@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Tip Calculator</string>
+    <string name="bill_amount_label">Bil Amount</string>
+    <string name="bill_amount">Enter number</string>
+    <string name="tip_percent_label">Percent</string>
+    <string name="btn_Down">-</string>
+    <string name="btn_Up">+</string>
+    <string name="percent_num">0%</string>
+    <string name="tip_amount_label">Tip</string>
+    <string name="tip_amount">0</string>
+    <string name="total_label">Total</string>
+    <string name="total_amount">0</string>
+</resources>
