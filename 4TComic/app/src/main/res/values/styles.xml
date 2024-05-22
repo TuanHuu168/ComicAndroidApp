@@ -1,0 +1,9 @@
+<resources>
+    <!-- Định nghĩa RoundImage -->
+    <style name="RoundImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="color">@color/white</item>
+    </style>
+
+</resources>
