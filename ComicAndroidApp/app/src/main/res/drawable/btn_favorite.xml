@@ -1,0 +1,20 @@
+<!-- res/drawable/rounded_corners.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+        <shape
+            android:shape="rectangle">
+            <solid android:color="@color/pink_main"/>
+            <corners android:radius="40dp"/>
+            <padding android:left="12dp"/>
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape
+            android:shape="rectangle">
+            <solid android:color="@color/pink_main_pressed"/>
+            <corners android:radius="40dp"/>
+            <padding android:left="12dp"/>
+        </shape>
+    </item>
+</selector>
