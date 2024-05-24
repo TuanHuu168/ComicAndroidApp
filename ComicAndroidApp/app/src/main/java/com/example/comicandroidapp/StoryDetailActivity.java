@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -13,6 +15,9 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -24,13 +29,16 @@ import java.util.List;
 
 public class StoryDetailActivity extends AppCompatActivity {
 
-    private TextView des_tv;
     private Button btn_favorite;
+    private ImageView img_banner, img_title;
+    private TextView des_tv;
+    private RecyclerView rcv_genres, rcv_chapters;
+    private GenreAdapter genreAdapter;
+    private ChapterAdapter chapterAdapter;
+
     private boolean isExpanded = false;
     private boolean isFavorite = false;
 
-    private List<List<String>> chapterGroups;
-    private ChapterPagerAdapter pagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +50,21 @@ public class StoryDetailActivity extends AppCompatActivity {
             return insets;
         });
 
-        des_tv = findViewById(R.id.des_tv);
+        // Tham chiếu đến các View
+        img_banner = findViewById(R.id.img_banner);
+        img_title = findViewById(R.id.img_title);
         btn_favorite = findViewById(R.id.btn_favorite);
+        rcv_genres = findViewById(R.id.rcv_genres);
+        des_tv = findViewById(R.id.des_tv);
+        rcv_chapters = findViewById(R.id.rcv_chapters);
 
+        // Banner
+        img_banner.setImageResource(R.drawable.banner);
+
+        // Title
+        img_title.setImageResource(R.drawable.img_title);
+
+        // Yêu thích
         btn_favorite.setOnClickListener(v -> {
             if (!isFavorite) {
                 btn_favorite.setText("Đã thích");
@@ -61,55 +81,48 @@ public class StoryDetailActivity extends AppCompatActivity {
             }
         });
 
-        String description = "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm - Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
-                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm - Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
-                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm - Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
-                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm - Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu";
+        // Thể loại
+        genreAdapter = new GenreAdapter();
+        GridLayoutManager gLM = new GridLayoutManager(this, 3);
+        rcv_genres.setLayoutManager(gLM);
+        rcv_genres.setFocusable(false);
+        rcv_genres.setNestedScrollingEnabled(false);
+        genreAdapter.setData(getGenres());
+        rcv_genres.setAdapter(genreAdapter);
+
+        // Nội dung
+        String description = "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
+                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu";
         des_tv.setText(description);
 
-        des_tv.setOnClickListener(v -> {
-            if (!isExpanded) {
-                des_tv.setMaxLines(Integer.MAX_VALUE); // Hiển thị toàn bộ văn bản
-                des_tv.setEllipsize(null);
-                des_tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.up);
-                isExpanded = true;
-            } else if (isExpanded) {
-                des_tv.setMaxLines(3); // Thu gọn lại 3 dòng
-                des_tv.setEllipsize(TextUtils.TruncateAt.END);
-                des_tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.down);
-                isExpanded = false;
-            }
-        });
-
-        // Initialize chapter groups
-        chapterGroups = new ArrayList<>();
-        chapterGroups.add(Arrays.asList("Chương 1", "Chương 2", "Chương 3"));
-        chapterGroups.add(Arrays.asList("Chương 51", "Chương 52", "Chương 53"));
-        chapterGroups.add(Arrays.asList("Chương 101", "Chương 102", "Chương 103"));
-        // Add more groups as needed
-
-        // Set up ViewPager and TabLayout
-        ViewPager2 viewPager = findViewById(R.id.viewPager);
-        pagerAdapter = new ChapterPagerAdapter(this, chapterGroups);
-        viewPager.setAdapter(pagerAdapter);
-
-        TabLayout tabLayout = findViewById(R.id.tabLayout);
-        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
-            switch (position) {
-                case 0:
-                    tab.setText("1-50");
-                    break;
-                case 1:
-                    tab.setText("51-100");
-                    break;
-                case 2:
-                    tab.setText("101-150");
-                    break;
-                // Add more cases as needed
-            }
-        }).attach();
+        // Chương
+        chapterAdapter = new ChapterAdapter();
+        LinearLayoutManager lLM = new LinearLayoutManager(this);
+        rcv_chapters.setLayoutManager(lLM);
+        rcv_chapters.setFocusable(false); // Không cho focus vào RecyclerView
+        rcv_chapters.setNestedScrollingEnabled(false);
+        chapterAdapter.setData(getChapters());
+        rcv_chapters.setAdapter(chapterAdapter);
     }
 
+    private List<Chapter> getChapters() {
+        List<Chapter> chapters = new ArrayList<>();
+        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
 
+        return chapters;
+    }
 
+    private List<String> getGenres() {
+        List<String> genres = new ArrayList<>();
+        genres.add("Hành động");
+        genres.add("Phiêu lưu");
+        genres.add("Shounen");
+        genres.add("Hài hước");
+        genres.add("Drama");
+
+        return genres;
+    }
 }

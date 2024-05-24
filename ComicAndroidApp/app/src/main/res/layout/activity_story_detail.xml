@@ -20,18 +20,20 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_margin="12dp"
             android:layout_marginBottom="8dp"
+            android:background="@color/white"
             android:contentDescription="Back"
             android:src="@drawable/return_btn"
-            android:background="@color/white"
-            android:layout_margin="12dp"/>
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/header">
+        app:layout_constraintTop_toBottomOf="@id/header"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,11 +47,10 @@
 
                 <!-- Banner nằm dưới nền các View khác -->
                 <ImageView
-                    android:id="@+id/banner"
+                    android:id="@+id/img_banner"
                     android:layout_width="match_parent"
                     android:layout_height="175dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/banner" />
+                    android:scaleType="centerCrop" />
 
                 <!-- Image and Title -->
                 <LinearLayout
@@ -60,13 +61,12 @@
                     android:paddingTop="16dp">
 
                     <ImageView
-                        android:id="@+id/coverImage"
+                        android:id="@+id/img_title"
                         android:layout_width="100dp"
                         android:layout_height="150dp"
                         android:layout_marginEnd="16dp"
-                        android:contentDescription="Cover Image"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ava" />
+                        android:contentDescription="Image Title"
+                        android:scaleType="centerCrop"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -121,36 +121,14 @@
                     android:layout_height="wrap_content"
                     android:text="Thể loại"
                     android:textSize="18sp"
-                    android:textStyle="bold|italic" />
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/pink_main" />
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_genres"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="16dp"
-                    android:orientation="horizontal">
-
-                    <!-- Tags -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="12dp"
-                        android:background="@drawable/rounded_corners"
-                        android:text="Action"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="12dp"
-                        android:background="@drawable/rounded_corners"
-                        android:text="Manga"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold" />
-
-                    <!-- Add more tags as needed -->
-                </LinearLayout>
+                    android:layout_marginBottom="16dp"/>
 
                 <!-- Description -->
                 <TextView
@@ -159,7 +137,8 @@
                     android:layout_marginBottom="4dp"
                     android:text="Nội dung"
                     android:textSize="18sp"
-                    android:textStyle="bold|italic" />
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/pink_main" />
 
                 <TextView
                     android:id="@+id/des_tv"
@@ -169,32 +148,31 @@
                     android:drawableBottom="@drawable/down"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    android:text="None" />
+                    android:text="@string/app_name" />
 
-                <!-- Chapter -->
+                <!-- Chương truyện -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
                     android:text="Chương"
                     android:textSize="18sp"
+                    android:textColor="@color/pink_main"
                     android:textStyle="bold|italic" />
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tabLayout"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_chapters"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:tabIndicatorColor="#FFCDD2"
-                    app:tabSelectedTextColor="#FFCDD2"
-                    app:tabTextColor="#000000" />
+                    android:layout_height="wrap_content"/>
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPager"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="50dp"/>
 
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
 
     <!-- Bottom Buttons -->
@@ -238,4 +216,5 @@
             android:textColor="@color/pink_main"
             android:textSize="12sp" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
