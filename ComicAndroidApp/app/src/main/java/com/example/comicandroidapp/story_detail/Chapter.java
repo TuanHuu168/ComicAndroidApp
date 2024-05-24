@@ -1,4 +1,4 @@
-package com.example.comicandroidapp;
+package com.example.comicandroidapp.story_detail;
 
 public class Chapter {
     private int resourceId;
