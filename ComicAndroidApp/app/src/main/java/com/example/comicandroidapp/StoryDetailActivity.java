@@ -92,31 +92,41 @@ public class StoryDetailActivity extends AppCompatActivity {
 
         // Nội dung
         String description = "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
-                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu";
+                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
+                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
+                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
+                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
+                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
+                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
+                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" ;
         des_tv.setText(description);
+        des_tv.setOnClickListener(v -> {
+            if (!isExpanded) {
+                des_tv.setMaxLines(Integer.MAX_VALUE);
+                des_tv.setEllipsize(null);
+                des_tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.up);
+                isExpanded = true;
+            } else {
+                des_tv.setMaxLines(3);
+                des_tv.setEllipsize(TextUtils.TruncateAt.END);
+                des_tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.down);
+                isExpanded = false;
+            }
+        });
 
         // Chương
         chapterAdapter = new ChapterAdapter();
-        LinearLayoutManager lLM = new LinearLayoutManager(this);
-        rcv_chapters.setLayoutManager(lLM);
+        GridLayoutManager gLM2 = new GridLayoutManager(this, 1);
+        rcv_chapters.setLayoutManager(gLM2);
         rcv_chapters.setFocusable(false); // Không cho focus vào RecyclerView
         rcv_chapters.setNestedScrollingEnabled(false);
         chapterAdapter.setData(getChapters());
         rcv_chapters.setAdapter(chapterAdapter);
     }
 
-    private List<Chapter> getChapters() {
-        List<Chapter> chapters = new ArrayList<>();
-        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
-
-        return chapters;
-    }
-
     private List<String> getGenres() {
         List<String> genres = new ArrayList<>();
+
         genres.add("Hành động");
         genres.add("Phiêu lưu");
         genres.add("Shounen");
@@ -124,5 +134,21 @@ public class StoryDetailActivity extends AppCompatActivity {
         genres.add("Drama");
 
         return genres;
+    }
+
+    private List<Chapter> getChapters() {
+        List<Chapter> chapters = new ArrayList<>();
+
+        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
+
+        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
+        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
+
+        return chapters;
     }
 }

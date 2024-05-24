@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".StoryDetailActivity">
 
+    <!-- Header -->
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -28,7 +29,8 @@
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
-    <ScrollView
+    <!-- ScrollView -->
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -142,7 +144,7 @@
 
                 <TextView
                     android:id="@+id/des_tv"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:drawableBottom="@drawable/down"
@@ -167,13 +169,13 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"/>
+                    android:layout_height="0.9in"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <!-- Bottom Buttons -->
     <LinearLayout
