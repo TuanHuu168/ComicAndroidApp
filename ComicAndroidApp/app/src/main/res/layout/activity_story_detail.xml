@@ -13,8 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <!-- Back Button -->
         <ImageButton
             android:id="@+id/backButton"
@@ -27,6 +28,7 @@
             android:contentDescription="Back"
             android:src="@drawable/return_btn"
             tools:ignore="TouchTargetSizeCheck" />
+
     </LinearLayout>
 
     <!-- ScrollView -->
@@ -35,6 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         >
 
         <LinearLayout
@@ -52,7 +56,8 @@
                     android:id="@+id/img_banner"
                     android:layout_width="match_parent"
                     android:layout_height="175dp"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner" />
 
                 <!-- Image and Title -->
                 <LinearLayout
@@ -68,7 +73,8 @@
                         android:layout_height="150dp"
                         android:layout_marginEnd="16dp"
                         android:contentDescription="Image Title"
-                        android:scaleType="centerCrop"/>
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_title" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -179,12 +185,15 @@
 
     <!-- Bottom Buttons -->
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/bottom_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_bottom"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
 
         <Button
             android:layout_width="wrap_content"
