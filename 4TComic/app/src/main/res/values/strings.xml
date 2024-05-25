@@ -17,10 +17,15 @@
 
     <string name="personal_title">Cá nhân</string>
     <string name="edit_profile_title">.Chỉnh sửa hồ sơ</string>
-    <string name="logout_title">Đăng xuất</string>
     <string name="account_title">Thông tin cá nhân</string>
     <string name="setting_title">Cài đặt giao diện</string>
     <string name="admin_title">Quản trị viên</string>
+
+    <string name="logout_title">Đăng xuất</string>
+    <string name="string_yes">Đăng xuất</string>
+    <string name="string_no">Hủy</string>
+    <string name="title_dialog_logout">Đăng xuất</string>
+    <string name="message_logout">Bạn sẽ trở về màn hình đăng nhập!</string>
 
 
 </resources>
