@@ -1,0 +1,276 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme._4TComic\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".activity_history_page\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".LoginActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	
++++ b/app/src/main/AndroidManifest.xml	
+@@ -14,16 +14,26 @@
+         tools:targetApi="31">
+         <activity
+             android:name=".activity_history_page"
+-            android:exported="false" />
+-        <activity
+-            android:name=".LoginActivity"
+-            android:exported="true">
++            android:exported="true" >
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
++        <activity
++            android:name=".LoginActivity"
++            android:exported="false">
++<!--            <intent-filter>-->
++<!--                <action android:name="android.intent.action.MAIN" />-->
++
++<!--                <category android:name="android.intent.category.LAUNCHER" />-->
++<!--            </intent-filter>-->
++        </activity>
++
++        <meta-data
++            android:name="preloaded_fonts"
++            android:resource="@array/preloaded_fonts" />
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">4T Comic</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	
++++ b/app/src/main/res/values/strings.xml	
+@@ -1,3 +1,6 @@
+ <resources>
+     <string name="app_name">4T Comic</string>
++    <string name="titleBookcase">Tủ sách</string>
++    <string name="Follow">Theo dõi</string>
++    <string name="hintSearch">Tìm kiếm</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Base.Theme._4TComic\" parent=\"Theme.Material3.DayNight.NoActionBar\">\r\n        <!-- Customize your light theme here. -->\r\n        <!-- <item name=\"colorPrimary\">@color/my_light_primary</item> -->\r\n    </style>\r\n\r\n    <style name=\"Theme._4TComic\" parent=\"Base.Theme._4TComic\" />\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	
++++ b/app/src/main/res/values/themes.xml	
+@@ -1,6 +1,6 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+     <!-- Base application theme. -->
+-    <style name="Base.Theme._4TComic" parent="Theme.Material3.DayNight.NoActionBar">
++    <style name="Base.Theme._4TComic" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+         <!-- Customize your light theme here. -->
+         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+     </style>
+Index: app/src/main/res/layout/activity_history_page.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".activity_history_page\">\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_history_page.xml b/app/src/main/res/layout/activity_history_page.xml
+--- a/app/src/main/res/layout/activity_history_page.xml	
++++ b/app/src/main/res/layout/activity_history_page.xml	
+@@ -1,10 +1,185 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:id="@+id/main"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
++    android:orientation="vertical"
+     tools:context=".activity_history_page">
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++    <RelativeLayout
++        android:layout_width="match_parent"
++        android:layout_height="60dp"
++        android:background="@drawable/ic_backgroud_menu_top">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:gravity="center">
++
++            <ImageButton
++                android:id="@+id/btnBack"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="10dp"
++                android:layout_weight="1"
++                android:background="#FFB3C6"
++                app:srcCompat="@drawable/ic_arrow"
++                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
++
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_weight="1"
++                android:fontFamily="@font/faustina"
++                android:gravity="center"
++                android:text="@string/titleBookcase"
++                android:textColor="#FFFFFF"
++                android:textSize="30dp"
++                android:textStyle="bold" />
++
++            <ImageButton
++                android:id="@+id/btnEdit"
++                android:layout_width="30dp"
++                android:layout_height="30dp"
++                android:layout_marginRight="10dp"
++                android:layout_weight="1"
++                android:background="#FFB3C6"
++                app:srcCompat="@drawable/ic_edit"
++                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
++        </LinearLayout>
++
++    </RelativeLayout>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="60dp"
++        android:layout_margin="5dp"
++        android:background="@drawable/ic_group_tab"
++        android:orientation="horizontal">
++
++        <Button
++            android:id="@+id/btnHistory"
++            android:layout_width="0dp"
++            android:layout_weight="1"
++            android:layout_height="40dp"
++            android:layout_marginLeft="20dp"
++            android:layout_marginRight="20dp"
++            android:layout_marginTop="4dp"
++            android:background="@drawable/ic_background_blue"
++            android:fontFamily="@font/faustina"
++            android:text="Lịch sử"
++            android:textSize="18dp"
++            android:textAllCaps="false"
++            tools:ignore="TouchTargetSizeCheck" />
++
++        <Button
++            android:id="@+id/btnFollow"
++            android:layout_width="0dp"
++            android:layout_weight="1"
++            android:layout_height="40dp"
++            android:layout_marginLeft="20dp"
++            android:layout_marginRight="20dp"
++            android:layout_marginTop="4dp"
++            android:background="@drawable/ic_background_white"
++            android:fontFamily="@font/faustina"
++            android:text="@string/Follow"
++            android:textSize="18dp"
++            android:textAllCaps="false"
++            tools:ignore="TouchTargetSizeCheck" />
++    </LinearLayout>
++
++    <LinearLayout
++        android:layout_width="401dp"
++        android:layout_height="55dp"
++        android:layout_marginStart="5dp"
++        android:layout_marginTop="0dp"
++        android:background="@drawable/ic_group_tab"
++        android:orientation="horizontal">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="50dp"
++            android:layout_marginLeft="4dp"
++            android:layout_marginTop="2dp"
++            android:layout_marginRight="4dp"
++            android:background="@drawable/ic_background_search"
++            android:orientation="horizontal">
++
++            <EditText
++                android:id="@+id/editSearch"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_weight="1"
++                android:backgroundTint="@android:color/transparent"
++                android:fontFamily="@font/faustina"
++                android:hint="@string/hintSearch"
++                android:paddingStart="20dp"
++                android:paddingEnd="16dp"
++                android:textColor="#808080"
++                android:textSize="19dp"
++                tools:ignore="TouchTargetSizeCheck" />
++
++            <ImageButton
++                android:id="@+id/btnSearch"
++                android:layout_width="50dp"
++                android:layout_height="wrap_content"
++                android:layout_marginTop="10dp"
++                android:background="#"
++                app:srcCompat="@drawable/ic_search"
++                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
++        </LinearLayout>
++    </LinearLayout>
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/rcvFollow"
++        android:layout_width="match_parent"
++        android:layout_height="0dp"
++        android:layout_weight="1" />
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="70dp"
++        android:background="@drawable/test"
++        android:orientation="horizontal"
++        android:gravity="center">
++
++            <ImageButton
++                android:id="@+id/btnHome"
++                android:layout_width="0dp"
++                android:layout_weight="1"
++                android:layout_height="wrap_content"
++                android:background="#"
++                app:srcCompat="@drawable/ic_home"
++                android:backgroundTint="@color/black"
++                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
++            <ImageButton
++                android:id="@+id/btnBookCase"
++                android:layout_width="0dp"
++                android:layout_weight="1"
++                android:layout_height="wrap_content"
++                android:background="#"
++                app:srcCompat="@drawable/ic_bookcase"
++                android:backgroundTint="@color/black"
++                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
++            <ImageButton
++                android:id="@+id/btnBell"
++                android:layout_width="0dp"
++                android:layout_weight="1"
++                android:layout_height="wrap_content"
++                android:background="#"
++                app:srcCompat="@drawable/ic_bell"
++                android:backgroundTint="@color/black"
++                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
++            <ImageButton
++                android:id="@+id/btnProfile"
++                android:layout_width="0dp"
++                android:layout_weight="1"
++                android:layout_height="wrap_content"
++                android:background="#"
++                app:srcCompat="@drawable/ic_profile"
++                android:backgroundTint="@color/black"
++                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
++    </LinearLayout>
++
++</LinearLayout>
+\ No newline at end of file

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">4T Comic</string>
+    <string name="titleBookcase">Tủ sách</string>
+    <string name="History">Lịch sử</string>
+    <string name="Follow">Theo dõi</string>
+    <string name="hintSearch">Tìm kiếm</string>
+    <string name="title">Tinh tú kiếm sĩ</string>
+    <string name="reading">"Chương đang đọc: "</string>
+    <string name="all">Chọn tất cả</string>
+    <string name="remove">Xoá</string>
 </resources>
