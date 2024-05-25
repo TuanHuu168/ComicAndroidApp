@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">4T Comic</string>
+    <string name="register_text"><![CDATA[ Đăng ký ]]></string>
+    <string name="user_name_text">Tên đăng nhập</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Mật khẩu</string>
+    <string name="confirm_password_text">Nhập lại mật khẩu</string>
+    <string name="login_text"><![CDATA[ Đăng nhập ]]></string>
+    <string name="terms_text"><![CDATA[Đồng ý với điều khoản & dịch vụ]]></string>
+    <string name="terms_text_underline"><![CDATA[điều khoản & dịch vụ]]></string>
+    <string name="forgot_text"><![CDATA[ Quên mật khẩu ]]></string>
+</resources>
