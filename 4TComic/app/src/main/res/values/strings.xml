@@ -9,4 +9,5 @@
     <string name="terms_text"><![CDATA[Agree to the terms & services]]></string>
     <string name="terms_text_underline"><![CDATA[terms & services]]></string>
     <string name="forgot_text"><![CDATA[ Forgot password ]]></string>
+    <string name="search_text">Search comics…</string>
 </resources>

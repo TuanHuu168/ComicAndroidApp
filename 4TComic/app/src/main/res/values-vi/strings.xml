@@ -10,4 +10,5 @@
     <string name="terms_text"><![CDATA[Đồng ý với điều khoản & dịch vụ]]></string>
     <string name="terms_text_underline"><![CDATA[điều khoản & dịch vụ]]></string>
     <string name="forgot_text"><![CDATA[ Quên mật khẩu ]]></string>
+    <string name="search_text">Tìm kiếm truyện…</string>
 </resources>

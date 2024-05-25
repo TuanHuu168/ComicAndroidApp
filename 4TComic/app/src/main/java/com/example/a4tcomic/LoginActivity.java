@@ -58,5 +58,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(registerIntent);
             }
         });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
+                startActivity(homePageIntent);
+            }
+        });
     }
 }
