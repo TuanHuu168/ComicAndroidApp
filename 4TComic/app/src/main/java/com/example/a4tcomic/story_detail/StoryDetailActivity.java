@@ -3,6 +3,7 @@ package com.example.a4tcomic.story_detail;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -52,6 +53,10 @@ public class StoryDetailActivity extends AppCompatActivity {
         des_tv = findViewById(R.id.des_tv);
         rcv_chapters = findViewById(R.id.rcv_chapters);
 
+        // Back
+        ImageButton btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(v -> finish());
+
         // Banner
         img_banner.setImageResource(R.drawable.banner);
 
@@ -61,14 +66,14 @@ public class StoryDetailActivity extends AppCompatActivity {
         // Yêu thích
         btn_favorite.setOnClickListener(v -> {
             if (!isFavorite) {
-                btn_favorite.setText("Đã thích");
-                btn_favorite.setBackgroundResource(R.drawable.btn_favorited);
+                btn_favorite.setText(R.string.btn_favorited);
+                btn_favorite.setBackgroundColor(ContextCompat.getColor(this,R.color.white));
                 btn_favorite.setTextColor(ContextCompat.getColor(this,R.color.pink_main));
                 btn_favorite.setCompoundDrawablesWithIntrinsicBounds(R.drawable.favorited, 0, 0, 0);
                 isFavorite = true;
             } else {
-                btn_favorite.setText("Yêu thích");
-                btn_favorite.setBackgroundResource(R.drawable.btn_favorite);
+                btn_favorite.setText(R.string.btn_favorite);
+                btn_favorite.setBackgroundColor(ContextCompat.getColor(this,R.color.pink_main));
                 btn_favorite.setTextColor(ContextCompat.getColor(this,R.color.white));
                 btn_favorite.setCompoundDrawablesWithIntrinsicBounds(R.drawable.favorite_white, 0, 0, 0);
                 isFavorite = false;

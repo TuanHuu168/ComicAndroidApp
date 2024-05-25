@@ -10,6 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.a4tcomic.personal.PersonalActivity;
 import com.example.a4tcomic.story_detail.StoryDetailActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,9 +26,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button btn1 = findViewById(R.id.btn1);
-        btn1.setOnClickListener(v -> {
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, StoryDetailActivity.class);
+            startActivity(intent);
+        });
+
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
             startActivity(intent);
         });
     }

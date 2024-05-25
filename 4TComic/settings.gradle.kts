@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "4TComic"
 include(":app")
- 

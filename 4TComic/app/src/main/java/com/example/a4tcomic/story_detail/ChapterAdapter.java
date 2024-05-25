@@ -36,7 +36,7 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         }
         holder.img_chapter.setImageResource(chapter.getResourceId());
         holder.tv_name_chapter.setText(chapter.getName());
-        holder.chapterTimeUpdate.setText("Cập nhật lúc: " + chapter.getTimeUpdate());
+        holder.chapterTimeUpdate.setText(R.string.update_time_title + chapter.getTimeUpdate());
 
     }
 
@@ -48,10 +48,10 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         return 0;
     }
 
-    public class ChapterViewHolder extends RecyclerView.ViewHolder {
-        private ImageView img_chapter;
-        private TextView tv_name_chapter;
-        private TextView chapterTimeUpdate;
+    public static class ChapterViewHolder extends RecyclerView.ViewHolder {
+        private final ImageView img_chapter;
+        private final TextView tv_name_chapter;
+        private final TextView chapterTimeUpdate;
 
         public ChapterViewHolder(@NonNull View itemView) {
             super(itemView);

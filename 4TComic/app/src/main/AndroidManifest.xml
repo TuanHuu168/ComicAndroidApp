@@ -12,11 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._4TComic"
         tools:targetApi="31">
-
+        <activity
+            android:name=".personal.PersonalActivity"
+            android:exported="false" />
         <activity
             android:name=".story_detail.StoryDetailActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
