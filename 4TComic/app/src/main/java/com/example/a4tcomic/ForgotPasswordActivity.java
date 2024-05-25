@@ -1,6 +1,5 @@
 package com.example.a4tcomic;
 
-import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
@@ -14,17 +13,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class LoginActivity extends AppCompatActivity {
+public class ForgotPasswordActivity extends AppCompatActivity {
 
     //Khai báo
     EditText edtUserName, edtPassword;
-    TextView lblForgot, lblRegister;
-    Button btnLogin;
+    TextView lblLogin;
+    Button btnForgot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_forgot_password);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.forgotMain), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -34,28 +33,17 @@ public class LoginActivity extends AppCompatActivity {
         // Ánh xạ
         edtUserName = findViewById(R.id.edtUserName);
         edtPassword = findViewById(R.id.edtPassword);
-        lblForgot = findViewById(R.id.lblForgot);
-        lblRegister = findViewById(R.id.lblRegister);
-        btnLogin = findViewById(R.id.btnLogin);
+        lblLogin = findViewById(R.id.lblLogin);
+        btnForgot = findViewById(R.id.btnForgot);
 
         // Gạch chân
-        lblForgot.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
-        lblRegister.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
+        lblLogin.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
-        // Chuyển trang quên mật khẩu và đăng ký
-        lblForgot.setOnClickListener(new View.OnClickListener() {
+        // Sự kiện
+        lblLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent forgotIntent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-                startActivity(forgotIntent);
-            }
-        });
-
-        lblRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(registerIntent);
+                finish();
             }
         });
     }

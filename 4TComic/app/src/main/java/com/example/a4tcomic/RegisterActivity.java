@@ -1,11 +1,13 @@
 package com.example.a4tcomic;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.UnderlineSpan;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -44,6 +46,9 @@ public class RegisterActivity extends AppCompatActivity {
         rd_terms = findViewById(R.id.rd_terms);
         btnRegister = findViewById(R.id.btnRegister);
 
+        // Gạch chân login
+        lblLogin.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
+
         // Đổi màu chữ và gạch chân điều khoản & dịch vụ
         String fullText = getString(R.string.terms_text);
         String underlinedText = getString(R.string.terms_text_underline);
@@ -58,5 +63,12 @@ public class RegisterActivity extends AppCompatActivity {
 
         rd_terms.setText(spannableString);
 
+        // Sự kiện
+        lblLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
