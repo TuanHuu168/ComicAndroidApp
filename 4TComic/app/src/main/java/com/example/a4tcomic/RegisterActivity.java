@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
         int start = fullText.indexOf(underlinedText);
         int end = start + underlinedText.length();
 
-        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FFB3C6")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF6C91")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannableString.setSpan(new UnderlineSpan(), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         rd_terms.setText(spannableString);

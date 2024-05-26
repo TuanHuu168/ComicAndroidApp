@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">4T Comic</string>
-    <string name="register_text"><![CDATA[ Register ]]></string>
+    <string name="register_text">Register</string>
     <string name="user_name_text">Username</string>
     <string name="email_text">Email</string>
     <string name="password_text">Password</string>
     <string name="confirm_password_text">Confirm Password</string>
-    <string name="login_text">"<![CDATA[ Login ]]>"</string>
-    <string name="terms_text"><![CDATA[Agree to the terms & services]]></string>
-    <string name="terms_text_underline"><![CDATA[terms & services]]></string>
-    <string name="forgot_text"><![CDATA[ Forgot password ]]></string>
+    <string name="login_text">Login</string>
+    <string name="terms_text">Agree to the terms &amp; services</string>
+    <string name="terms_text_underline">terms &amp; services</string>
+    <string name="forgot_text">Forgot password</string>
     <string name="search_text">Search comics…</string>
 </resources>
