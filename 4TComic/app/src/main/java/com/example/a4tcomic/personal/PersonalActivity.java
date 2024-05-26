@@ -1,8 +1,13 @@
 package com.example.a4tcomic.personal;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -38,7 +43,8 @@ public class PersonalActivity extends AppCompatActivity {
 
         // Sự kiện
         tv_edit_profile.setOnClickListener(v -> {
-            // Xử lý sự kiện khi TextView được nhấp vào
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
         });
 
         btn_account.setOnClickListener(v -> {
@@ -69,4 +75,5 @@ public class PersonalActivity extends AppCompatActivity {
             dialog.show();
         });
     }
+
 }

@@ -114,7 +114,7 @@ public class StoryDetailActivity extends AppCompatActivity {
         });
 
         // Chương
-        chapterAdapter = new ChapterAdapter();
+        chapterAdapter = new ChapterAdapter(this);
         LinearLayoutManager lLM = new LinearLayoutManager(this);
         rcv_chapters.setLayoutManager(lLM);
         rcv_chapters.setFocusable(false); // Không cho focus vào RecyclerView

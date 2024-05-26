@@ -1,5 +1,7 @@
 package com.example.a4tcomic.story_detail;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,11 @@ import java.util.List;
 
 public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterViewHolder> {
     private List<Chapter> listChapter;
+    private Context context;
+
+    public ChapterAdapter(Context context) {
+        this.context = context;
+    }
 
     public void setData(List<Chapter> listChapter) {
         this.listChapter = listChapter;
@@ -34,9 +41,10 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         if (chapter == null) {
             return;
         }
+        String title_time = context.getString(R.string.update_time_title);
         holder.img_chapter.setImageResource(chapter.getResourceId());
         holder.tv_name_chapter.setText(chapter.getName());
-        holder.chapterTimeUpdate.setText(R.string.update_time_title + chapter.getTimeUpdate());
+        holder.chapterTimeUpdate.setText(title_time + " " + chapter.getTimeUpdate());
 
     }
 
