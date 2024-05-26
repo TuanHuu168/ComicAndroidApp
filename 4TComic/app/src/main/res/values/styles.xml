@@ -1,8 +1,15 @@
 <resources>
-    <!-- Định nghĩa RoundImage -->
-    <style name="RoundImage">
+    <!-- Định nghĩa RoundLog -->
+    <style name="RoundLog">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <!-- Định nghĩa RoundComic -->
+    <style name="RoundComic">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
         <item name="color">@color/white</item>
     </style>
 

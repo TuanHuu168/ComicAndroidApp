@@ -117,9 +117,7 @@
                 android:id="@+id/sliderCard"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginTop="12dp"
                 app:cardBackgroundColor="@color/pink"
                 app:cardCornerRadius="20dp">
 
@@ -136,6 +134,92 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!-- Các loại truyện -->
+            <!-- Xu hướng -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:background="@drawable/comic_holder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/trending_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/faustina_bold"
+                    android:text="Xu hướng"
+                    android:textColor="#FFB3C6"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_trending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </LinearLayout>
+
+            <!-- Lịch sử -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:background="@drawable/comic_holder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/history_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/faustina_bold"
+                    android:text="Lịch sử"
+                    android:textColor="#FFB3C6"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"/>
+            </LinearLayout>
+
+            <!-- Mới cập nhật -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:background="@drawable/comic_holder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/updated_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/faustina_bold"
+                    android:text="Mới cập nhật"
+                    android:textColor="#FFB3C6"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_updated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"/>
+            </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
