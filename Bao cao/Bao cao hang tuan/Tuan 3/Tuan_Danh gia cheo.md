@@ -1,7 +1,7 @@
 # Mẫu đánh giá chéo
 ## Thông Tin Chung
 - **Tên Dự Án**: Ứng dụng đọc truyện online
-- **Ngày**: 29/4 -> 1/5
+- **Ngày**: 29/4 -> 5/5
 - **Người Đánh Giá**: Trình Hữu Tuấn
 
 - **Người được đánh giá**: Luyện Thị Ánh Tuyết

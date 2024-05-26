@@ -2,7 +2,7 @@
 
 ## Thông Tin Chung
 - **Tên Dự Án**: Ứng dụng đọc truyện online
-- **Tuần**: 29/4 - 1/5
+- **Tuần**: 29/4 - 5/5
 - **Ngày**: 
 - **Nhóm Thực Hiện**: 
   - Thành viên 1: Tuấn
