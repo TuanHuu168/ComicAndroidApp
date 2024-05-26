@@ -48,7 +48,8 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         btn_account.setOnClickListener(v -> {
-            // Xử lý sự kiện khi Button được nhấp vào
+            Intent intent = new Intent(this, AccountActivity.class);
+            startActivity(intent);
         });
 
         btn_setting.setOnClickListener(v -> {
@@ -64,7 +65,6 @@ public class PersonalActivity extends AppCompatActivity {
             builder.setTitle(R.string.title_dialog_logout);
             builder.setMessage(R.string.message_logout);
 
-            // truyền màu cho text
             builder.setPositiveButton(R.string.string_no, (dialog, which) -> {
                 dialog.dismiss();
             });

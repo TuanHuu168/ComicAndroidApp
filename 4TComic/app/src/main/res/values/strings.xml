@@ -16,8 +16,8 @@
     <string name="btn_first_chapter">Đọc từ đầu</string>
 
     <string name="personal_title">Cá nhân</string>
-    <string name="edit_profile_title">.Chỉnh sửa hồ sơ</string>
-    <string name="account_title">Thông tin cá nhân</string>
+    <string name="edit_profile_title">Chỉnh sửa hồ sơ</string>
+    <string name="account_title">Tài khoản</string>
     <string name="setting_title">Cài đặt giao diện</string>
     <string name="admin_title">Quản trị viên</string>
 
@@ -28,11 +28,16 @@
     <string name="message_logout">Bạn sẽ trở về màn hình đăng nhập!</string>
 
     <string name="select_img_title">Chọn hình ảnh đại diện</string>
-    <string name="profile_title">Chỉnh sửa hồ sơ</string>
     <string name="save_btn_title">Lưu</string>
     <string name="edit_name_title">Đặt tên hiển thị</string>
     <string name="num_character">18 / 50</string>
     <string name="nva_name">Nguyễn Văn A</string>
+
+    <string name="email_title">Liên kết email:</string>
+    <string name="delete_account">Xóa tài khoản</string>
+    <string name="change_pass">Thay đối mật khẩu</string>
+    <string name="title_dialog_warning">Cảnh báo</string>
+    <string name="mes_delete_account">Bạn có muốn xóa tài khoản này?</string>
 
 
 </resources>
