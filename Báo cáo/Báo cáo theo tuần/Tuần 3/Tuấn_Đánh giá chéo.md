@@ -54,7 +54,6 @@
 - **Nhận xét**: đưa ra được một số giao diện nổi bật hiện tại
 
 ## Nhận Xét Chung
-(Phần này dành cho những nhận xét tổng thể về thành viên được đánh giá, bao gồm cả những gợi ý để cải thiện trong tương lai.)
 - Giành thời gian tìm hiểu qua về ứng dụng và các chức năng cần thiết.
 - Đóng góp được một số ý tưởng về giao diện
 
@@ -81,6 +80,5 @@
 - **Nhận xét**: có ý tưởng mới
 
 ## Nhận Xét Chung
-(Phần này dành cho những nhận xét tổng thể về thành viên được đánh giá, bao gồm cả những gợi ý để cải thiện trong tương lai.)
 - Giành thời gian tìm hiểu qua về ứng dụng và các chức năng cần thiết.
 - Đóng góp được một số ý tưởng về giao diện
