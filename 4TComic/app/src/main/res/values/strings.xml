@@ -13,4 +13,7 @@
     <string name="trending_text">Trending</string>
     <string name="history_text">History</string>
     <string name="recently_updated">Recently Updated</string>
+    <string name="admin_text">Admin Page</string>
+    <string name="account_list_text">Recently Created Account</string>
+    <string name="recently_comment">Recently Comment</string>
 </resources>

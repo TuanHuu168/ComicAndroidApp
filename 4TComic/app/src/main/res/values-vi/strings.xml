@@ -14,4 +14,7 @@
     <string name="trending_text">Xu Hướng</string>
     <string name="history_text">Lịch Sử</string>
     <string name="recently_updated">Mới Cập Nhật</string>
+    <string name="account_list_text">Tài Khoản Mới Tạo</string>
+    <string name="admin_text">Trang Quản Trị</string>
+    <string name="recently_comment">Bình Luận Gần Đây</string>
 </resources>
