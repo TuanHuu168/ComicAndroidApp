@@ -11,4 +11,7 @@
     <string name="terms_text_underline">điều khoản &amp; dịch vụ</string>
     <string name="forgot_text">Quên mật khẩu</string>
     <string name="search_text">Tìm kiếm truyện…</string>
+    <string name="trending_text">Xu Hướng</string>
+    <string name="history_text">Lịch Sử</string>
+    <string name="recently_updated">Mới Cập Nhật</string>
 </resources>

@@ -22,10 +22,10 @@ public class HomePageActivity extends AppCompatActivity {
 
     private RecyclerView trendingRecyclerView;
     private RecyclerView historyRecyclerView;
-    private RecyclerView updatedRecyclerView;
+    private RecyclerView recentlyUpdatedRecyclerView;
     private List<ComicItem> trendingList;
     private List<ComicItem> historyList;
-    private List<ComicItem> updatedList;
+    private List<ComicItem> recentlyUpdatedList;
 
 
     @Override
@@ -42,7 +42,7 @@ public class HomePageActivity extends AppCompatActivity {
         // Ánh xạ
         trendingRecyclerView = findViewById(R.id.recycler_view_trending);
         historyRecyclerView = findViewById(R.id.recycler_view_history);
-        updatedRecyclerView = findViewById(R.id.recycler_view_updated);
+        recentlyUpdatedRecyclerView = findViewById(R.id.recycler_view_recently_updated);
 
         // Tạo slider vào thêm ảnh vào slider
         ImageSlider imageSlider = findViewById(R.id.imageSlider);
@@ -58,7 +58,7 @@ public class HomePageActivity extends AppCompatActivity {
         // Tạo custom listView
         trendingList = new ArrayList<>();
         historyList = new ArrayList<>();
-        updatedList = new ArrayList<>();
+        recentlyUpdatedList = new ArrayList<>();
         // Thêm nội dung truyện
         trendingList.add(new ComicItem(R.drawable.truyen1, "Tiểu Thư Bé Bỏng Đáng Yêu!"));
         trendingList.add(new ComicItem(R.drawable.truyen2, "Tinh Tú Kiếm Sĩ"));
@@ -69,15 +69,15 @@ public class HomePageActivity extends AppCompatActivity {
         historyList.add(new ComicItem(R.drawable.truyen3, "Tôi Trở Nên Phi Thường Ngay Cả Ở Thế Giới Thật"));
         historyList.add(new ComicItem(R.drawable.truyen4, "Không Chỉ Là Bắt Nạt"));
 
-        updatedList.add(new ComicItem(R.drawable.truyen1, "Tiểu Thư Bé Bỏng Đáng Yêu!"));
-        updatedList.add(new ComicItem(R.drawable.truyen2, "Tinh Tú Kiếm Sĩ"));
-        updatedList.add(new ComicItem(R.drawable.truyen3, "Tôi Trở Nên Phi Thường Ngay Cả Ở Thế Giới Thật"));
-        updatedList.add(new ComicItem(R.drawable.truyen4, "Không Chỉ Là Bắt Nạt"));
+        recentlyUpdatedList.add(new ComicItem(R.drawable.truyen1, "Tiểu Thư Bé Bỏng Đáng Yêu!"));
+        recentlyUpdatedList.add(new ComicItem(R.drawable.truyen2, "Tinh Tú Kiếm Sĩ"));
+        recentlyUpdatedList.add(new ComicItem(R.drawable.truyen3, "Tôi Trở Nên Phi Thường Ngay Cả Ở Thế Giới Thật"));
+        recentlyUpdatedList.add(new ComicItem(R.drawable.truyen4, "Không Chỉ Là Bắt Nạt"));
 
         // Thiết lập Adapter và LayoutManager cho RecyclerView
         setupRecyclerView(trendingRecyclerView, trendingList);
         setupRecyclerView(historyRecyclerView, historyList);
-        setupRecyclerView(updatedRecyclerView, updatedList);
+        setupRecyclerView(recentlyUpdatedRecyclerView, recentlyUpdatedList);
 
     }
 
