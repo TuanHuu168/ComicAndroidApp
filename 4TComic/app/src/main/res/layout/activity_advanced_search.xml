@@ -6,7 +6,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:backgroundTint="#FFB3C6"
     tools:context=".AdvancedSearchActivity">
 
     <LinearLayout
@@ -148,23 +147,19 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ScrollView
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomNav"
         android:layout_below="@+id/linearLayout4"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/box_vertical">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+        android:background="@drawable/box_group_tran"
+        tools:listitem="@layout/item_translation_group" />
 
     <LinearLayout
         android:id="@+id/bottomNav"
