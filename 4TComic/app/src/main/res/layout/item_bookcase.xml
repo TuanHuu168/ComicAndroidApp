@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
+    android:layout_marginBottom="5dp"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,16 +14,17 @@
             android:layout_height="118dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/ic_bg_item_white">
 
             <ImageButton
                 android:id="@+id/imgBtnItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/tinhtukiemsi"
-                android:background="@null"
+                android:background="@drawable/border_image"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <LinearLayout
@@ -32,7 +33,9 @@
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="7dp"
                 android:layout_marginEnd="30dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
                 <TextView
                     android:id="@+id/titleItem"
                     android:layout_width="match_parent"
@@ -40,16 +43,18 @@
                     android:fontFamily="@font/faustina"
                     android:text="@string/title"
                     android:textColor="#FF6C91"
-                    android:textSize="25dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <LinearLayout
+                        android:id="@+id/lyReadingChapter"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp">
                         <TextView
-                            android:id="@+id/readedChapter"
+                            android:id="@+id/readChapter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/reading"
@@ -75,7 +80,7 @@
                         android:id="@+id/radio_button_book"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:layout_marginStart="60dp"
+                        android:layout_marginStart="45dp"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
                 <LinearLayout
@@ -88,7 +93,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp">
+                        android:layout_marginRight="15dp">
                         <ImageButton
                             android:layout_width="40dp"
                             android:layout_height="30dp"
@@ -104,7 +109,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp">
+                        android:layout_marginRight="15dp">
                         <ImageButton
                             android:layout_width="40dp"
                             android:layout_height="30dp"
@@ -137,4 +142,4 @@
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
-</androidx.cardview.widget.CardView>
+</LinearLayout>

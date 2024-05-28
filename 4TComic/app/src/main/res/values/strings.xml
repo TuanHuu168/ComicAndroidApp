@@ -8,4 +8,9 @@
     <string name="reading">"Chương đang đọc: "</string>
     <string name="all">Chọn tất cả</string>
     <string name="remove">Xoá</string>
+    <string name="filterOldest">Cũ nhất</string>
+    <string name="filterNewest">Mới nhất</string>
+    <string name="titleChapter">Chương 1</string>
+    <string name="ChooseChapters">Chọn chương</string>
+    <string name="chapter">Chương 1</string>
 </resources>
