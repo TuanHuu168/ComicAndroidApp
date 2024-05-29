@@ -1,7 +1,6 @@
 package com.example.a4tcomic.activities.personal;
 
-import static com.google.android.material.internal.ViewUtils.hideKeyboard;
-
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -59,6 +58,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnTouchLi
         avatarAdapter.setData(getAvatarList());
         rcv_avatar.setAdapter(avatarAdapter);
 
+        // hide keyboard
+        findViewById(R.id.main).setOnTouchListener(this);
     }
 
     private List<Integer> getAvatarList() {
@@ -69,6 +70,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnTouchLi
         return list;
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
