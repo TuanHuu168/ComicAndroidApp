@@ -1,6 +1,7 @@
-package com.example.a4tcomic.personal;
+package com.example.a4tcomic.activities.personal;
 
-import android.annotation.SuppressLint;
+import static com.google.android.material.internal.ViewUtils.hideKeyboard;
+
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,11 +18,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.adapters.AvatarAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileActivity extends AppCompatActivity{
+public class ProfileActivity extends AppCompatActivity implements View.OnTouchListener {
 
     private EditText et_name;
     private ImageButton btn_return;
@@ -46,6 +48,8 @@ public class ProfileActivity extends AppCompatActivity{
         // Trở lại trang trước
         btn_return.setOnClickListener(v -> finish());
 
+        findViewById(R.id.main).setOnTouchListener(this);
+
         // Hiển thị list avatar
         avatarAdapter = new AvatarAdapter();
         GridLayoutManager gLM = new GridLayoutManager(this, 4);
@@ -65,4 +69,11 @@ public class ProfileActivity extends AppCompatActivity{
         return list;
     }
 
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        et_name.clearFocus();
+        return false;
+    }
 }

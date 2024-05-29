@@ -1,4 +1,4 @@
-package com.example.a4tcomic.story_detail;
+package com.example.a4tcomic.models;
 
 public class Chapter {
     private int resourceId;

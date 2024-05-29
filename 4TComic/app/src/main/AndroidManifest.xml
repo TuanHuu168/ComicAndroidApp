@@ -13,19 +13,19 @@
         android:theme="@style/Theme._4TComic"
         tools:targetApi="31">
         <activity
-            android:name=".personal.AccountActivity"
+            android:name=".activities.personal.AccountActivity"
             android:exported="false" />
         <activity
-            android:name=".personal.ProfileActivity"
+            android:name=".activities.personal.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".personal.PersonalActivity"
+            android:name=".activities.personal.PersonalActivity"
             android:exported="false" />
         <activity
-            android:name=".story_detail.StoryDetailActivity"
+            android:name=".activities.StoryDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

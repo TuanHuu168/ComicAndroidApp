@@ -1,7 +1,6 @@
-package com.example.a4tcomic.story_detail;
+package com.example.a4tcomic.adapters;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.models.Chapter;
 
 import java.util.List;
 

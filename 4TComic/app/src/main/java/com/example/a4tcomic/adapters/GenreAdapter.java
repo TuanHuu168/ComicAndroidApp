@@ -1,4 +1,4 @@
-package com.example.a4tcomic.story_detail;
+package com.example.a4tcomic.adapters;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;

@@ -38,6 +38,7 @@
     <string name="change_pass">Thay đối mật khẩu</string>
     <string name="title_dialog_warning">Cảnh báo</string>
     <string name="mes_delete_account">Bạn có muốn xóa tài khoản này?</string>
+    <string name="upload_story_title">Đăng truyện</string>
 
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.a4tcomic;
+package com.example.a4tcomic.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.a4tcomic.personal.PersonalActivity;
-import com.example.a4tcomic.story_detail.StoryDetailActivity;
+import com.example.a4tcomic.R;
+import com.example.a4tcomic.activities.personal.PersonalActivity;
 
 public class MainActivity extends AppCompatActivity {
 

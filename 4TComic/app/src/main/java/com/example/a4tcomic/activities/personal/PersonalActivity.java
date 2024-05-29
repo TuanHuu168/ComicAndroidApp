@@ -1,13 +1,10 @@
-package com.example.a4tcomic.personal;
+package com.example.a4tcomic.activities.personal;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -61,6 +58,7 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         btn_logout.setOnClickListener(v -> {
+
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.title_dialog_logout);
             builder.setMessage(R.string.message_logout);
@@ -71,9 +69,23 @@ public class PersonalActivity extends AppCompatActivity {
             builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
                 this.finish();
             });
-            Dialog dialog = builder.create();
+            AlertDialog dialog = builder.create();
             dialog.show();
+
+            Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+            Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
+
+            // Dat mau chu va do bong cho cac nut
+            positiveButton.setTextColor(Color.parseColor("#50CAFF"));
+            positiveButton.setTextSize(16.0f);
+            positiveButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
+
+            neutralButton.setTextColor(Color.parseColor("#FFA5BB"));
+            neutralButton.setTextSize(16.0f);
+            neutralButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
         });
+
+
     }
 
 }

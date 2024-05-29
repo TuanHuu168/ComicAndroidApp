@@ -1,4 +1,4 @@
-package com.example.a4tcomic.personal;
+package com.example.a4tcomic.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

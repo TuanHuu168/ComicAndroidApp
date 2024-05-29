@@ -1,4 +1,4 @@
-package com.example.a4tcomic.story_detail;
+package com.example.a4tcomic.activities;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -18,6 +18,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.adapters.ChapterAdapter;
+import com.example.a4tcomic.adapters.GenreAdapter;
+import com.example.a4tcomic.models.Chapter;
 
 import java.util.ArrayList;
 import java.util.List;

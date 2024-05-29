@@ -1,8 +1,11 @@
-package com.example.a4tcomic.personal;
+package com.example.a4tcomic.activities.personal;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -50,8 +53,20 @@ public class AccountActivity extends AppCompatActivity {
             builder.setNeutralButton(R.string.delete_account, (dialog, which) -> {
                 this.finish();
             });
-            Dialog dialog = builder.create();
+            AlertDialog dialog = builder.create();
             dialog.show();
+
+            Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+            Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
+
+            // Dat mau chu va do bong cho cac nut
+            positiveButton.setTextColor(Color.parseColor("#50CAFF"));
+            positiveButton.setTextSize(16.0f);
+            positiveButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
+
+            neutralButton.setTextColor(Color.parseColor("#FFA5BB"));
+            neutralButton.setTextSize(16.0f);
+            neutralButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
         });
 
     }
