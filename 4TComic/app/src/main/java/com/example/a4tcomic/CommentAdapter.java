@@ -35,7 +35,7 @@ public class CommentAdapter extends ArrayAdapter<CommentItem> {
 
         CommentItem commentItem = commentList.get(position);
 
-        ImageView commentImage = view.findViewById(R.id.imgComic);
+        ImageView commentImage = view.findViewById(R.id.imgCommentComic);
         TextView commentTitle = view.findViewById(R.id.lblComicTitle);
         TextView commentUser = view.findViewById(R.id.lblCommentUser);
         TextView commentContent = view.findViewById(R.id.lblCommentContent);

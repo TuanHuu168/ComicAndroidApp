@@ -28,7 +28,7 @@
             android:layout_height="50dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="@drawable/search_background"
+            android:background="@drawable/white_edt_background"
             android:drawableRight="@drawable/ic_search"
             android:ems="10"
             android:fontFamily="@font/faustina"
@@ -152,11 +152,11 @@
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/faustina_bold"
                     android:text="@string/trending_text"
-                    android:textColor="#FFB3C6"
+                    android:textColor="@color/pink"
                     android:textSize="20sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view_trending"
+                    android:id="@+id/recyclerViewTrending"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -181,11 +181,11 @@
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/faustina_bold"
                     android:text="@string/history_text"
-                    android:textColor="#FFB3C6"
+                    android:textColor="@color/pink"
                     android:textSize="20sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view_history"
+                    android:id="@+id/recyclerViewHistory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -209,11 +209,11 @@
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/faustina_bold"
                     android:text="@string/recently_updated"
-                    android:textColor="#FFB3C6"
+                    android:textColor="@color/pink"
                     android:textSize="20sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view_recently_updated"
+                    android:id="@+id/recyclerViewRecentlyUpdated"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

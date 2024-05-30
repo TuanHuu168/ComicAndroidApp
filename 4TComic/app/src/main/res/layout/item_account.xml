@@ -13,7 +13,7 @@
         android:padding="10dp"
         android:orientation="vertical">
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/user_image"
+            android:id="@+id/imgUser"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="9dp"
@@ -24,7 +24,7 @@
             app:shapeAppearanceOverlay="@style/RoundLog" />
 
         <TextView
-            android:id="@+id/user_title"
+            android:id="@+id/lblUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

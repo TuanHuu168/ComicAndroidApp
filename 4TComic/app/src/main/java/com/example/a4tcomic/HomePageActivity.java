@@ -32,7 +32,7 @@ public class HomePageActivity extends AppCompatActivity {
     private List<ContentItem> recentlyUpdatedList;
 
     // Các biến khác
-    ImageButton btnAdvancedSearch;
+    ImageButton btnAdvancedSearch, btnHomePage, btnArchive, btnNotification, btnSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +46,14 @@ public class HomePageActivity extends AppCompatActivity {
         });
 
         // Ánh xạ
-        trendingRecyclerView = findViewById(R.id.recycler_view_trending);
-        historyRecyclerView = findViewById(R.id.recycler_view_history);
-        recentlyUpdatedRecyclerView = findViewById(R.id.recycler_view_recently_updated);
+        trendingRecyclerView = findViewById(R.id.recyclerViewTrending);
+        historyRecyclerView = findViewById(R.id.recyclerViewHistory);
+        recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);
         btnAdvancedSearch = findViewById(R.id.btnAdvancedSearch);
+        btnHomePage = findViewById(R.id.btnHomePage);
+        btnArchive = findViewById(R.id.btnArchive);
+        btnNotification = findViewById(R.id.btnNotification);
+        btnSetting = findViewById(R.id.btnSetting);
 
         btnAdvancedSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +101,15 @@ public class HomePageActivity extends AppCompatActivity {
         setupRecyclerView(historyRecyclerView, historyList);
         setupRecyclerView(recentlyUpdatedRecyclerView, recentlyUpdatedList);
 
+
+        // Sự kiện
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent uploadIntent = new Intent(HomePageActivity.this, UploadComicActivity.class);
+                startActivity(uploadIntent);
+            }
+        });
     }
 
     private void setupRecyclerView(RecyclerView recyclerView, List<ContentItem> itemList) {

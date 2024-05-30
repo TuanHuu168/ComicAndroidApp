@@ -13,7 +13,7 @@
         android:padding="10dp"
         android:orientation="vertical">
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/comic_image"
+            android:id="@+id/imgRecentlyUpdated"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="9dp"
@@ -23,7 +23,7 @@
             app:shapeAppearanceOverlay="@style/RoundLog"/>
 
         <TextView
-            android:id="@+id/comic_title"
+            android:id="@+id/lblRecentlyUpdated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -32,14 +32,6 @@
             android:textSize="14sp" />
 
 
-        <ImageButton
-            android:id="@+id/btnDeleteComic"
-            android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_marginTop="5dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/btn_delete_comic" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

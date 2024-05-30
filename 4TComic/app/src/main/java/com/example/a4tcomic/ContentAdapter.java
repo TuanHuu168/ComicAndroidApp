@@ -59,13 +59,17 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
 
         public ContentViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
-            if(viewType == ContentItem.TYPE_COMIC || viewType == ContentItem.TYPE_UPDATE){
-                contentImage = itemView.findViewById(R.id.comic_image);
-                contentTitle = itemView.findViewById(R.id.comic_title);
+            if(viewType == ContentItem.TYPE_COMIC){
+                contentImage = itemView.findViewById(R.id.imgComic);
+                contentTitle = itemView.findViewById(R.id.lblComic);
+            }
+            else if (viewType == ContentItem.TYPE_UPDATE){
+                contentImage = itemView.findViewById(R.id.imgRecentlyUpdated);
+                contentTitle = itemView.findViewById(R.id.lblRecentlyUpdated);
             }
             else{
-                contentImage = itemView.findViewById(R.id.user_image);
-                contentTitle = itemView.findViewById(R.id.user_title);
+                contentImage = itemView.findViewById(R.id.imgUser);
+                contentTitle = itemView.findViewById(R.id.lblUser);
             }
 
         }

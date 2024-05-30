@@ -40,7 +40,7 @@ public class AdminActivity extends AppCompatActivity {
 
         // Ánh xạ
         accountRecyclerView = findViewById(R.id.recycler_view_account);
-        recentlyUpdatedRecyclerView = findViewById(R.id.recycler_view_recently_updated);
+        recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);
         commentListView = findViewById(R.id.list_view_comment);
 
         // Tạo custom listView
