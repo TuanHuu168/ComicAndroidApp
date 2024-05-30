@@ -30,7 +30,15 @@
             android:gravity="center"
             android:textColor="#000"
             android:textSize="14sp" />
-
+        <ImageButton
+            android:id="@+id/btnDeleteComic"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/btn_delete_comic"/>
 
     </LinearLayout>
 

@@ -7,10 +7,10 @@
     <string name="password_text">Password</string>
     <string name="confirm_password_text">Confirm Password</string>
     <string name="login_text">&#160;Login&#160;</string>
-    <string name="terms_text">Agree to the terms &amp; services</string>
+    <string name="terms_text">I agree to the terms &amp; services</string>
     <string name="terms_text_underline">terms &amp; services</string>
-    <string name="forgot_text">&#160;Forgot password&#160;</string>
-    <string name="search_text">Search comics…</string>
+    <string name="forgot_text">&#160;Forgot Password&#160;</string>
+    <string name="search_text">Search Comics…</string>
     <string name="trending_text">Trending</string>
     <string name="history_text">History</string>
     <string name="recently_updated">Recently Updated</string>
