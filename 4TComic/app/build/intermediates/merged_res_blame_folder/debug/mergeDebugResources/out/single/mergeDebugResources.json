@@ -1,0 +1,298 @@
+[
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_selected_archive.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_selected_archive.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\font_faustina_bold.ttf.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\font\\faustina_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_slider_3.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\slider_3.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_circle_shape.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\circle_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_logo_user.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\logo_user.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_username.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_username.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_setting.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_setting.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_truyen3.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\truyen3.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_spinner_background.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_spinner_background.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_comic_holder.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\comic_holder.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\font_faustina.ttf.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\font\\faustina.ttf"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_blue_dot.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\blue_dot.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_white_edt_background.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\white_edt_background.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_activity_upload_comic.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\activity_upload_comic.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_pink_dot.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\pink_dot.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\activity_forgot_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_item_comic.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\item_comic.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_truyen2.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\truyen2.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_activity_home_page.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\activity_home_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_item_account.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\item_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_notification.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_notification.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_slider_2.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\slider_2.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_bottom_navigation_bar.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\bottom_navigation_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_back.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_back.png"
+    },
+    {
+        "merged": "com.example.a4tcomic.app-debug-32:/layout_item_account.xml.flat",
+        "source": "com.example.a4tcomic.app-main-34:/layout/item_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_topnav.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\topnav.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_archive.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_archive.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_home_page.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_home_page.png"
+    },
+    {
+        "merged": "com.example.a4tcomic.app-debug-32:/layout_item_recently_updated.xml.flat",
+        "source": "com.example.a4tcomic.app-main-34:/layout/item_recently_updated.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_btn_edit_user.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\btn_edit_user.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_bottomnavbar.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\bottomnavbar.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\font_inter_medium.ttf.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\font\\inter_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_item_comment.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\item_comment.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_title_holder.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\title_holder.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_truyen1.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\truyen1.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_slider_1.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\slider_1.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\font_fira_code.ttf.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\font\\fira_code.ttf"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\color_radio_color.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\color\\radio_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_selected_setting.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_selected_setting.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_item_recently_updated.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\item_recently_updated.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_item_holder.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\item_holder.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_top_navigation_bar.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\top_navigation_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_advanced_search.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_advanced_search.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_upload.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_upload.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_selected_home_page.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_selected_home_page.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_selected_notification.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_selected_notification.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_btn_delete_user.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\btn_delete_user.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_edt_multi_line_background.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_edt_multi_line_background.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_password.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\font_faustina_medium.ttf.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\font\\faustina_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_btn_delete_comic.png.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\btn_delete_comic.png"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_truyen4.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\truyen4.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\layout_activity_admin.xml.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\layout\\activity_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-32:\\drawable_slider_4.jpg.flat",
+        "source": "C:\\Users\\tuanj\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-34:\\drawable\\slider_4.jpg"
+    }
+]
