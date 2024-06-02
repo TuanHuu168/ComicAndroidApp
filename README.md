@@ -5,4 +5,4 @@ The purpose of this application is to create a comic app with friendly interface
 https://www.figma.com/design/Z2Oo1KzYG6PXu8CH2iRp5a/App-%C4%91%E1%BB%8Dc-truy%E1%BB%87n-design?node-id=0%3A1&t=kUIMCtvmUiLLBlnn-1
 
 # Our division of work
-Updating...
+Check "Bao cao" folder for more information
