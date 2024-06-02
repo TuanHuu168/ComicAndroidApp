@@ -29,6 +29,19 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
+            android:name=".activities.personal.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.personal.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.personal.PersonalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.StoryDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
