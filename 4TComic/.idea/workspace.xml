@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="efee1ea7-765f-4566-a907-a70ddf115f0e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 3/BaoCao_Tuan3.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 3/NQThang_DanhGiaCheo_Tuan3.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 3/Tuan_DanhGiaCheo_Tuan3.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 3/Tung_DanhGiaCheo_Tuan3.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 3/Tuyet_DanhGiaCheo_Tuan3.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 4/BaoCao_Tuan4.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 4/NQThang_DanhGiaCheo_Tuan4.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 4/Tuan_DanhGiaCheo_Tuan4.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 4/Tung_DanhGiaCheo_Tuan4.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 4/Tuyet_DanhGiaCheo_Tuan4.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 5/BaoCao_Tuan5.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 5/NQThang_DanhGiaCheo_Tuan5.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 5/Tuan_DanhGiaCheo_Tuan5.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 5/Tung_DanhGiaCheo_Tuan5.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 5/Tuyet_DanhGiaCheo_Tuan5.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 6/BaoCao_Tuan6.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 6/NQThang_DanhGiaCheo_Tuan6.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 6/Tuan_DanhGiaCheo_Tuan6.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 6/TungDanhGiaCheo_Tuan6.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bao cao/Bao cao hang tuan/Tuan 6/Tuyet_DanhGiaCheo_Tuan6.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/blue_dot.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/blue_dot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/bottom_navigation_bar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/bottom_navigation_bar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/bottomnavbar.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/bottomnavbar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/btn_delete_comic.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/btn_delete_comic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/btn_delete_user.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/btn_delete_user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/btn_edit_user.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/btn_edit_user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/circle_shape.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/circle_shape.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/comic_holder.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/comic_holder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_advanced_search.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_advanced_search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_archive.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_archive.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_edt_multi_line_background.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_edt_multi_line_background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_email.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_email.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_home_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_home_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_notification.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_notification.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_selected_archive.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_selected_archive.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_selected_home_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_selected_home_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_selected_notification.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_selected_notification.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_selected_setting.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_selected_setting.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_setting.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_setting.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_spinner_background.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_spinner_background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_upload.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_upload.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_username.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/ic_username.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/item_holder.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/item_holder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/logo_user.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/logo_user.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/pink_dot.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/pink_dot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/slider_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/slider_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/slider_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/slider_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/slider_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/slider_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/slider_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/slider_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/title_holder.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/title_holder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/top_navigation_bar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/top_navigation_bar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/topnav.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/topnav.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/truyen1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/truyen1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/truyen2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/truyen2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/truyen3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/truyen3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/truyen4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/truyen4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/white_edt_background.png" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/drawable/white_edt_background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_admin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_admin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_forgot_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_forgot_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_home_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_home_page.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_register.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_upload_comic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/activity_upload_comic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/item_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/item_account.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/item_comic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/item_comic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/item_comment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/item_comment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/item_recently_updated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/layout/item_recently_updated.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/xml/backup_rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4TComic/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../4TComic/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\tuanj\.android\avd\hehe_may_fake.avd)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2hKNIGgBV0e32kEla13sEERTBRV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Merging Tuan",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tuanj/ComicAndroidApp/4TComic"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="4T_Comic.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="efee1ea7-765f-4566-a907-a70ddf115f0e" name="Changes" comment="" />
+      <created>1717338727494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717338727494</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+</project>
