@@ -1,0 +1,6 @@
+com.example.a4tcomic.test.app-annotation-experimental-1.4.0-0 C:\Users\tuanj\.gradle\caches\transforms-4\05599256ab8815b3e070c174b0dbf238\transformed\annotation-experimental-1.4.0\res
+com.example.a4tcomic.test.app-core-1.5.0-1 C:\Users\tuanj\.gradle\caches\transforms-4\cdeaab977c8bc71778b5296d41352057\transformed\core-1.5.0\res
+com.example.a4tcomic.test.app-androidTest-2 C:\Users\tuanj\ComicAndroidApp\4TComic\app\build\generated\res\resValues\androidTest\debug
+com.example.a4tcomic.test.app-mergeDebugAndroidTestResources-3 C:\Users\tuanj\ComicAndroidApp\4TComic\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.a4tcomic.test.app-mergeDebugAndroidTestResources-4 C:\Users\tuanj\ComicAndroidApp\4TComic\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.a4tcomic.test.app-debugAndroidTest-5 C:\Users\tuanj\ComicAndroidApp\4TComic\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
