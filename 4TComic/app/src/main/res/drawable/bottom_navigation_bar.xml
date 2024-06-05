@@ -1,9 +1,0 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Màu nền -->
-    <solid android:color="#FFB3C6"/> <!-- Màu hồng -->
-
-    <!-- Góc bo -->
-    <corners
-        android:topLeftRadius="20dp"
-        android:topRightRadius="20dp"/>
-</shape>
