@@ -76,7 +76,6 @@
                     android:textSize="18sp" />
             </LinearLayout>
 
-
         </RelativeLayout>
 
         <Button
@@ -99,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/pink_main"
-            android:drawableLeft="@drawable/ic_setting"
+            android:drawableLeft="@drawable/ic_setting_display"
             android:drawableRight="@drawable/ic_right"
             android:gravity="center_vertical"
             android:paddingTop="16dp"
@@ -192,13 +191,12 @@
 
         <ImageButton
             android:id="@+id/btnSetting"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/ic_selected_personal" />
     </LinearLayout>
-
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.a4tcomic;
+package com.example.a4tcomic.activities.account;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.a4tcomic.R;
+import com.example.a4tcomic.activities.HomePageActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

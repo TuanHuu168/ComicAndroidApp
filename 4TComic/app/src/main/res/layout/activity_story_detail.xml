@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.StoryDetailActivity">
+    tools:context=".activities.story.StoryDetailActivity">
 
     <!-- Header -->
     <LinearLayout
@@ -195,6 +195,7 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <Button
+            android:id="@+id/btn_last_chapter"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -206,6 +207,7 @@
             android:textStyle="bold"/>
 
         <Button
+            android:id="@+id/btn_cmt"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -216,6 +218,7 @@
             android:textStyle="bold"/>
 
         <Button
+            android:id="@+id/btn_first_chapter"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

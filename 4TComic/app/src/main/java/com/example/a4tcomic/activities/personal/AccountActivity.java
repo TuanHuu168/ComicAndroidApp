@@ -3,6 +3,7 @@ package com.example.a4tcomic.activities.personal;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.activities.account.ForgotPasswordActivity;
 
 public class AccountActivity extends AppCompatActivity {
 
@@ -39,7 +41,8 @@ public class AccountActivity extends AppCompatActivity {
         btn_return.setOnClickListener(v -> finish());
 
         changePassword.setOnClickListener(v -> {
-
+            Intent intent = new Intent(this, ForgotPasswordActivity.class);
+            startActivity(intent);
         });
 
         deleteAccount.setOnClickListener(v -> {

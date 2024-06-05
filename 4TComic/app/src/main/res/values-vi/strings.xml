@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">4T Comic</string>
+
+    <string name="name_story">ONE PIECE</string>
+    <string name="author_story">sáng tác bởi Oda Eiichiro</string>
+    <string name="genre_title">Thể loại</string>
+    <string name="des_title">Nội dung</string>
+    <string name="chapter_title">Chương</string>
+    <string name="update_time_title">Cập nhật lúc</string>
+
+    <string name="btn_favorite">Yêu thích</string>
+    <string name="btn_favorited">Đã thích</string>
+
+    <string name="btn_new">Đọc mới nhất</string>
+    <string name="btn_cmt">Bình luận</string>
+    <string name="btn_first_chapter">Đọc từ đầu</string>
+
+    <string name="personal_title">Cá nhân</string>
+    <string name="edit_profile_title">Chỉnh sửa hồ sơ</string>
+    <string name="account_title">Tài khoản</string>
+    <string name="setting_title">Cài đặt giao diện</string>
+    <string name="admin_title">Quản trị viên</string>
+
+    <string name="logout_title">Đăng xuất</string>
+    <string name="string_yes">Đăng xuất</string>
+    <string name="string_no">Hủy</string>
+    <string name="title_dialog_logout">Đăng xuất</string>
+    <string name="message_logout">Bạn sẽ trở về màn hình đăng nhập!</string>
+
+    <string name="select_img_title">Chọn hình ảnh đại diện</string>
+    <string name="save_btn_title">Lưu</string>
+    <string name="edit_name_title">Đặt tên hiển thị</string>
+    <string name="num_character">18 / 50</string>
+    <string name="nva_name">Nguyễn Văn A</string>
+
+    <string name="email_title">Liên kết email:</string>
+    <string name="delete_account">Xóa tài khoản</string>
+    <string name="change_pass">Thay đối mật khẩu</string>
+    <string name="title_dialog_warning">Cảnh báo</string>
+    <string name="mes_delete_account">Bạn có muốn xóa tài khoản này?</string>
+    <string name="upload_story_title">Đăng truyện</string>
+
     <string name="register_text">&#160;Đăng Ký&#160;</string>
     <string name="user_name_text">Tên đăng nhập</string>
     <string name="email_text">Email</string>
@@ -23,8 +63,22 @@
     <string name="author_text">Tác giả</string>
     <string name="category_text">Thể loại</string>
     <string name="summary_text">Tóm tắt</string>
-    <string name="edt_summary_text">Tóm tắt nội dung truyn</string>
+    <string name="edt_summary_text">Tóm tắt nội dung truyện</string>
     <string name="cover_image_text">Ảnh bìa</string>
     <string name="content_image">Ảnh nội dung</string>
     <string name="upload_terms_text">Tôi đồng ý với các điều khoản &amp; dịch vụ khi đăng truyện</string>
+
+    <string name="titleBookcase">Tủ sách</string>
+    <string name="History">Lịch sử</string>
+    <string name="Follow">Theo dõi</string>
+    <string name="hintSearch">Tìm kiếm</string>
+    <string name="title">Tinh tú kiếm sĩ</string>
+    <string name="reading">"Chương đang đọc: "</string>
+    <string name="all">Chọn tất cả</string>
+    <string name="remove">Xoá</string>
+    <string name="filterOldest">Cũ nhất</string>
+    <string name="filterNewest">Mới nhất</string>
+    <string name="titleChapter">Chương 1</string>
+    <string name="ChooseChapters">Chọn chương</string>
+    <string name="chapter">Chương 1</string>
 </resources>

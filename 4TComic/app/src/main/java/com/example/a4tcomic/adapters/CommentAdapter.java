@@ -1,4 +1,4 @@
-package com.example.a4tcomic;
+package com.example.a4tcomic.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.a4tcomic.R;
+import com.example.a4tcomic.models.CommentItem;
+
 import java.util.List;
 
 public class CommentAdapter extends ArrayAdapter<CommentItem> {

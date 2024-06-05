@@ -1,6 +1,7 @@
-package com.example.a4tcomic;
+package com.example.a4tcomic.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.a4tcomic.R;
+import com.example.a4tcomic.activities.story.StoryDetailActivity;
+import com.example.a4tcomic.models.ContentItem;
 
 import java.util.List;
 
@@ -46,6 +51,16 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
         ContentItem contentItem = contentList.get(position);
         holder.contentImage.setImageResource(contentItem.getImageResource());
         holder.contentTitle.setText(shortenTitle(contentItem.getTitle()));
+
+        // nhấn vào sẽ mở trang trang chi tiết
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // xử lý sự kiện nhấn vào đây
+                Intent intent = new Intent(context, StoryDetailActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

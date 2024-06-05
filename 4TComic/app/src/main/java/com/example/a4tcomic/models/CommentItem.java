@@ -1,4 +1,4 @@
-package com.example.a4tcomic;
+package com.example.a4tcomic.models;
 
 public class CommentItem {
     private int imageResource;

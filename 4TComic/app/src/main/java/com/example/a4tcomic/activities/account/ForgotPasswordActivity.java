@@ -1,4 +1,4 @@
-package com.example.a4tcomic;
+package com.example.a4tcomic.activities.account;
 
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.a4tcomic.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 

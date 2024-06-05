@@ -5,10 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePageActivity">
+    tools:context=".activities.HomePageActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
 
-
-        <!-- Thanh điều hướng trên -->
+    <!-- Thanh điều hướng trên -->
     <LinearLayout
         android:id="@+id/topNav"
         android:layout_width="match_parent"
@@ -23,13 +25,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/et_search"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="@drawable/white_edt_background"
-            android:drawableRight="@drawable/ic_search"
+            android:drawableRight="@drawable/ic_search_img"
             android:ems="10"
             android:fontFamily="@font/faustina"
             android:hint="@string/search_text"

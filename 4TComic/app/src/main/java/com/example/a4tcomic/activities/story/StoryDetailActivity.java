@@ -1,5 +1,6 @@
-package com.example.a4tcomic.activities;
+package com.example.a4tcomic.activities.story;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -27,7 +28,7 @@ import java.util.List;
 
 public class StoryDetailActivity extends AppCompatActivity {
 
-    private Button btn_favorite;
+    private Button btn_favorite, btn_first_chapter, btn_cmt, btn_last_chapter;
     private ImageView img_banner, img_title;
     private TextView des_tv;
     private RecyclerView rcv_genres, rcv_chapters;
@@ -55,6 +56,9 @@ public class StoryDetailActivity extends AppCompatActivity {
         rcv_genres = findViewById(R.id.rcv_genres);
         des_tv = findViewById(R.id.des_tv);
         rcv_chapters = findViewById(R.id.rcv_chapters);
+        btn_first_chapter = findViewById(R.id.btn_first_chapter);
+        btn_cmt = findViewById(R.id.btn_cmt);
+        btn_last_chapter = findViewById(R.id.btn_last_chapter);
 
         // Back
         ImageButton btn_back = findViewById(R.id.btn_back);
@@ -124,6 +128,11 @@ public class StoryDetailActivity extends AppCompatActivity {
         rcv_chapters.setNestedScrollingEnabled(false);
         chapterAdapter.setData(getChapters());
         rcv_chapters.setAdapter(chapterAdapter);
+
+        btn_last_chapter.setOnClickListener(v -> {
+            Intent intent = new Intent(this, activity_read_page.class);
+            startActivity(intent);
+        });
     }
 
     private List<String> getGenres() {

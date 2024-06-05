@@ -1,8 +1,11 @@
-package com.example.a4tcomic;
+package com.example.a4tcomic.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -16,12 +19,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.a4tcomic.R;
+import com.example.a4tcomic.activities.personal.PersonalActivity;
+import com.example.a4tcomic.adapters.ContentAdapter;
+import com.example.a4tcomic.models.ContentItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomePageActivity extends AppCompatActivity {
+public class HomePageActivity extends AppCompatActivity implements View.OnTouchListener {
 
     // Danh sách truyện
     private RecyclerView trendingRecyclerView;
@@ -32,6 +39,7 @@ public class HomePageActivity extends AppCompatActivity {
     private List<ContentItem> recentlyUpdatedList;
 
     // Các biến khác
+    EditText et_search;
     ImageButton btnAdvancedSearch, btnHomePage, btnArchive, btnNotification, btnSetting;
 
     @Override
@@ -46,6 +54,7 @@ public class HomePageActivity extends AppCompatActivity {
         });
 
         // Ánh xạ
+        et_search = findViewById(R.id.et_search);
         trendingRecyclerView = findViewById(R.id.recyclerViewTrending);
         historyRecyclerView = findViewById(R.id.recyclerViewHistory);
         recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);
@@ -55,13 +64,8 @@ public class HomePageActivity extends AppCompatActivity {
         btnNotification = findViewById(R.id.btnNotification);
         btnSetting = findViewById(R.id.btnSetting);
 
-        btnAdvancedSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent adminIntent = new Intent(HomePageActivity.this, AdminActivity.class);
-                startActivity(adminIntent);
-            }
-        });
+        // hide keyboard
+        findViewById(R.id.main).setOnTouchListener(this);
 
         // Tạo slider vào thêm ảnh vào slider
         ImageSlider imageSlider = findViewById(R.id.imageSlider);
@@ -101,15 +105,17 @@ public class HomePageActivity extends AppCompatActivity {
         setupRecyclerView(historyRecyclerView, historyList);
         setupRecyclerView(recentlyUpdatedRecyclerView, recentlyUpdatedList);
 
-
         // Sự kiện
-        btnSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent uploadIntent = new Intent(HomePageActivity.this, UploadComicActivity.class);
-                startActivity(uploadIntent);
-            }
+        btnSetting.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(HomePageActivity.this, PersonalActivity.class);
+            startActivity(settingIntent);
         });
+
+        btnArchive.setOnClickListener(v -> {
+            Intent archiveIntent = new Intent(HomePageActivity.this, activity_bookcase_page.class);
+            startActivity(archiveIntent);
+        });
+
     }
 
     private void setupRecyclerView(RecyclerView recyclerView, List<ContentItem> itemList) {
@@ -119,4 +125,11 @@ public class HomePageActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        et_search.clearFocus();
+        return false;
+    }
 }

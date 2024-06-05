@@ -1,6 +1,7 @@
-package com.example.a4tcomic;
+package com.example.a4tcomic.activities.personal;
 
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -11,10 +12,18 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.a4tcomic.R;
+import com.example.a4tcomic.adapters.CommentAdapter;
+import com.example.a4tcomic.adapters.ContentAdapter;
+import com.example.a4tcomic.models.CommentItem;
+import com.example.a4tcomic.models.ContentItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdminActivity extends AppCompatActivity {
+
+    ImageButton btnBack;
 
     // Phần tài khoản mới tạo và truyện mới cập nhật
     private RecyclerView accountRecyclerView;
@@ -42,6 +51,9 @@ public class AdminActivity extends AppCompatActivity {
         accountRecyclerView = findViewById(R.id.recycler_view_account);
         recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);
         commentListView = findViewById(R.id.list_view_comment);
+        btnBack = findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(v -> { finish(); });
 
         // Tạo custom listView
         accountList = new ArrayList<>();

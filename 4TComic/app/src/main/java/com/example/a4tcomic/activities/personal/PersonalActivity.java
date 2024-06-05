@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,11 +16,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.activities.HomePageActivity;
+import com.example.a4tcomic.activities.account.LoginActivity;
+import com.example.a4tcomic.activities.activity_bookcase_page;
 
 public class PersonalActivity extends AppCompatActivity {
 
     private TextView tv_edit_profile;
-    private Button btn_account, btn_setting, btn_admin, btn_logout;
+    private Button btn_account, btn_setting, btn_admin, btn_logout, btn_upload_story;
+    private ImageButton btnHome, btnArchive;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +42,9 @@ public class PersonalActivity extends AppCompatActivity {
         btn_setting = findViewById(R.id.btn_setting);
         btn_admin = findViewById(R.id.btn_admin);
         btn_logout = findViewById(R.id.btn_logout);
+        btn_upload_story = findViewById(R.id.btn_upload_story);
+        btnHome = findViewById(R.id.btnHomePage);
+        btnArchive = findViewById(R.id.btnArchive);
 
         // Sự kiện
         tv_edit_profile.setOnClickListener(v -> {
@@ -54,11 +62,16 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         btn_admin.setOnClickListener(v -> {
-            // Xử lý sự kiện khi Button được nhấp vào
+            Intent intent = new Intent(this, AdminActivity.class);
+            startActivity(intent);
+        });
+
+        btn_upload_story.setOnClickListener(v -> {
+            Intent intent = new Intent(this, UploadComicActivity.class);
+            startActivity(intent);
         });
 
         btn_logout.setOnClickListener(v -> {
-
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.title_dialog_logout);
             builder.setMessage(R.string.message_logout);
@@ -67,7 +80,8 @@ public class PersonalActivity extends AppCompatActivity {
                 dialog.dismiss();
             });
             builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
-                this.finish();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
             });
             AlertDialog dialog = builder.create();
             dialog.show();
@@ -85,6 +99,15 @@ public class PersonalActivity extends AppCompatActivity {
             neutralButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
         });
 
+        btnHome.setOnClickListener(v -> {
+            Intent intent = new Intent(this, HomePageActivity.class);
+            startActivity(intent);
+        });
+
+        btnArchive.setOnClickListener(v -> {
+            Intent intent = new Intent(this, activity_bookcase_page.class);
+            startActivity(intent);
+        });
 
     }
 
