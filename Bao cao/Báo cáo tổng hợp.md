@@ -27,5 +27,6 @@ Xây dựng ứng dụng đọc truyện tranh cho người dùng đọc truyệ
 
 2. Người quản trị
 
-	- Đăng nhập vào giao diện quản trị
+	- Có tất cả các chức năng của người dùng
+	- Vào giao diện quản trị thông qua nút Quản trị viên ở trang Cá nhân
 	- Trang quản trị: hiển thị/sửa/xóa danh sách tài khoản, hiển thị/xóa danh sách truyện mới tải lên, hiển thị danh sách bình luận mới
