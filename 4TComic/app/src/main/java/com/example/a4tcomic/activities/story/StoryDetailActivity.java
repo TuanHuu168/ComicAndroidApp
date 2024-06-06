@@ -129,10 +129,17 @@ public class StoryDetailActivity extends AppCompatActivity {
         chapterAdapter.setData(getChapters());
         rcv_chapters.setAdapter(chapterAdapter);
 
+        // Button bottom
         btn_last_chapter.setOnClickListener(v -> {
-            Intent intent = new Intent(this, activity_read_page.class);
+            Intent intent = new Intent(this, ReadPageActivity.class);
             startActivity(intent);
         });
+
+        btn_cmt.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CommentActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     private List<String> getGenres() {

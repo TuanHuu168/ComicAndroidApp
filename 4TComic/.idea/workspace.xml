@@ -111,6 +111,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="efee1ea7-765f-4566-a907-a70ddf115f0e" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4tcomic/activities/activity_bookcase_page.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4tcomic/activities/story/activity_read_page.java" afterDir="false" />
@@ -195,6 +196,9 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="efee1ea7-765f-4566-a907-a70ddf115f0e" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

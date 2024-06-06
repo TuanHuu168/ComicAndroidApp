@@ -20,7 +20,8 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.a4tcomic.R;
-import com.example.a4tcomic.activities.personal.PersonalActivity;
+import com.example.a4tcomic.activities.search.FindByCategoryActivity;
+import com.example.a4tcomic.activities.search.FindByWriterActivity;
 import com.example.a4tcomic.adapters.ContentAdapter;
 import com.example.a4tcomic.models.ContentItem;
 
@@ -59,10 +60,36 @@ public class HomePageActivity extends AppCompatActivity implements View.OnTouchL
         historyRecyclerView = findViewById(R.id.recyclerViewHistory);
         recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);
         btnAdvancedSearch = findViewById(R.id.btnAdvancedSearch);
+
         btnHomePage = findViewById(R.id.btnHomePage);
         btnArchive = findViewById(R.id.btnArchive);
         btnNotification = findViewById(R.id.btnNotification);
         btnSetting = findViewById(R.id.btnSetting);
+
+        btnHomePage.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(this, HomePageActivity.class);
+            startActivity(settingIntent);
+        });
+
+        btnNotification.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(this, NotificationActivity.class);
+            startActivity(settingIntent);
+        });
+
+        btnSetting.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(this, PersonalActivity.class);
+            startActivity(settingIntent);
+        });
+
+        btnArchive.setOnClickListener(v -> {
+            Intent archiveIntent = new Intent(this, BookcaseActivity.class);
+            startActivity(archiveIntent);
+        });
+
+        btnAdvancedSearch.setOnClickListener(v -> {
+            Intent advancedSearchIntent = new Intent(this, FindByWriterActivity.class);
+            startActivity(advancedSearchIntent);
+        });
 
         // hide keyboard
         findViewById(R.id.main).setOnTouchListener(this);
@@ -104,17 +131,6 @@ public class HomePageActivity extends AppCompatActivity implements View.OnTouchL
         setupRecyclerView(trendingRecyclerView, trendingList);
         setupRecyclerView(historyRecyclerView, historyList);
         setupRecyclerView(recentlyUpdatedRecyclerView, recentlyUpdatedList);
-
-        // Sự kiện
-        btnSetting.setOnClickListener(v -> {
-            Intent settingIntent = new Intent(HomePageActivity.this, PersonalActivity.class);
-            startActivity(settingIntent);
-        });
-
-        btnArchive.setOnClickListener(v -> {
-            Intent archiveIntent = new Intent(HomePageActivity.this, activity_bookcase_page.class);
-            startActivity(archiveIntent);
-        });
 
     }
 

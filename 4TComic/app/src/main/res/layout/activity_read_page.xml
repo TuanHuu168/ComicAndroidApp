@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.story.activity_read_page">
+    tools:context=".activities.story.ReadPageActivity">
 
     <RelativeLayout
         android:id="@+id/topNav"
@@ -99,15 +99,6 @@
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/ic_adjust"
-            tools:ignore="SpeakableTextPresentCheck" />
-        <ImageButton
-            android:id="@+id/btnComment"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_comment_chapter"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton

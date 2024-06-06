@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
-import com.example.a4tcomic.activities.personal.PersonalActivity;
 import com.example.a4tcomic.adapters.BookAdapter;
 import com.example.a4tcomic.models.ListBookCase;
 
@@ -31,8 +30,8 @@ import java.util.List;
 
 
 
-public class activity_bookcase_page extends AppCompatActivity implements View.OnTouchListener {
-    ImageButton btnBack, btnEdit, btnHome, btnSetting;
+public class BookcaseActivity extends AppCompatActivity implements View.OnTouchListener {
+    ImageButton btnEdit, btnHomePage, btnArchive, btnSetting, btnNotification;
     Button btnFollow, btnChooseAll,btnHistory;
     EditText editSearch;
     RecyclerView rcvHistory;
@@ -59,21 +58,34 @@ public class activity_bookcase_page extends AppCompatActivity implements View.On
         llayout.setVisibility(View.GONE);
         btnChooseAll = findViewById(R.id.btnChooseAll);
         btnHistory = findViewById(R.id.btnHistory);
-        btnHome = findViewById(R.id.btnHomePage);
+
+        btnHomePage = findViewById(R.id.btnHomePage);
+        btnArchive = findViewById(R.id.btnArchive);
+        btnNotification = findViewById(R.id.btnNotification);
         btnSetting = findViewById(R.id.btnSetting);
 
-        // hide keyboard
-        findViewById(R.id.main).setOnTouchListener(this);
+        btnHomePage.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(this, HomePageActivity.class);
+            startActivity(settingIntent);
+        });
 
-        btnHome.setOnClickListener(v -> {
-            Intent intentHome = new Intent(activity_bookcase_page.this, HomePageActivity.class);
-            startActivity(intentHome);
+        btnNotification.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(this, NotificationActivity.class);
+            startActivity(settingIntent);
         });
 
         btnSetting.setOnClickListener(v -> {
-            Intent intentSetting = new Intent(activity_bookcase_page.this, PersonalActivity.class);
-            startActivity(intentSetting);
+            Intent settingIntent = new Intent(this, PersonalActivity.class);
+            startActivity(settingIntent);
         });
+
+        btnArchive.setOnClickListener(v -> {
+            Intent archiveIntent = new Intent(this, BookcaseActivity.class);
+            startActivity(archiveIntent);
+        });
+
+        // hide keyboard
+        findViewById(R.id.main).setOnTouchListener(this);
 
         int blue_main = ContextCompat.getColor(this, R.color.blue_main);
         int white = ContextCompat.getColor(this, R.color.white);
@@ -130,7 +142,7 @@ public class activity_bookcase_page extends AppCompatActivity implements View.On
 //        btnFollow.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intentFollow = new Intent(activity_bookcase_page.this, activity_follow_page.class);
+//                Intent intentFollow = new Intent(BookcaseActivity.this, activity_follow_page.class);
 //                startActivity(intentFollow);
 //            }
 //        });

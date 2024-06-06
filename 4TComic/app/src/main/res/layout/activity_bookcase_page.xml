@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.activity_bookcase_page"
+    tools:context=".activities.BookcaseActivity"
     android:focusable="true"
     android:focusableInTouchMode="true"
     >
@@ -38,7 +38,7 @@
                 android:layout_height="40dp"
                 android:layout_marginRight="20dp"
                 android:background="#FFB3C6"
-                app:srcCompat="@drawable/ic_edit"
+                app:srcCompat="@drawable/ic_edit_white"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
         </LinearLayout>
 
@@ -136,22 +136,25 @@
         android:layout_height="60dp"
         android:background="@drawable/ic_bg_menu"
         android:orientation="horizontal"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav">
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        android:paddingTop="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        >
 
         <Button
             android:id="@+id/btnChooseAll"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/faustina"
             android:text="@string/all"
             android:textAllCaps="false"
-            android:textSize="18dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
@@ -159,14 +162,12 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:backgroundTint="@color/blue_main"
             android:fontFamily="@font/faustina"
             android:text="@string/remove"
-            android:textAllCaps="false"
-            android:textSize="18dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
