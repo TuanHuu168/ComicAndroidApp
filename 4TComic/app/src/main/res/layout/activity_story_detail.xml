@@ -110,6 +110,7 @@
                         android:drawableLeft="@drawable/favorite_white"
                         android:text="@string/btn_favorite"
                         android:textColor="@android:color/white"
+
                         android:textStyle="bold"/>
 
                 </RelativeLayout>

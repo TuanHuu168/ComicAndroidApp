@@ -19,10 +19,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -32,6 +29,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -40,5 +38,7 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    implementation("com.github.denzcoskun:ImageSlideshow:0.1.0")
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("androidx.cardview:cardview:1.0.0")
 }

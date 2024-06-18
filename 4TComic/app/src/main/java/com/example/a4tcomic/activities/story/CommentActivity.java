@@ -2,7 +2,6 @@ package com.example.a4tcomic.activities.story;
 
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;

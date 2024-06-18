@@ -165,7 +165,7 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
         public Provider<String> getActivity() { return getVersion("activity"); }
 
         /**
-         * Version alias <b>agp</b> with value <b>8.4.0</b>
+         * Version alias <b>agp</b> with value <b>8.4.1</b>
          * <p>
          * If the version is a rich version and cannot be represented as a
          * single version string, an empty string is returned.
@@ -175,7 +175,7 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
         public Provider<String> getAgp() { return getVersion("agp"); }
 
         /**
-         * Version alias <b>appcompat</b> with value <b>1.6.1</b>
+         * Version alias <b>appcompat</b> with value <b>1.7.0</b>
          * <p>
          * If the version is a rich version and cannot be represented as a
          * single version string, an empty string is returned.

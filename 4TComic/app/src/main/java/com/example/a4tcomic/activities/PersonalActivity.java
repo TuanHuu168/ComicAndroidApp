@@ -17,8 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.activities.account.LoginActivity;
-import com.example.a4tcomic.activities.personal.AccountActivity;
 import com.example.a4tcomic.activities.admin.AdminActivity;
+import com.example.a4tcomic.activities.personal.AccountActivity;
 import com.example.a4tcomic.activities.personal.GraphicSettingActivity;
 import com.example.a4tcomic.activities.personal.ProfileActivity;
 import com.example.a4tcomic.activities.personal.UploadComicActivity;

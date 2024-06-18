@@ -25,11 +25,11 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarView
     @Override
     public AvatarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_avatar, parent, false);
-        return new AvatarAdapter.AvatarViewHolder(view);
+        return new AvatarViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AvatarAdapter.AvatarViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AvatarViewHolder holder, int position) {
         holder.img_avatar.setImageResource(avatarList.get(position));
     }
 

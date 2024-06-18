@@ -117,7 +117,7 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="340dp"
+        android:layout_height="400dp"
         tools:listitem="@layout/item_comment"/>
 
     <Button
@@ -131,54 +131,5 @@
         android:text="Xem thêm"
         android:textColor="#000000" />
 
-    <LinearLayout
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="74dp"
-        android:background="@drawable/bottom_nav_bar_up"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/btnHomePage"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_home_page" />
-
-        <ImageButton
-            android:id="@+id/btnArchive"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_archive" />
-
-        <ImageButton
-            android:id="@+id/btnNotification"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_notification" />
-
-        <ImageButton
-            android:id="@+id/btnSetting"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_setting" />
-    </LinearLayout>
 
 </LinearLayout>

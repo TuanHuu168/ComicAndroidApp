@@ -20,7 +20,6 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.a4tcomic.R;
-import com.example.a4tcomic.activities.search.FindByCategoryActivity;
 import com.example.a4tcomic.activities.search.FindByWriterActivity;
 import com.example.a4tcomic.adapters.ContentAdapter;
 import com.example.a4tcomic.models.ContentItem;

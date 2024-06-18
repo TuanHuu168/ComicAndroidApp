@@ -1,7 +1,6 @@
 package com.example.a4tcomic.activities.personal;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
