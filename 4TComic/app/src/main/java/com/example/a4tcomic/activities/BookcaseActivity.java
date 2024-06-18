@@ -1,5 +1,7 @@
 package com.example.a4tcomic.activities;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,8 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TabHost;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -22,43 +27,70 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
-import com.example.a4tcomic.adapters.BookAdapter;
+import com.example.a4tcomic.adapters.FollowAdapter;
+import com.example.a4tcomic.adapters.HistoryAdapter;
 import com.example.a4tcomic.models.ListBookCase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class BookcaseActivity extends AppCompatActivity implements View.OnTouchListener {
     ImageButton btnEdit, btnHomePage, btnArchive, btnSetting, btnNotification;
-    Button btnFollow, btnChooseAll,btnHistory;
-    EditText editSearch;
-    RecyclerView rcvHistory;
-    BookAdapter bookAdapter;
-    LinearLayout llayout;
+    Button btnChooseAll, btnDelete, btnChooseAllFollow, btnDeleteFollow;
+    EditText editSearch, editSearchFollow;
+    RecyclerView rcvHistory, rcvFollow;
+    HistoryAdapter historyAdapter;
+    FollowAdapter followAdapter;
+    LinearLayout llayout, llayoutFollow;
     boolean isEditButtonColored = false; // Trạng thái ban đầu của nút
     boolean isAllSelected = false; // Trạng thái ban đầu của nút
+
+    // Thiết lập tabLayout
+    TabHost mytab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_bookcase_page);
+
+        // Xử lý tabHost
+        mytab = findViewById(R.id.mytabhost);
+        mytab.setup();
+        // khai báo các Tab con (TabSpec)
+        TabHost.TabSpec spec1, spec2;
+        // ứng với mỗi tab con, thực hiện 4 công việc
+        // lịch sử
+        spec1 = mytab.newTabSpec("lichsu");   // tạo mới tab
+        spec1.setContent(R.id.tabHistory); // tham chiếu id tab con
+        spec1.setIndicator("Lịch sử");
+        mytab.addTab(spec1);
+        // theo dõi
+        spec2 = mytab.newTabSpec("theodoi");   // tạo mới tab
+        spec2.setContent(R.id.tabFollow); // tham chiếu id tab con
+        spec2.setIndicator("Theo dõi");
+        mytab.addTab(spec2);
+
+        // setup edit text search
+        findViewById(R.id.main).setOnTouchListener(this);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, ((Insets) systemBars).bottom);
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return WindowInsetsCompat.CONSUMED;
         });
 
         editSearch = findViewById(R.id.editSearch);
-        btnFollow = findViewById(R.id.btnFollow);
+        editSearchFollow = findViewById(R.id.editSearchFollow);
         btnEdit = findViewById(R.id.btnEdit);
         llayout = findViewById(R.id.llayout);
         llayout.setVisibility(View.GONE);
+        llayoutFollow = findViewById(R.id.llayoutFollow);
+        llayoutFollow.setVisibility(View.GONE);
         btnChooseAll = findViewById(R.id.btnChooseAll);
-        btnHistory = findViewById(R.id.btnHistory);
-
+        btnChooseAllFollow = findViewById(R.id.btnChooseAllFollow);
+        btnDelete = findViewById(R.id.btnDelete);
+        btnDeleteFollow = findViewById(R.id.btnDeleteFollow);
         btnHomePage = findViewById(R.id.btnHomePage);
         btnArchive = findViewById(R.id.btnArchive);
         btnNotification = findViewById(R.id.btnNotification);
@@ -87,75 +119,96 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
         // hide keyboard
         findViewById(R.id.main).setOnTouchListener(this);
 
-        int blue_main = ContextCompat.getColor(this, R.color.blue_main);
-        int white = ContextCompat.getColor(this, R.color.white);
-
-        btnHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bookAdapter.setShowReadingChapter(true);
-                btnHistory.setBackgroundColor(blue_main);
-                btnFollow.setBackgroundColor(white);
-                bookAdapter.notifyDataSetChanged(); // Cập nhật lại RecyclerView
-            }
+        btnDelete.setOnClickListener(v -> {
+            new AlertDialog.Builder(BookcaseActivity.this)
+                    .setTitle("Xác nhận xóa")
+                    .setMessage("Bạn có chắc chắn muốn xóa lịch sử truyện này không?")
+                    .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                        // Xóa đơn vị khỏi SQLite
+                    })
+                    .setNegativeButton(android.R.string.no, null)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
         });
 
-        btnFollow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bookAdapter.setShowReadingChapter(false);
-                btnFollow.setBackgroundColor(blue_main);
-                btnHistory.setBackgroundColor(white);
-                bookAdapter.notifyDataSetChanged(); // Cập nhật lại RecyclerView
-            }
+        btnDeleteFollow.setOnClickListener(v -> {
+            new AlertDialog.Builder(BookcaseActivity.this)
+                    .setTitle("Xác nhận xóa")
+                    .setMessage("Bạn có chắc chắn muốn xóa truyện theo dõi này không?")
+                    .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                        // Xóa đơn vị khỏi SQLite
+                    })
+                    .setNegativeButton(android.R.string.no, null)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
         });
-        btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isEditButtonColored) {
-                    btnEdit.clearColorFilter();
-                    llayout.setVisibility(View.GONE);
-                    // điều chỉnh radio
-                    bookAdapter.setEditMode(false);
-                } else {
-                    btnEdit.setColorFilter(Color.parseColor("#3CBEF5"));
+
+        btnEdit.setOnClickListener(v -> {
+            if (isEditButtonColored) {
+                btnEdit.clearColorFilter();
+                llayout.setVisibility(View.GONE);
+                llayoutFollow.setVisibility(View.GONE);
+                // Tắt chế độ chỉnh sửa
+                historyAdapter.setEditMode(false);
+                followAdapter.setEditMode(false);
+            } else {
+                btnEdit.setColorFilter(Color.parseColor("#3CBEF5"));
+                if (mytab.getCurrentTab() == 0) {
                     llayout.setVisibility(View.VISIBLE);
-                    bookAdapter.setEditMode(true);
+                    historyAdapter.setEditMode(true);
+                    followAdapter.setEditMode(false);
+                } else if (mytab.getCurrentTab() == 1) {
+                    llayoutFollow.setVisibility(View.VISIBLE);
+                    followAdapter.setEditMode(true);
+                    historyAdapter.setEditMode(false);
                 }
-                isEditButtonColored = !isEditButtonColored; // Đổi trạng thái
             }
+            isEditButtonColored = !isEditButtonColored;
         });
 
-        btnChooseAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(isAllSelected){
-                    bookAdapter.deselectAll();
-                    btnChooseAll.setText("Chọn tất cả");
-                }else{
-                    btnChooseAll.setText("Bỏ chọn tất cả");
-                    bookAdapter.selectAll();
-                }
-                isAllSelected=!isAllSelected; // đổi trạng thái
+        btnChooseAll.setOnClickListener(v -> {
+            if (isAllSelected) {
+                historyAdapter.deselectAll();
+                btnChooseAll.setText("Chọn tất cả");
+            } else {
+                btnChooseAll.setText("Bỏ chọn tất cả");
+                historyAdapter.selectAll();
             }
+            isAllSelected = !isAllSelected; // đổi trạng thái
         });
-//        btnFollow.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intentFollow = new Intent(BookcaseActivity.this, activity_follow_page.class);
-//                startActivity(intentFollow);
-//            }
-//        });
+
+        btnChooseAllFollow.setOnClickListener(v -> {
+            if (isAllSelected) {
+                followAdapter.deselectAll();
+                btnChooseAllFollow.setText("Chọn tất cả");
+            } else {
+                btnChooseAllFollow.setText("Bỏ chọn tất cả");
+                followAdapter.selectAll();
+            }
+            isAllSelected = !isAllSelected; // đổi trạng thái
+        });
 
         rcvHistory = findViewById(R.id.rcvHistory);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rcvHistory.setLayoutManager(linearLayoutManager);
-        bookAdapter = new BookAdapter(getList(),false);
-        rcvHistory.setAdapter(bookAdapter);
+        historyAdapter = new HistoryAdapter(getList()); // sử dụng adapter cho lịch sử
+        rcvHistory.setAdapter(historyAdapter);
 
-        // Set initial visibility state
-        bookAdapter.setShowReadingChapter(true);
-        bookAdapter.notifyDataSetChanged(); // Cập nhật lại RecyclerView
+        rcvFollow = findViewById(R.id.rcvFollow);
+        LinearLayoutManager linearLayoutManagerFollow = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        rcvFollow.setLayoutManager(linearLayoutManagerFollow);
+        followAdapter = new FollowAdapter(getList()); // sử dụng adapter cho theo dõi
+        rcvFollow.setAdapter(followAdapter);
+
+        mytab.setOnTabChangedListener(tabId -> {
+            // Reset edit mode khi chuyển tab
+            btnEdit.clearColorFilter();
+            llayout.setVisibility(View.GONE);
+            llayoutFollow.setVisibility(View.GONE);
+            historyAdapter.setEditMode(false);
+            followAdapter.setEditMode(false);
+            isEditButtonColored = false;
+        });
     }
 
     private List<ListBookCase> getList() {
@@ -169,11 +222,15 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
         return list;
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        if (getCurrentFocus() != null) {
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
         editSearch.clearFocus();
+        editSearchFollow.clearFocus();
         return false;
     }
 }

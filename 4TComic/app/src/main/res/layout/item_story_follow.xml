@@ -18,7 +18,7 @@
             android:background="@drawable/ic_bg_item_white">
 
             <ImageButton
-                android:id="@+id/imgBtnItem"
+                android:id="@+id/imgBtnItemFollow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -37,7 +37,7 @@
                 android:paddingTop="10dp">
 
                 <TextView
-                    android:id="@+id/titleItem"
+                    android:id="@+id/titleItemFollow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/faustina"
@@ -77,7 +77,7 @@
                             tools:ignore="TextSizeCheck" />
                     </LinearLayout>
                     <RadioButton
-                        android:id="@+id/radio_button_book"
+                        android:id="@+id/radio_button_book_Follow"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginStart="45dp"
