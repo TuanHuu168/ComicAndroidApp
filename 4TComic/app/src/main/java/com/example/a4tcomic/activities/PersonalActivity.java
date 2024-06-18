@@ -1,4 +1,4 @@
-package com.example.a4tcomic.activities.personal;
+package com.example.a4tcomic.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,15 +16,18 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
-import com.example.a4tcomic.activities.HomePageActivity;
 import com.example.a4tcomic.activities.account.LoginActivity;
-import com.example.a4tcomic.activities.activity_bookcase_page;
+import com.example.a4tcomic.activities.personal.AccountActivity;
+import com.example.a4tcomic.activities.personal.AdminActivity;
+import com.example.a4tcomic.activities.personal.GraphicSettingActivity;
+import com.example.a4tcomic.activities.personal.ProfileActivity;
+import com.example.a4tcomic.activities.personal.UploadComicActivity;
 
 public class PersonalActivity extends AppCompatActivity {
 
     private TextView tv_edit_profile;
     private Button btn_account, btn_setting, btn_admin, btn_logout, btn_upload_story;
-    private ImageButton btnHome, btnArchive;
+    private ImageButton btnHomePage, btnArchive, btnNotification, btnSetting;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +46,32 @@ public class PersonalActivity extends AppCompatActivity {
         btn_admin = findViewById(R.id.btn_admin);
         btn_logout = findViewById(R.id.btn_logout);
         btn_upload_story = findViewById(R.id.btn_upload_story);
-        btnHome = findViewById(R.id.btnHomePage);
+
+        btnHomePage = findViewById(R.id.btnHomePage);
         btnArchive = findViewById(R.id.btnArchive);
+        btnNotification = findViewById(R.id.btnNotification);
+        btnSetting = findViewById(R.id.btnSetting);
+
+        // Chuyển trang bottom
+        btnHomePage.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(this, HomePageActivity.class);
+            startActivity(settingIntent);
+        });
+
+        btnNotification.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(this, NotificationActivity.class);
+            startActivity(settingIntent);
+        });
+
+        btnSetting.setOnClickListener(v -> {
+            Intent settingIntent = new Intent(this, PersonalActivity.class);
+            startActivity(settingIntent);
+        });
+
+        btnArchive.setOnClickListener(v -> {
+            Intent archiveIntent = new Intent(this, BookcaseActivity.class);
+            startActivity(archiveIntent);
+        });
 
         // Sự kiện
         tv_edit_profile.setOnClickListener(v -> {
@@ -58,7 +85,8 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         btn_setting.setOnClickListener(v -> {
-            // Xử lý sự kiện khi Button được nhấp vào
+            Intent intent = new Intent(this, GraphicSettingActivity.class);
+            startActivity(intent);
         });
 
         btn_admin.setOnClickListener(v -> {
@@ -97,16 +125,6 @@ public class PersonalActivity extends AppCompatActivity {
             neutralButton.setTextColor(Color.parseColor("#FFA5BB"));
             neutralButton.setTextSize(16.0f);
             neutralButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
-        });
-
-        btnHome.setOnClickListener(v -> {
-            Intent intent = new Intent(this, HomePageActivity.class);
-            startActivity(intent);
-        });
-
-        btnArchive.setOnClickListener(v -> {
-            Intent intent = new Intent(this, activity_bookcase_page.class);
-            startActivity(intent);
         });
 
     }

@@ -47,8 +47,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnTouchLi
         // Trở lại trang trước
         btn_return.setOnClickListener(v -> finish());
 
-        findViewById(R.id.main).setOnTouchListener(this);
-
         // Hiển thị list avatar
         avatarAdapter = new AvatarAdapter();
         GridLayoutManager gLM = new GridLayoutManager(this, 4);

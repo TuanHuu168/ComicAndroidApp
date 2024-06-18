@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._4TComic"
         tools:targetApi="31">
+
         <activity
             android:name=".activities.personal.UploadComicActivity"
             android:exported="false" />
@@ -55,20 +56,41 @@
             android:name=".activities.personal.AccountActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.personal.PersonalActivity"
+            android:name=".activities.PersonalActivity"
             android:exported="false" />
         <activity
             android:name=".activities.story.StoryDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.story.activity_chapters"
+            android:name=".activities.story.ChaptersActivity"
             android:exported="false"/>
         <activity
-            android:name=".activities.story.activity_read_page"
+            android:name=".activities.story.ReadPageActivity"
             android:exported="false"/>
         <activity
-            android:name=".activities.activity_bookcase_page"
+            android:name=".activities.BookcaseActivity"
             android:exported="false"/>
+
+        <activity
+            android:name=".activities.story.CommentActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.NotificationActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.search.AdvancedSearchActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.search.FindByCategoryActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.search.FindByWriterActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.personal.GraphicSettingActivity"
+            android:exported="false"/>
+
+
 
     </application>
 

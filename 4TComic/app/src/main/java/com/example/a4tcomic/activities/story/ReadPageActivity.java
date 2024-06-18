@@ -29,7 +29,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class activity_read_page extends AppCompatActivity {
+public class ReadPageActivity extends AppCompatActivity {
 
     ImageButton btnBack;
     private ViewPager2 viewPager;
