@@ -35,16 +35,13 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         tv_writer.setOnClickListener(v -> {
             Intent intent = new Intent(this, FindByWriterActivity.class);
             startActivity(intent);
+            finish();
         });
 
         tv_category.setOnClickListener(v -> {
             Intent intent = new Intent(this, FindByCategoryActivity.class);
             startActivity(intent);
-        });
-
-        tv_advanced.setOnClickListener(v -> {
-            Intent intent = new Intent(this, AdvancedSearchActivity.class);
-            startActivity(intent);
+            finish();
         });
 
         ImageButton btn_back = findViewById(R.id.btn_back);

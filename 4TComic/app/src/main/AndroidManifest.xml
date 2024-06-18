@@ -17,7 +17,7 @@
             android:name=".activities.personal.UploadComicActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.personal.AdminActivity"
+            android:name=".activities.admin.AdminActivity"
             android:exported="false" />
         <activity
             android:name=".activities.HomePageActivity"
@@ -34,20 +34,8 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activity_bookcase_page"
-            android:exported="false">
-
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activities.personal.ProfileActivity"
@@ -89,8 +77,6 @@
         <activity
             android:name=".activities.personal.GraphicSettingActivity"
             android:exported="false"/>
-
-
 
     </application>
 

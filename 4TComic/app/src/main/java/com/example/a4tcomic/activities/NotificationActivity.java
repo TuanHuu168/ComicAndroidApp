@@ -35,21 +35,19 @@ public class NotificationActivity extends AppCompatActivity {
         btnHomePage.setOnClickListener(v -> {
             Intent settingIntent = new Intent(this, HomePageActivity.class);
             startActivity(settingIntent);
-        });
-
-        btnNotification.setOnClickListener(v -> {
-            Intent settingIntent = new Intent(this, NotificationActivity.class);
-            startActivity(settingIntent);
+            finish();
         });
 
         btnSetting.setOnClickListener(v -> {
             Intent settingIntent = new Intent(this, PersonalActivity.class);
             startActivity(settingIntent);
+            finish();
         });
 
         btnArchive.setOnClickListener(v -> {
             Intent archiveIntent = new Intent(this, BookcaseActivity.class);
             startActivity(archiveIntent);
+            finish();
         });
     }
 }

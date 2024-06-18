@@ -31,19 +31,16 @@ public class FindByWriterActivity extends AppCompatActivity {
         tv_category = findViewById(R.id.tv_category);
         tv_advanced = findViewById(R.id.tv_advanced);
 
-        tv_writer.setOnClickListener(v -> {
-            Intent intent = new Intent(this, FindByWriterActivity.class);
-            startActivity(intent);
-        });
-
         tv_category.setOnClickListener(v -> {
             Intent intent = new Intent(this, FindByCategoryActivity.class);
             startActivity(intent);
+            finish();
         });
 
         tv_advanced.setOnClickListener(v -> {
             Intent intent = new Intent(this, AdvancedSearchActivity.class);
             startActivity(intent);
+            finish();
         });
 
         ImageButton btn_back = findViewById(R.id.btn_back);

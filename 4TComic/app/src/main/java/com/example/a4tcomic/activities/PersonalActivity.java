@@ -18,7 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.activities.account.LoginActivity;
 import com.example.a4tcomic.activities.personal.AccountActivity;
-import com.example.a4tcomic.activities.personal.AdminActivity;
+import com.example.a4tcomic.activities.admin.AdminActivity;
 import com.example.a4tcomic.activities.personal.GraphicSettingActivity;
 import com.example.a4tcomic.activities.personal.ProfileActivity;
 import com.example.a4tcomic.activities.personal.UploadComicActivity;
@@ -56,21 +56,19 @@ public class PersonalActivity extends AppCompatActivity {
         btnHomePage.setOnClickListener(v -> {
             Intent settingIntent = new Intent(this, HomePageActivity.class);
             startActivity(settingIntent);
+            finish();
         });
 
         btnNotification.setOnClickListener(v -> {
             Intent settingIntent = new Intent(this, NotificationActivity.class);
             startActivity(settingIntent);
-        });
-
-        btnSetting.setOnClickListener(v -> {
-            Intent settingIntent = new Intent(this, PersonalActivity.class);
-            startActivity(settingIntent);
+            finish();
         });
 
         btnArchive.setOnClickListener(v -> {
             Intent archiveIntent = new Intent(this, BookcaseActivity.class);
             startActivity(archiveIntent);
+            finish();
         });
 
         // Sự kiện
@@ -110,6 +108,7 @@ public class PersonalActivity extends AppCompatActivity {
             builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             });
             AlertDialog dialog = builder.create();
             dialog.show();

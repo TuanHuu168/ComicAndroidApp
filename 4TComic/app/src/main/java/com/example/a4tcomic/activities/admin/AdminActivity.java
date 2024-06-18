@@ -1,4 +1,4 @@
-package com.example.a4tcomic.activities.personal;
+package com.example.a4tcomic.activities.admin;
 
 import android.os.Bundle;
 import android.widget.ImageButton;
