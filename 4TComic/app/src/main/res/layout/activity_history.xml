@@ -90,8 +90,9 @@
             android:fontFamily="@font/faustina"
             android:text="@string/all"
             android:textAllCaps="false"
+            android:textColor="@color/black"
             android:textSize="16dp"
-            android:textColor="@color/black" />
+            app:cornerRadius="20dp" />
 
         <Button
             android:id="@+id/btnDelete"
@@ -102,7 +103,8 @@
             android:backgroundTint="@color/blue_main"
             android:fontFamily="@font/faustina"
             android:text="@string/remove"
+            android:textColor="@color/black"
             android:textSize="16dp"
-            android:textColor="@color/black" />
+            app:cornerRadius="20dp" />
     </LinearLayout>
 </LinearLayout>

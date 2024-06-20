@@ -31,7 +31,7 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="@drawable/white_edt_background"
-            android:drawableRight="@drawable/ic_search_img"
+            android:drawableRight="@drawable/ic_search"
             android:ems="10"
             android:fontFamily="@font/faustina"
             android:hint="@string/search_text"
