@@ -159,6 +159,9 @@
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/box_group_tran"
+        android:dividerHeight="0dp"
+        android:divider="@android:color/transparent"
+        android:scrollbars="none"
         tools:listitem="@layout/item_translation_group" />
 
     <LinearLayout
