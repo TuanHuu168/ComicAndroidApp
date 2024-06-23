@@ -100,18 +100,20 @@
 
                     <Button
                         android:id="@+id/btn_favorite"
-                        android:layout_width="130dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_alignStart="@+id/tv_name_story"
                         android:layout_alignParentBottom="true"
-                        android:paddingEnd="14dp"
-                        android:paddingStart="12dp"
                         android:backgroundTint="@color/pink_main"
                         android:drawableLeft="@drawable/favorite_white"
+                        android:gravity="center"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="14dp"
                         android:text="@string/btn_favorite"
-                        android:textColor="@android:color/white"
 
-                        android:textStyle="bold"/>
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        app:cornerRadius="20dp" />
 
                 </RelativeLayout>
 
@@ -205,7 +207,8 @@
             android:backgroundTint="@color/white"
             android:text="@string/btn_new"
             android:textColor="@color/pink_main"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:cornerRadius="20dp" />
 
         <Button
             android:id="@+id/btn_cmt"
@@ -216,7 +219,8 @@
             android:backgroundTint="@color/white"
             android:text="@string/btn_cmt"
             android:textColor="@color/pink_main"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:cornerRadius="20dp" />
 
         <Button
             android:id="@+id/btn_first_chapter"
@@ -227,7 +231,8 @@
             android:backgroundTint="@color/white"
             android:text="@string/btn_first_chapter"
             android:textColor="@color/pink_main"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:cornerRadius="20dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

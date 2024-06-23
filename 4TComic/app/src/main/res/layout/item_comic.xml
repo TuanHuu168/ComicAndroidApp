@@ -11,10 +11,11 @@
         android:layout_width="90dp"
         android:layout_height="120dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        app:shapeAppearanceOverlay="@style/RoundComic"/>
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/RoundComic"
+        app:srcCompat="@drawable/truyen2" />
 
     <TextView
         android:id="@+id/lblComic"
@@ -23,6 +24,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:textColor="#000"
+        android:text="manga name"
         android:textSize="14sp" />
 
 </LinearLayout>

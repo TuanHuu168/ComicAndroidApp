@@ -2,6 +2,19 @@
 <resources>
     <string name="app_name">4T Comic</string>
 
+    <string name="account_locked">Tài khoản đã bị khóa</string>
+    <string name="fill_all_fields">Vui lòng nhập đầy đủ thông tin</string>
+    <string name="incorrect_credentials">Tài khoản hoặc mật khẩu không đúng</string>
+
+    <string name="invalid_email">Email không hợp lệ</string>
+    <string name="password_mismatch">Mật khẩu không khớp</string>
+    <string name="agree_terms">Vui lòng đồng ý với điều khoản</string>
+    <string name="account_exists">Tài khoản đã tồn tại</string>
+    <string name="account_not_exists">Tài khoản không tồn tại</string>
+    <string name="random_password_created">Mật khẩu đã được tạo là 12345. Vui lòng vào cài đặt để đổi lại mật khẩu</string>
+    <string name="registration_failed">Đăng ký thất bại. Vui lòng thử lại</string>
+    <string name="registration_success">Đăng ký thành công</string>
+
     <string name="name_story">ONE PIECE</string>
     <string name="author_story">sáng tác bởi Oda Eiichiro</string>
     <string name="genre_title">Thể loại</string>

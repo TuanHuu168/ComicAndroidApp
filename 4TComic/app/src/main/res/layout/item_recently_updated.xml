@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="vertical">
+
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgRecentlyUpdated"
             android:layout_width="60dp"
@@ -20,7 +21,8 @@
             android:layout_marginRight="9dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/RoundLog"/>
+            app:shapeAppearanceOverlay="@style/RoundLog"
+            app:srcCompat="@drawable/truyen2" />
 
         <TextView
             android:id="@+id/lblRecentlyUpdated"
@@ -29,6 +31,7 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:textColor="#000"
+            android:text="manga name"
             android:textSize="14sp" />
         <ImageButton
             android:id="@+id/btnDeleteComic"
