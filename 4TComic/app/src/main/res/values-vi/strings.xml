@@ -11,7 +11,7 @@
     <string name="agree_terms">Vui lòng đồng ý với điều khoản</string>
     <string name="account_exists">Tài khoản đã tồn tại</string>
     <string name="account_not_exists">Tài khoản không tồn tại</string>
-    <string name="random_password_created">Mật khẩu ngẫu nhiên đã được tạo. Vui lòng vào cài đặt để đổi lại mật khẩu</string>
+    <string name="random_password_created">Mật khẩu đã được tạo là 12345. Vui lòng vào cài đặt để đổi lại mật khẩu</string>
     <string name="registration_failed">Đăng ký thất bại. Vui lòng thử lại</string>
     <string name="registration_success">Đăng ký thành công</string>
 

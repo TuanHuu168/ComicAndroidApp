@@ -73,10 +73,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                             for (User user : users) {
                                 if (user.getUsername().equals(username) && user.getEmail().equals(email)) {
                                     userFound = true;
-                                    String newPassword = generateRandomPassword();
+                                    String newPassword = "12345";
                                     user.setPassword(newPassword);
                                     usersDB.updateUser(user, user.getAvatar_url(), () -> {
-                                        Toast.makeText(ForgotPasswordActivity.this, getString(R.string.random_password_created), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(ForgotPasswordActivity.this, getString(R.string.random_password_created), Toast.LENGTH_LONG).show();
                                     });
                                     break;
                                 }
@@ -91,14 +91,4 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         });
     }
 
-    private String generateRandomPassword() {
-        int passwordLength = 8;
-        String allowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        Random random = new Random();
-        StringBuilder password = new StringBuilder(passwordLength);
-        for (int i = 0; i < passwordLength; i++) {
-            password.append(allowedChars.charAt(random.nextInt(allowedChars.length())));
-        }
-        return password.toString();
-    }
 }
