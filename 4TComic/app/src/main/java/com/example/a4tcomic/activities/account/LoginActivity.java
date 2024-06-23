@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.activities.HomePageActivity;
+import com.example.a4tcomic.db.UsersDB;
+import com.example.a4tcomic.models.User;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText edtUserName, edtPassword;
     TextView lblForgot, lblRegister;
     Button btnLogin;
+    UsersDB usersDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         lblForgot = findViewById(R.id.lblForgot);
         lblRegister = findViewById(R.id.lblRegister);
         btnLogin = findViewById(R.id.btnLogin);
+        usersDB = new UsersDB();
 
         // Gạch chân
         lblForgot.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
@@ -65,9 +72,35 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
-                startActivity(homePageIntent);
-                finish();
+                String username = edtUserName.getText().toString().trim();
+                String password = edtPassword.getText().toString().trim();
+
+                if (username.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(LoginActivity.this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
+                } else {
+                    usersDB.getAllUsers(new UsersDB.AllUsersCallback() {
+                        @Override
+                        public void onAllUsersLoaded(List<User> users) {
+                            boolean userFound = false;
+                            for (User user : users) {
+                                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                                    if(user.getStatus()==1){
+                                        Toast.makeText(LoginActivity.this, getString(R.string.account_locked), Toast.LENGTH_SHORT).show();
+                                        return;
+                                    }
+                                    userFound = true;
+                                    Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
+                                    startActivity(homePageIntent);
+                                    finish();
+                                    break;
+                                }
+                            }
+                            if (!userFound) {
+                                Toast.makeText(LoginActivity.this, getString(R.string.incorrect_credentials), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
             }
         });
     }
