@@ -157,15 +157,15 @@ public class StoryDetailActivity extends AppCompatActivity {
     private List<Chapter> getChapters() {
         List<Chapter> chapters = new ArrayList<>();
 
-        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
-
-        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
+//        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
+//        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
+//        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
+//        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
+//
+//        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
+//        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
+//        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
+//        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
 
         return chapters;
     }

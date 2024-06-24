@@ -42,9 +42,9 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
             return;
         }
         String title_time = context.getString(R.string.update_time_title);
-        holder.img_chapter.setImageResource(chapter.getResourceId());
-        holder.tv_name_chapter.setText(chapter.getName());
-        holder.chapterTimeUpdate.setText(title_time + " " + chapter.getTimeUpdate());
+//        holder.img_chapter.setImageResource(chapter.getResourceId());
+//        holder.tv_name_chapter.setText(chapter.getName());
+//        holder.chapterTimeUpdate.setText(title_time + " " + chapter.getTimeUpdate());
 
     }
 

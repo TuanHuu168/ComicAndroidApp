@@ -2,8 +2,10 @@ package com.example.a4tcomic.db;
 
 import androidx.annotation.NonNull;
 
+import com.example.a4tcomic.models.Chapter;
 import com.example.a4tcomic.models.Comic;
 import com.example.a4tcomic.models.Favorite;
+import com.example.a4tcomic.models.History;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -11,18 +13,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ComicsDB {
-
     private final FirebaseDatabase mDatabase;
     private final DatabaseReference mComicsRef;
-    private final DatabaseReference mFavoritesRef;
 
     public ComicsDB() {
         mDatabase = FirebaseDatabase.getInstance("https://comic4t-default-rtdb.asia-southeast1.firebasedatabase.app/");
         mComicsRef = mDatabase.getReference("comic_db/comics");
-        mFavoritesRef = mDatabase.getReference("comic_db/favorites");
     }
 
     public interface ComicCallback {
@@ -31,10 +32,6 @@ public class ComicsDB {
 
     public interface AllComicsCallback {
         void onAllComicsLoaded(List<Comic> comics);
-    }
-
-    public interface UserFavorComicsCallback {
-        void onUserFavorComicsLoaded(List<Comic> comics);
     }
 
     // lấy danh sách tất cả truyện
@@ -47,6 +44,7 @@ public class ComicsDB {
                     Comic comic = comicSnapshot.getValue(Comic.class);
                     comics.add(comic);
                 }
+                comics.sort((o1, o2) -> Integer.compare(o2.getCreated_at(), o1.getCreated_at()));
                 callback.onAllComicsLoaded(comics);
             }
             @Override
@@ -67,44 +65,15 @@ public class ComicsDB {
                 });
     }
 
-    // lấy danh sách truyện yêu thích theo user_id
-    // sắp xếp theo created_at giảm dần
-    public void getComicsFavorByUser(String user_id, final UserFavorComicsCallback callback) {
-        mFavoritesRef.orderByChild("user_id")
-                .equalTo(user_id)
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        List<Favorite> favoritesUserList = new ArrayList<>();
-                        for (DataSnapshot favorSnapshot : snapshot.getChildren()) {
-                            Favorite favorite = favorSnapshot.getValue(Favorite.class);
-                            favoritesUserList.add(favorite);
-                        }
-                        favoritesUserList.sort((o1, o2) -> Integer.compare(o2.getCreated_at(), o1.getCreated_at()));
-
-                        List<Comic> comics = new ArrayList<>();
-                        for (Favorite favorite : favoritesUserList) {
-                            getComicById(favorite.getComic_id(), comic ->
-                                    comics.add(comic));
-                        }
-                        callback.onUserFavorComicsLoaded(comics);
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) { }
-                });
-    }
-
     public void addComic(Comic comic) {
         String key = mComicsRef.push().getKey();
         comic.setId(key);
         mComicsRef.child(key).setValue(comic);
     }
 
-    public void deleteComic(Comic comic) {
-        mComicsRef.child(comic.getId()).removeValue();
+    // xóa truyện theo id_comic
+    public void deleteComic(String comic_id) {
+        mComicsRef.child(comic_id).removeValue();
     }
 
-    public DatabaseReference getComicsRef() {
-        return mComicsRef;
-    }
 }
