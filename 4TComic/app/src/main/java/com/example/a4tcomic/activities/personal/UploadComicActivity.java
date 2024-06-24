@@ -288,5 +288,6 @@ public class UploadComicActivity extends AppCompatActivity {
             }
         });
         Toast.makeText(this, "Comic uploaded successfully!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

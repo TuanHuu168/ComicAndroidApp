@@ -1,6 +1,7 @@
 package com.example.a4tcomic.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.activities.personal.UploadChapterActivity;
 import com.example.a4tcomic.db.AuthorsDB;
 import com.example.a4tcomic.models.Author;
 import com.example.a4tcomic.models.Comic;
@@ -52,6 +54,13 @@ public class UpdatedComicByUserAdapter extends RecyclerView.Adapter<UpdatedComic
                 .load(comic.getImg_url())
                 .placeholder(R.drawable.truyen1)
                 .into(holder.imgCommentComic);
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, UploadChapterActivity.class);
+            intent.putExtra("comicName", comic.getTitle());
+            intent.putExtra("comicId", comic.getId());
+            context.startActivity(intent);
+        });
     }
 
     @Override

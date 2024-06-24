@@ -77,17 +77,19 @@
     <string name="category_text">Thể loại</string>
     <string name="summary_text">Tóm tắt</string>
     <string name="edt_summary_text">Tóm tắt nội dung truyện</string>
-    <string name="cover_image_text">Ảnh bìa (Tùy chọn)</string>
+    <string name="cover_image_text">Ảnh bìa</string>
     <string name="content_image">Ảnh đại diện</string>
     <string name="upload_terms_text">Tôi đồng ý với các điều khoản &amp; dịch vụ khi đăng truyện</string>
     <string name="select_category">Chọn thể loại</string>
     <string name="select_img">Vui lòng chọn đầy đủ ảnh của truyện.</string>
+    <string name="upload_chapter">Thêm chương mới</string>
+    <string name="pdf_selector">Chọn file PDF</string>
 
     <string name="titleBookcase">Tủ sách</string>
     <string name="History">Lịch sử</string>
     <string name="Follow">Theo dõi</string>
     <string name="hintSearch">Tìm kiếm</string>
-    <string name="title">Tinh tú kiếm sĩ</string>
+    <string name="title">Tiêu đề</string>
     <string name="reading">"Chương đang đọc: "</string>
     <string name="all">Chọn tất cả</string>
     <string name="remove">Xoá</string>
@@ -95,5 +97,5 @@
     <string name="filterNewest">Mới nhất</string>
     <string name="titleChapter">Chương 1</string>
     <string name="ChooseChapters">Chọn chương</string>
-    <string name="chapter">Chương 1</string>
+    <string name="chapter">Chương</string>
 </resources>
