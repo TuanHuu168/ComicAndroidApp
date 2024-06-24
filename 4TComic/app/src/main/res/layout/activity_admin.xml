@@ -153,7 +153,7 @@
                     android:scrollbars="none"
                     android:divider="@android:color/transparent"
                     android:dividerHeight="0dp"
-                    tools:listitem="@layout/item_comment" />
+                    tools:listitem="@layout/item_upload_comic" />
             </LinearLayout>
 
         </LinearLayout>

@@ -21,6 +21,7 @@ import com.example.a4tcomic.activities.account.LoginActivity;
 import com.example.a4tcomic.activities.admin.AdminActivity;
 import com.example.a4tcomic.activities.personal.AccountActivity;
 import com.example.a4tcomic.activities.personal.GraphicSettingActivity;
+import com.example.a4tcomic.activities.personal.HomeUploadActivity;
 import com.example.a4tcomic.activities.personal.ProfileActivity;
 import com.example.a4tcomic.activities.personal.UploadComicActivity;
 
@@ -94,7 +95,7 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         btn_upload_story.setOnClickListener(v -> {
-            Intent intent = new Intent(this, UploadComicActivity.class);
+            Intent intent = new Intent(this, HomeUploadActivity.class);
             startActivity(intent);
         });
 

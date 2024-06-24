@@ -44,19 +44,20 @@ public class HistoryDB {
                         historyUserList.sort((o1, o2) -> Integer.compare(o2.getLast_date(), o1.getLast_date()));
 
                         ChaptersDB chaptersDB = new ChaptersDB();
-                        List<Chapter> chapters = new ArrayList<>();
-                        for (History history : historyUserList) {
-                            chaptersDB.getChapterById(history.getChapter_id(), chapter ->
-                                    chapters.add(chapter));
-                        }
-
                         ComicsDB comicsDB = new ComicsDB();
+
+                        List<Chapter> chapters = new ArrayList<>();
                         List<Comic> comics = new ArrayList<>();
-                        for (Chapter chapter : chapters) {
-                            comicsDB.getComicById(chapter.getComic_id(), comic ->
-                                    comics.add(comic));
+
+                        for (History h : historyUserList) {
+                            chaptersDB.getChapterById(h.getChapter_id(), chapter1 -> {
+                                chapters.add(chapter1);
+                                comicsDB.getComicById(chapter1.getComic_id(), comic1 -> {
+                                    comics.add(comic1);
+                                    callback.onHistoryLoaded(historyUserList, comics, chapters);
+                                });
+                            });
                         }
-                        callback.onHistoryLoaded(historyUserList, comics, chapters);
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) { }

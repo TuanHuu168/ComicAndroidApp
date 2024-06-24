@@ -1,7 +1,9 @@
 package com.example.a4tcomic.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -22,21 +24,25 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.activities.search.FindByWriterActivity;
 import com.example.a4tcomic.adapters.ContentAdapter;
-import com.example.a4tcomic.models.ContentItem;
+import com.example.a4tcomic.db.ComicsDB;
+import com.example.a4tcomic.db.FavoritesDB;
+import com.example.a4tcomic.db.HistoryDB;
+import com.example.a4tcomic.models.Chapter;
+import com.example.a4tcomic.models.Comic;
+import com.example.a4tcomic.models.History;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class HomePageActivity extends AppCompatActivity implements View.OnTouchListener {
+public class HomePageActivity extends AppCompatActivity{
 
     // Danh sách truyện
     private RecyclerView trendingRecyclerView;
     private RecyclerView historyRecyclerView;
     private RecyclerView recentlyUpdatedRecyclerView;
-    private List<ContentItem> trendingList;
-    private List<ContentItem> historyList;
-    private List<ContentItem> recentlyUpdatedList;
+    private List<Comic> trendingList;
+    private List<Comic> historyList;
+    private List<Comic> recentlyUpdatedList;
 
     // Các biến khác
     EditText et_search;
@@ -88,8 +94,6 @@ public class HomePageActivity extends AppCompatActivity implements View.OnTouchL
             startActivity(advancedSearchIntent);
         });
 
-        // hide keyboard
-        findViewById(R.id.main).setOnTouchListener(this);
 
         // Tạo slider vào thêm ảnh vào slider
         ImageSlider imageSlider = findViewById(R.id.imageSlider);
@@ -107,42 +111,55 @@ public class HomePageActivity extends AppCompatActivity implements View.OnTouchL
         historyList = new ArrayList<>();
         recentlyUpdatedList = new ArrayList<>();
 
-        // Thêm nội dung truyện hot
-        trendingList.add(new ContentItem(0,R.drawable.truyen1, "Tiểu Thư Bé Bỏng Đáng Yêu!"));
-        trendingList.add(new ContentItem(0,R.drawable.truyen2, "Tinh Tú Kiếm Sĩ"));
-        trendingList.add(new ContentItem(0,R.drawable.truyen4, "Không Chỉ Là Bắt Nạt"));
+        // Lấy nội dung truyện hot từ Firebase
+        getTrendingComics();
 
         // Thêm nội dung lịch sử đọc
-        historyList.add(new ContentItem(0,R.drawable.truyen1, "Tiểu Thư Bé Bỏng Đáng Yêu!"));
-        historyList.add(new ContentItem(0,R.drawable.truyen2, "Tinh Tú Kiếm Sĩ"));
-        historyList.add(new ContentItem(0,R.drawable.truyen3, "Tôi Trở Nên Phi Thường Ngay Cả Ở Thế Giới Thật"));
-        historyList.add(new ContentItem(0,R.drawable.truyen4, "Không Chỉ Là Bắt Nạt"));
+        getUserHistoryComics();
 
         // Thêm nội dung truyện mới tải lên
-        recentlyUpdatedList.add(new ContentItem(0,R.drawable.truyen1, "Tiểu Thư Bé Bỏng Đáng Yêu!"));
-        recentlyUpdatedList.add(new ContentItem(0,R.drawable.truyen2, "Tinh Tú Kiếm Sĩ"));
-        recentlyUpdatedList.add(new ContentItem(0,R.drawable.truyen3, "Tôi Trở Nên Phi Thường Ngay Cả Ở Thế Giới Thật"));
-        recentlyUpdatedList.add(new ContentItem(0,R.drawable.truyen4, "Không Chỉ Là Bắt Nạt"));
+        getRecentlyUpdatedComics();
 
         // Thiết lập Adapter và LayoutManager cho RecyclerView
         setupRecyclerView(trendingRecyclerView, trendingList);
         setupRecyclerView(historyRecyclerView, historyList);
         setupRecyclerView(recentlyUpdatedRecyclerView, recentlyUpdatedList);
-
     }
 
-    private void setupRecyclerView(RecyclerView recyclerView, List<ContentItem> itemList) {
+    private void getTrendingComics() {
+        FavoritesDB favoritesDB = new FavoritesDB();
+        favoritesDB.getComicsMostFavor(comics -> {
+            trendingList.clear();
+            trendingList.addAll(comics);
+            trendingRecyclerView.getAdapter().notifyDataSetChanged();
+        });
+    }
+
+    private void getUserHistoryComics(){
+        HistoryDB historyDB = new HistoryDB();
+        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        String userId = sharedPreferences.getString("id", "");
+        historyDB.getComicsReadByUser(userId, (history, comics, chapter) -> {
+            historyList.clear();
+            historyList.addAll(comics);
+            historyRecyclerView.getAdapter().notifyDataSetChanged();
+        });
+    }
+
+    private void getRecentlyUpdatedComics(){
+        ComicsDB comicsDB = new ComicsDB();
+        comicsDB.getAllComics(comics ->{
+            recentlyUpdatedList.clear();
+            recentlyUpdatedList.addAll(comics);
+            recentlyUpdatedRecyclerView.getAdapter().notifyDataSetChanged();
+        });
+    }
+
+    private void setupRecyclerView(RecyclerView recyclerView, List<Comic> itemList) {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         ContentAdapter adapter = new ContentAdapter(this, itemList);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-        et_search.clearFocus();
-        return false;
-    }
 }

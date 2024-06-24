@@ -137,11 +137,39 @@
             </androidx.cardview.widget.CardView>
 
             <!-- Các loại truyện -->
-            <!-- Xu hướng -->
+
+            <!-- Mới cập nhật -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:layout_marginTop="10dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:background="@drawable/comic_holder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/updated_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/faustina_bold"
+                    android:text="@string/recently_updated"
+                    android:textColor="@color/pink"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewRecentlyUpdated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"/>
+            </LinearLayout>
+            <!-- Xu hướng -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
                 android:paddingLeft="24dp"
                 android:paddingRight="24dp"
                 android:background="@drawable/comic_holder"
@@ -195,33 +223,7 @@
                     android:scrollbars="none"/>
             </LinearLayout>
 
-            <!-- Mới cập nhật -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:background="@drawable/comic_holder"
-                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/updated_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/faustina_bold"
-                    android:text="@string/recently_updated"
-                    android:textColor="@color/pink"
-                    android:textSize="20sp" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewRecentlyUpdated"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:orientation="horizontal"
-                    android:scrollbars="none"/>
-            </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

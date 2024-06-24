@@ -1,6 +1,7 @@
 package com.example.a4tcomic.activities.admin;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -14,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.adapters.CommentAdapter;
-import com.example.a4tcomic.adapters.ContentAdapter;
 import com.example.a4tcomic.models.CommentItem;
 import com.example.a4tcomic.models.ContentItem;
 
@@ -24,17 +24,7 @@ import java.util.List;
 public class AdminActivity extends AppCompatActivity {
 
     ImageButton btnBack;
-
-    // Phần tài khoản mới tạo và truyện mới cập nhật
-    private RecyclerView accountRecyclerView;
-    private RecyclerView recentlyUpdatedRecyclerView;
-    private List<ContentItem> accountList;
-    private List<ContentItem> recentlyUpdatedList;
-
-    // Phần bình luận
-    private ListView commentListView;
-    private CommentAdapter commentAdapter;
-    private List<CommentItem> commentList;
+    Button btnAccount, btnUpdated, btnComment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,41 +37,20 @@ public class AdminActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Ánh xạ
-        accountRecyclerView = findViewById(R.id.recycler_view_account);
-        recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);
-        commentListView = findViewById(R.id.list_view_comment);
         btnBack = findViewById(R.id.btnBack);
+        btnAccount = findViewById(R.id.btnAccount);
+        btnUpdated = findViewById(R.id.btnUpdated);
+        btnComment = findViewById(R.id.btnComment);
 
-        btnBack.setOnClickListener(v -> { finish(); });
-
-        // Tạo custom listView
-        accountList = new ArrayList<>();
-        recentlyUpdatedList = new ArrayList<>();
-
-        // Các tài khoản
-        accountList.add(new ContentItem(1,R.drawable.truyen1, "Trịnh Khắc Tùng"));
-        accountList.add(new ContentItem(1,R.drawable.truyen2, "Luyện Thị Ánh Tuyết"));
-        accountList.add(new ContentItem(1,R.drawable.truyen4, "Nguyễn Tuấn Nghĩa"));
-
-        // Thêm nội dung truyện mới tải lên
-        recentlyUpdatedList.add(new ContentItem(2,R.drawable.truyen1, "Tiểu Thư Bé Bỏng Đáng Yêu!"));
-        recentlyUpdatedList.add(new ContentItem(2,R.drawable.truyen2, "Tinh Tú Kiếm Sĩ"));
-        recentlyUpdatedList.add(new ContentItem(2,R.drawable.truyen3, "Tôi Trở Nên Phi Thường Ngay Cả Ở Thế Giới Thật"));
-        recentlyUpdatedList.add(new ContentItem(2,R.drawable.truyen4, "Không Chỉ Là Bắt Nạt"));
-
-
-        // Thiết lập Adapter và LayoutManager cho RecyclerView
-        setupRecyclerView(accountRecyclerView, accountList);
-        setupRecyclerView(recentlyUpdatedRecyclerView, recentlyUpdatedList);
+        btnBack.setOnClickListener(v -> finish());
 
     }
 
     private void setupRecyclerView(RecyclerView recyclerView, List<ContentItem> itemList) {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        ContentAdapter adapter = new ContentAdapter(this, itemList);
+        //ContentAdapter adapter = new ContentAdapter(this, itemList);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        //recyclerView.setAdapter(adapter);
     }
 
 }
