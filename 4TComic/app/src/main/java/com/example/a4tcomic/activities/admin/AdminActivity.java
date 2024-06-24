@@ -70,16 +70,6 @@ public class AdminActivity extends AppCompatActivity {
         recentlyUpdatedList.add(new ContentItem(2,R.drawable.truyen3, "Tôi Trở Nên Phi Thường Ngay Cả Ở Thế Giới Thật"));
         recentlyUpdatedList.add(new ContentItem(2,R.drawable.truyen4, "Không Chỉ Là Bắt Nạt"));
 
-        // Bình luận
-        commentList = new ArrayList<>();
-        commentList.add(new CommentItem(R.drawable.truyen1, "Tiểu Thư Bé Bỏng Đáng Yêu!", "Tùng", "Ôi cô công chúa xinh quá. Ước gì mình cũng có cô con gái như vậy", "29 phút"));
-        commentList.add(new CommentItem(R.drawable.truyen2, "Tinh Tú Kiếm Sĩ", "Tùng", "Lại thể loại truyện hack như mấy bộ ăn liền khác. Đọc chán thật đấy", "44 phút"));
-        commentList.add(new CommentItem(R.drawable.truyen3, "Tôi Trở Nên Phi Thường Ngay Cả Ở Thế Giới Thật", "Tùng", "Lại mì ăn liền à", "52 phút"));
-
-
-        // Thiết lập Adapter và LayoutManager cho RecyclerView
-        commentAdapter = new CommentAdapter(this, R.layout.item_comment, commentList);
-        commentListView.setAdapter(commentAdapter);
 
         // Thiết lập Adapter và LayoutManager cho RecyclerView
         setupRecyclerView(accountRecyclerView, accountList);

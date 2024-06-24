@@ -5,9 +5,9 @@ public class Comment {
     private String body;
     private String comic_id;
     private String user_id;
-    private int created_at;
+    private long created_at;
 
-    public Comment(String id, String body, String comic_id, String user_id, int created_at) {
+    public Comment(String id, String body, String comic_id, String user_id, long created_at) {
         this.id = id;
         this.body = body;
         this.comic_id = comic_id;
@@ -15,6 +15,7 @@ public class Comment {
         this.created_at = created_at;
     }
 
+    // Default constructor for Firebase
     public Comment() {
         this("", "", "", "", 0);
     }
@@ -51,11 +52,11 @@ public class Comment {
         this.user_id = user_id;
     }
 
-    public int getCreated_at() {
+    public long getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(int created_at) {
+    public void setCreated_at(long created_at) {
         this.created_at = created_at;
     }
 }

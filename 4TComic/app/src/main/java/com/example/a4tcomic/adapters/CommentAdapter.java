@@ -5,68 +5,65 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.a4tcomic.R;
-import com.example.a4tcomic.models.CommentItem;
+import com.example.a4tcomic.models.Comment;
+import com.example.a4tcomic.utilities.UserUtil;
 
 import java.util.List;
 
-public class CommentAdapter extends ArrayAdapter<CommentItem> {
-    private Context context;
-    private int resource;
-    private List<CommentItem> commentList;
+public class CommentAdapter extends ArrayAdapter<Comment> {
 
-    public CommentAdapter(Context context, int resource, List<CommentItem> commentList) {
-        super(context, resource, commentList);
-        this.context = context;
-        this.resource = resource;
-        this.commentList = commentList;
+    private Context mContext;
+    private int mResource;
+
+    public CommentAdapter(@NonNull Context context, int resource, @NonNull List<Comment> objects) {
+        super(context, resource, objects);
+        mContext = context;
+        mResource = resource;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view = convertView;
-        if (view == null) {
-            LayoutInflater inflater = LayoutInflater.from(context);
-            view = inflater.inflate(resource, parent, false);
+        View listItem = convertView;
+        if (listItem == null) {
+            listItem = LayoutInflater.from(mContext).inflate(mResource, parent, false);
         }
 
-        CommentItem commentItem = commentList.get(position);
+        Comment comment = getItem(position);
 
-        ImageView commentImage = view.findViewById(R.id.imgCommentComic);
-        TextView commentTitle = view.findViewById(R.id.lblComicTitle);
-        TextView commentUser = view.findViewById(R.id.lblCommentUser);
-        TextView commentContent = view.findViewById(R.id.lblCommentContent);
-        TextView commentTime = view.findViewById(R.id.lblCommentTime);
+        TextView textViewContent = listItem.findViewById(R.id.tvContentComment);
+        textViewContent.setText(comment.getBody());
 
-        commentImage.setImageResource(commentItem.getImageResource());
-        commentTitle.setText(shortenTitle(commentItem.getTitle()));
-        commentUser.setText(commentItem.getUser());
-        commentContent.setText(shortenContent(commentItem.getContent()));
-        commentTime.setText(commentItem.getTime());
+        TextView tvNameUser = listItem.findViewById(R.id.tvNameUser);
+        tvNameUser.setTag(comment.getUser_id()); // Assuming user_id is a String
 
-        return view;
-    }
+        // Initially set a placeholder text
+        tvNameUser.setText("Loading...");
 
-    private String shortenContent(String content) {
-        if (content.length() > 70) {
-            return content.substring(0, 70) + "...";
-        } else {
-            return content;
-        }
-    }
+        // Fetch username asynchronously
+        UserUtil.fetchUsername(comment.getUser_id(), new UserUtil.OnUserFetchListener() {
+            @Override
+            public void onUserFetched(String username) {
+                // Check if the listItem is still associated with the correct user_id
+                Object tag = tvNameUser.getTag();
+                if (tag instanceof String && tag.equals(comment.getUser_id())) {
+                    tvNameUser.setText(username);
+                }
+            }
 
-    private String shortenTitle(String title) {
-        if (title.length() > 27) {
-            return title.substring(0, 27) + "...";
-        } else {
-            return title;
-        }
+            @Override
+            public void onUserFetchFailed(String errorMessage) {
+                // Handle fetch failure
+                tvNameUser.setText("Unknown User");
+            }
+        });
+
+        return listItem;
     }
 }
