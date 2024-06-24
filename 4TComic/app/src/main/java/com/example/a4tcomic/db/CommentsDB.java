@@ -37,6 +37,8 @@ public class CommentsDB {
                             Comment comment = commentSnapshot.getValue(Comment.class);
                             comments.add(comment);
                         }
+                        comments.sort((o1, o2) -> Integer.compare(o2.getCreated_at(), o1.getCreated_at()));
+
                         callback.onCommentsLoaded(comments);
                     }
                     @Override
