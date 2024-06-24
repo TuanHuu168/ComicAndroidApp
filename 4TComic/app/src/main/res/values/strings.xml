@@ -81,6 +81,7 @@
     <string name="content_image">Avatar Image</string>
     <string name="upload_terms_text">I agree to the terms &amp; services when posting a story</string>
     <string name="select_category">Select categories</string>
+    <string name="select_img">Please select both cover and avatar images.</string>
 
     <string name="titleBookcase">Bookshelf</string>
     <string name="History">History</string>

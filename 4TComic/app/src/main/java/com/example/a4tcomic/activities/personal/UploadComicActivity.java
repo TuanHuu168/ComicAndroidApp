@@ -251,7 +251,7 @@ public class UploadComicActivity extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(UploadComicActivity.this, "Failed to upload avatar image.", Toast.LENGTH_SHORT).show();
+
                                 }
                             });
                         }
@@ -260,11 +260,11 @@ public class UploadComicActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(UploadComicActivity.this, "Failed to upload cover image.", Toast.LENGTH_SHORT).show();
+
                 }
             });
         } else {
-            Toast.makeText(this, "Please select both cover and avatar images.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.select_img), Toast.LENGTH_SHORT).show();
         }
     }
 

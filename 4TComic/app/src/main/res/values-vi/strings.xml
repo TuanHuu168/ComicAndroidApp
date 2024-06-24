@@ -81,6 +81,7 @@
     <string name="content_image">Ảnh đại diện</string>
     <string name="upload_terms_text">Tôi đồng ý với các điều khoản &amp; dịch vụ khi đăng truyện</string>
     <string name="select_category">Chọn thể loại</string>
+    <string name="select_img">Vui lòng chọn đầy đủ ảnh của truyện.</string>
 
     <string name="titleBookcase">Tủ sách</string>
     <string name="History">Lịch sử</string>
