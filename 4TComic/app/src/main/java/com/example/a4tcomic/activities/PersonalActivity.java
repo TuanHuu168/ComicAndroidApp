@@ -38,7 +38,6 @@ public class PersonalActivity extends AppCompatActivity {
     private CircleImageView iv_avatar;
 
     private UsersDB usersDB;
-
     private String user_id;
     private User currentUser;
 
@@ -90,14 +89,13 @@ public class PersonalActivity extends AppCompatActivity {
         // Sự kiện
         tv_edit_profile.setOnClickListener(v -> {
             Intent intent = new Intent(this, ProfileActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("currentUser", currentUser);
-            intent.putExtras(bundle);
+            intent.putExtra("currentUser", currentUser);
             startActivity(intent);
         });
 
         btn_account.setOnClickListener(v -> {
             Intent intent = new Intent(this, AccountActivity.class);
+            intent.putExtra("currentUser", currentUser);
             startActivity(intent);
         });
 
@@ -112,6 +110,7 @@ public class PersonalActivity extends AppCompatActivity {
                 return;
             }
             Intent intent = new Intent(this, AdminActivity.class);
+            intent.putExtra("currentUser", currentUser);
             startActivity(intent);
         });
 
@@ -121,36 +120,12 @@ public class PersonalActivity extends AppCompatActivity {
                 return;
             }
             Intent intent = new Intent(this, UploadComicActivity.class);
+            intent.putExtra("user_id", user_id);
             startActivity(intent);
         });
 
         btn_logout.setOnClickListener(v -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.title_dialog_logout);
-            builder.setMessage(R.string.message_logout);
-
-            builder.setPositiveButton(R.string.string_no, (dialog, which) -> {
-                dialog.dismiss();
-            });
-            builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
-                Intent intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            });
-            AlertDialog dialog = builder.create();
-            dialog.show();
-
-            Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
-            Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
-
-            // Dat mau chu va do bong cho cac nut
-            positiveButton.setTextColor(Color.parseColor("#50CAFF"));
-            positiveButton.setTextSize(16.0f);
-            positiveButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
-
-            neutralButton.setTextColor(Color.parseColor("#FFA5BB"));
-            neutralButton.setTextSize(16.0f);
-            neutralButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
+            setDialogLogout();
         });
 
         // nhận dữ liệu
@@ -180,5 +155,34 @@ public class PersonalActivity extends AppCompatActivity {
             Picasso.get().load(currentUser.getAvatar_url()).into(iv_avatar);
         else
             iv_avatar.setImageResource(R.drawable.avatar);
+    }
+
+    private void setDialogLogout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.title_dialog_logout);
+        builder.setMessage(R.string.message_logout);
+
+        builder.setPositiveButton(R.string.string_no, (dialog, which) -> {
+            dialog.dismiss();
+        });
+        builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
+
+        // Dat mau chu va do bong cho cac nut
+        positiveButton.setTextColor(Color.parseColor("#50CAFF"));
+        positiveButton.setTextSize(16.0f);
+        positiveButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
+
+        neutralButton.setTextColor(Color.parseColor("#FFA5BB"));
+        neutralButton.setTextSize(16.0f);
+        neutralButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
     }
 }

@@ -37,12 +37,17 @@
     <string name="nva_name">Nguyen Van A</string>
     <string name="name_user">Unknown</string>
 
+    <string name="change_pass_personal">Change Password</string>
     <string name="email_title">Linked Email:</string>
     <string name="delete_account">Delete Account</string>
     <string name="change_pass">Change Password</string>
     <string name="title_dialog_warning">Warning</string>
     <string name="mes_delete_account">Do you want to delete this account?</string>
     <string name="upload_story_title">Upload Story</string>
+
+    <string name="current_password_title">Current Password</string>
+    <string name="new_password_title">New Password</string>
+    <string name="confirm_new_password_title">Confirm New Password</string>
 
     <string name="register_text">&#160;Register&#160;</string>
     <string name="user_name_text">Username</string>

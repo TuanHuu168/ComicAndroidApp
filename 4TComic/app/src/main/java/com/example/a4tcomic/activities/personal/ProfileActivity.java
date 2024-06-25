@@ -67,8 +67,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnTouchLi
         btn_delete_avatar = findViewById(R.id.btn_delete_avatar);
 
         // get data
-        Bundle bundle = getIntent().getExtras();
-        currentUser = (User) bundle.getSerializable("currentUser");
+        currentUser = (User) getIntent().getSerializableExtra("currentUser");
         odlAvatarUrl = currentUser.getAvatar_url();
 
         // set data
@@ -129,7 +128,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnTouchLi
         // lưu thay đổi user
         btn_save.setOnClickListener(v -> {
            saveUser();
-           finish();
         });
 
         // hide keyboard
@@ -137,11 +135,18 @@ public class ProfileActivity extends AppCompatActivity implements View.OnTouchLi
     }
 
     private void saveUser() {
+        if (et_name.getText().toString().equals("")){
+            Toast.makeText(this, "Tên không được để trống", Toast.LENGTH_SHORT).show();
+            return;
+        }
         currentUser.setUsername(et_name.getText().toString());
+
         if (!odlAvatarUrl.equals("") && isDeleteAvatar)
             currentUser.setAvatar_url("");
-        usersDB.updateUser(currentUser, odlAvatarUrl, () ->
-                Toast.makeText(ProfileActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show());
+        usersDB.updateUser(currentUser, odlAvatarUrl, () -> {
+            Toast.makeText(ProfileActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
+            finish();
+        });
     }
 
     @SuppressLint("ClickableViewAccessibility")

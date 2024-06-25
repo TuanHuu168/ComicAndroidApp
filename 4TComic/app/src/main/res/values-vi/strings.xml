@@ -37,12 +37,17 @@
     <string name="nva_name">Nguyễn Văn A</string>
     <string name="name_user">Không xác định</string>
 
+    <string name="change_pass_personal">Đổi mật khẩu</string>
     <string name="email_title">Liên kết email:</string>
     <string name="delete_account">Xóa tài khoản</string>
     <string name="change_pass">Thay đối mật khẩu</string>
     <string name="title_dialog_warning">Cảnh báo</string>
     <string name="mes_delete_account">Bạn có muốn xóa tài khoản này?</string>
     <string name="upload_story_title">Đăng truyện</string>
+
+    <string name="current_password_title">Mật khẩu hiện tại</string>
+    <string name="new_password_title">Mật khẩu mới</string>
+    <string name="confirm_new_password_title">Xác nhận mật khẩu mới</string>
 
     <string name="register_text">&#160;Đăng Ký&#160;</string>
     <string name="user_name_text">Tên đăng nhập</string>

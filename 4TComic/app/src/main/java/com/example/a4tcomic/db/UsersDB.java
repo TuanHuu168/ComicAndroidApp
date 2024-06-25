@@ -125,10 +125,4 @@ public class UsersDB {
         mUsersRef.child(userId).child("password").setValue("");
     }
 
-    public DatabaseReference getUsersRef() {
-        return mUsersRef;
-    }
-    public StorageReference getStorageRef() {
-        return mStorageRef;
-    }
 }
