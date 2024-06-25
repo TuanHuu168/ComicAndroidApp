@@ -12,10 +12,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.activities.ListComicActivity;
 
 public class FindByCategoryActivity extends AppCompatActivity {
 
     private TextView tv_writer, tv_category, tv_advanced;
+    private ImageButton btnSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class FindByCategoryActivity extends AppCompatActivity {
         tv_writer = findViewById(R.id.tv_writer);
         tv_category = findViewById(R.id.tv_category);
         tv_advanced = findViewById(R.id.tv_advanced);
+        btnSearch = findViewById(R.id.btnSearch);
 
         tv_writer.setOnClickListener(v -> {
             Intent intent = new Intent(this, FindByWriterActivity.class);
@@ -46,5 +49,11 @@ public class FindByCategoryActivity extends AppCompatActivity {
 
         ImageButton btn_back = findViewById(R.id.btn_back);
         btn_back.setOnClickListener(v -> finish());
+
+        btnSearch.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ListComicActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 }

@@ -1,26 +1,19 @@
 package com.example.a4tcomic.models;
 
 public class CommentItem {
-    private int imageResource;
-    private String title;
+    private  String comic;
     private String user;
     private String content;
-    private String time;
+    private Long time;
 
-    public CommentItem(int imageResource, String title, String user, String content, String time) {
-        this.imageResource = imageResource;
-        this.title = title;
+    public CommentItem(String comic, String user, String content, Long time) {
         this.user = user;
         this.content = content;
         this.time = time;
     }
 
-    public int getImageResource() {
-        return imageResource;
-    }
-
-    public String getTitle() {
-        return title;
+    public String getComic() {
+        return comic;
     }
 
     public String getUser() {
@@ -31,7 +24,7 @@ public class CommentItem {
         return content;
     }
 
-    public String getTime() {
+    public Long getTime() {
         return time;
     }
 }
