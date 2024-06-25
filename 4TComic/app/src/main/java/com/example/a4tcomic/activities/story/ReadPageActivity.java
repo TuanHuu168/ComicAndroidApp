@@ -1,6 +1,7 @@
 package com.example.a4tcomic.activities.story;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -31,12 +32,13 @@ import java.util.stream.Collectors;
 
 public class ReadPageActivity extends AppCompatActivity {
 
-    ImageButton btnBack;
+    ImageButton btnBack, btnMusic;
     private ViewPager2 viewPager;
     private ReadingPagerAdapter adapter;
     private List<Integer> pageImages;
     private ImageButton btnSelectChapter, btnPrevious, btnNext;
     private List<String> chapters;
+    Boolean isMusicPlaying = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,14 @@ public class ReadPageActivity extends AppCompatActivity {
 
         btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> finish());
+
+        btnMusic = findViewById(R.id.btnMusic);
+        btnMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleMusic();
+            }
+        });
 
         // Khởi tạo danh sách các trang truyện
         pageImages = new ArrayList<>();
@@ -79,6 +89,18 @@ public class ReadPageActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    private void toggleMusic() {
+        Intent intent = new Intent(ReadPageActivity.this, Music.class);
+        if (isMusicPlaying) {
+            stopService(intent);
+            btnMusic.setImageResource(R.drawable.ic_adjust); // Cập nhật icon cho nút
+        } else {
+            startService(intent);
+            btnMusic.setImageResource(R.drawable.ic_adjust); // Cập nhật icon cho nút
+        }
+        isMusicPlaying = !isMusicPlaying;
     }
 
     private void showDialog() {

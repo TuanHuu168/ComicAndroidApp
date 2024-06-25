@@ -21,7 +21,7 @@ import java.util.List;
 
 public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterViewHolder> {
     private List<Chapter> listChapter;
-    private IClickChapter iClickChapter;
+    private final IClickChapter iClickChapter;
 
     public ChapterAdapter(IClickChapter iClickChapter) {
         this.iClickChapter = iClickChapter;
@@ -52,7 +52,7 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         holder.tv_name_chapter.setText(chapter.getOrder() + ": " + chapter.getTitle());
 
         if (chapter.getCreated_at() > 0)
-            holder.chapterTimeUpdate.setText(" " + convertTime(chapter.getCreated_at()) );
+            holder.chapterTimeUpdate.setText("" + convertTime(chapter.getCreated_at()));
 
         holder.cardView.setOnClickListener(v -> {
             iClickChapter.onClickChapter(chapter.getPdf_url()+"");
