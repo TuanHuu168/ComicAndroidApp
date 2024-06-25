@@ -33,17 +33,17 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        tools:listitem="@layout/item_notification"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerNotification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear_header" />
+        app:layout_constraintTop_toBottomOf="@+id/linear_header">
+    </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:id="@+id/bottomNav"

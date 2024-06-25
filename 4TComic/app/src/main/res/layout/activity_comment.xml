@@ -116,10 +116,13 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/lvComment"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_comment_2" />
+        android:id="@+id/recyclerComment"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
