@@ -44,7 +44,7 @@ public class ComicsDB {
                     Comic comic = comicSnapshot.getValue(Comic.class);
                     comics.add(comic);
                 }
-                comics.sort((o1, o2) -> Integer.compare(o2.getCreated_at(), o1.getCreated_at()));
+                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
                 callback.onAllComicsLoaded(comics);
             }
             @Override

@@ -10,13 +10,13 @@ public class Comic {
     private String author_id;
     private String description;
     private String user_id;
-    private int created_at;
+    private long created_at;
 
     public Comic() {
         this("", "", "", "", "", "", "", 0);
     }
 
-    public Comic(String id, String title, String img_url, String banner_url, String author_id, String description, String user_id, int created_at) {
+    public Comic(String id, String title, String img_url, String banner_url, String author_id, String description, String user_id, long created_at) {
         this.id = id;
         this.title = title;
         this.img_url = img_url;
@@ -83,11 +83,11 @@ public class Comic {
         this.user_id = user_id;
     }
 
-    public int getCreated_at() {
+    public long getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(int created_at) {
+    public void setCreated_at(long created_at) {
         this.created_at = created_at;
     }
 }
