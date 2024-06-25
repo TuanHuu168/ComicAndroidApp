@@ -72,13 +72,19 @@ public class ComicsDB {
                 });
     }
 
-    // tim truyện theo id
-    public void getComicById(String comic_id, final ComicCallback callback) {
-        mComicsRef.child(comic_id).addValueEventListener(new ValueEventListener() {
+    public void getComicsByAuthor(String author_id, final AllComicsCallback callback) {
+        mComicsRef.orderByChild("author_id")
+                .equalTo(author_id)
+                .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Comic comic = snapshot.getValue(Comic.class);
-                        callback.onComicLoaded(comic);
+                        List<Comic> comics = new ArrayList<>();
+                        for (DataSnapshot comicSnapshot : snapshot.getChildren()) {
+                            Comic comic = comicSnapshot.getValue(Comic.class);
+                            comics.add(comic);
+                        }
+                        comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                        callback.onAllComicsLoaded(comics);
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) { }

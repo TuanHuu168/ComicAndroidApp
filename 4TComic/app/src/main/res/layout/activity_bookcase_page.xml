@@ -45,14 +45,18 @@
         android:id="@+id/mytabhost"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+<<<<<<< HEAD
         android:theme="@style/tabColor"
 
+=======
+>>>>>>> Thang
         android:layout_weight="1">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+<<<<<<< HEAD
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,6 +72,13 @@
                     android:layout_height="50dp" />
             </androidx.cardview.widget.CardView>
 
+=======
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+>>>>>>> Thang
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"

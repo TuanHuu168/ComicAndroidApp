@@ -15,7 +15,6 @@ public class Comment {
         this.created_at = created_at;
     }
 
-    // Default constructor for Firebase
     public Comment() {
         this("", "", "", "", 0);
     }

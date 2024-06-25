@@ -90,9 +90,14 @@
             android:fontFamily="@font/faustina"
             android:text="@string/all"
             android:textAllCaps="false"
+<<<<<<< HEAD
             android:textColor="@color/black"
             android:textSize="16dp"
             app:cornerRadius="20dp" />
+=======
+            android:textSize="16dp"
+            android:textColor="@color/black" />
+>>>>>>> Thang
 
         <Button
             android:id="@+id/btnDelete"
@@ -103,8 +108,13 @@
             android:backgroundTint="@color/blue_main"
             android:fontFamily="@font/faustina"
             android:text="@string/remove"
+<<<<<<< HEAD
             android:textColor="@color/black"
             android:textSize="16dp"
             app:cornerRadius="20dp" />
+=======
+            android:textSize="16dp"
+            android:textColor="@color/black" />
+>>>>>>> Thang
     </LinearLayout>
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.a4tcomic.models;
 
-public class Chapter {
+import java.io.Serializable;
+
+public class Chapter implements Serializable {
     private String id;
     private String title;
     private String img_url;

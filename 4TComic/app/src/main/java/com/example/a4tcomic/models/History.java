@@ -4,9 +4,9 @@ public class History {
     private String id;
     private String user_id;
     private String chapter_id;
-    private int last_date;
+    private long last_date;
 
-    public History(String id, String user_id, String chapter_id, int last_date) {
+    public History(String id, String user_id, String chapter_id, long last_date) {
         this.id = id;
         this.user_id = user_id;
         this.chapter_id = chapter_id;
