@@ -167,18 +167,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="ABO"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -188,18 +180,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="E-Sport"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -209,18 +193,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="Hoạt hình"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -237,18 +213,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="Manhua"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -258,18 +226,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="Manga"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -279,18 +239,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="Trọng sinh"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -307,18 +259,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="Tình cảm"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -328,18 +272,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="Xuyên không"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -349,18 +285,10 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-<<<<<<< HEAD
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
                 android:padding="0dp"
-=======
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFB3C6"
->>>>>>> Thang
                 android:text="Tu tiên"
                 android:textSize="12sp"
                 app:cornerRadius="10dp" />
@@ -390,17 +318,11 @@
                 android:paddingTop="6dp">
 
                 <LinearLayout
-<<<<<<< HEAD
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_gravity="bottom|center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-=======
-                    android:layout_width="390dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="bottom|center"
->>>>>>> Thang
                     android:background="@drawable/white_box"
                     android:orientation="vertical">
 
@@ -466,17 +388,11 @@
                 android:paddingTop="6dp">
 
                 <LinearLayout
-<<<<<<< HEAD
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_gravity="bottom|center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-=======
-                    android:layout_width="390dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="bottom|center"
->>>>>>> Thang
                     android:background="@drawable/white_box"
                     android:orientation="vertical">
 

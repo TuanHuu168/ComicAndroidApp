@@ -41,11 +41,11 @@ public class History {
         this.chapter_id = chapter_id;
     }
 
-    public int getLast_date() {
+    public long getLast_date() {
         return last_date;
     }
 
-    public void setLast_date(int last_date) {
+    public void setLast_date(long last_date) {
         this.last_date = last_date;
     }
 }

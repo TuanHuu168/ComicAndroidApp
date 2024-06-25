@@ -115,11 +115,7 @@
             android:paddingBottom="10dp">
 
             <EditText
-<<<<<<< HEAD
                 android:id="@+id/edtSearch"
-=======
-                android:id="@+id/editSearch"
->>>>>>> Thang
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -320,7 +316,6 @@
                 android:layout_gravity="center"
                 android:background="@drawable/b_box_items"
                 android:orientation="vertical"
-<<<<<<< HEAD
                 android:paddingLeft="5dp"
                 android:paddingTop="6dp"
                 android:paddingRight="5dp">
@@ -331,14 +326,7 @@
                     android:layout_gravity="bottom|center"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-=======
-                android:paddingTop="6dp">
 
-                <LinearLayout
-                    android:layout_width="390dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="bottom|center"
->>>>>>> Thang
                     android:background="@drawable/white_box"
                     android:orientation="vertical">
 
@@ -404,17 +392,11 @@
                 android:paddingTop="6dp">
 
                 <LinearLayout
-<<<<<<< HEAD
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_gravity="bottom|center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-=======
-                    android:layout_width="390dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="bottom|center"
->>>>>>> Thang
                     android:background="@drawable/white_box"
                     android:orientation="vertical">
 

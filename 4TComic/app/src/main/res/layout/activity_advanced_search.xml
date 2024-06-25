@@ -158,12 +158,9 @@
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/box_group_tran"
-<<<<<<< HEAD
         android:dividerHeight="0dp"
         android:divider="@android:color/transparent"
         android:scrollbars="none"
-=======
->>>>>>> Thang
         tools:listitem="@layout/item_translation_group" />
 
 </RelativeLayout>

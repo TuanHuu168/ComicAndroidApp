@@ -62,16 +62,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-<<<<<<< HEAD
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_toEndOf="@id/tv_name"
-            android:paddingTop="5dp"
-            android:src="@drawable/ic_edit_pink"
-            tools:ignore="ContentDescription,ImageContrastCheck" />
-=======
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
@@ -90,7 +80,6 @@
                 android:src="@drawable/ic_edit_pink"
                 tools:ignore="ContentDescription,ImageContrastCheck" />
         </LinearLayout>
->>>>>>> Thang
 
         <EditText
             android:id="@+id/et_name"

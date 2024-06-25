@@ -112,35 +112,20 @@
 
                     <TextView
                         android:id="@+id/btn_favorite"
-<<<<<<< HEAD
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignStart="@+id/tv_name_story"
-                        android:layout_alignParentBottom="true"
-                        android:backgroundTint="@color/pink_main"
-=======
                         android:layout_width="130dp"
                         android:layout_height="40dp"
                         android:layout_alignStart="@+id/tv_name_story"
                         android:layout_alignParentBottom="true"
-                        android:paddingEnd="14dp"
-                        android:paddingStart="12dp"
                         android:background="@drawable/background_btn_favorite"
->>>>>>> Thang
                         android:drawableLeft="@drawable/favorite_white"
                         android:gravity="center"
                         android:paddingStart="12dp"
                         android:paddingEnd="14dp"
                         android:text="@string/btn_favorite"
-
                         android:textColor="@android:color/white"
-<<<<<<< HEAD
                         android:textStyle="bold"
                         app:cornerRadius="20dp" />
-=======
-                        android:gravity="center"
-                        android:textStyle="bold"/>
->>>>>>> Thang
+                        android:gravity="center"/>
 
                 </RelativeLayout>
 
@@ -234,12 +219,8 @@
             android:text="@string/btn_new"
             android:textColor="@color/pink_main"
             android:textStyle="bold"
-<<<<<<< HEAD
             app:cornerRadius="20dp" />
-=======
 
-            />
->>>>>>> Thang
 
         <Button
             android:id="@+id/btn_cmt"
@@ -250,12 +231,8 @@
             android:text="@string/btn_cmt"
             android:textColor="@color/pink_main"
             android:textStyle="bold"
-<<<<<<< HEAD
-            app:cornerRadius="20dp" />
-=======
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"/>
->>>>>>> Thang
 
         <Button
             android:id="@+id/btn_first_chapter"

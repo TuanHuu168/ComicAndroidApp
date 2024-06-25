@@ -24,6 +24,9 @@
             android:name=".activities.personal.HomeUploadActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.personal.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.personal.UploadComicActivity"
             android:exported="false" />
         <activity

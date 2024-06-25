@@ -52,6 +52,19 @@ public class ComicsDB {
         });
     }
 
+    // lấy truyện theo id
+    public void getComicById(String comic_id, final ComicCallback callback) {
+        mComicsRef.child(comic_id).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Comic comic = snapshot.getValue(Comic.class);
+                        callback.onComicLoaded(comic);
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) { }
+                });
+    }
+
     // lấy truyện theo user_id người đăng
     public void getComicByUserId(String user_id, final AllComicsCallback callback) {
         mComicsRef.orderByChild("user_id")
