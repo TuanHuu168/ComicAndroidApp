@@ -49,7 +49,8 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ContentV
             public void onClick(View v) {
                 // Xử lý sự kiện nhấn vào đây
                 Intent intent = new Intent(context, StoryDetailActivity.class);
-                intent.putExtra("comic_id", comic.getId()); // Truyền thêm ID của truyện để hiển thị chi tiết
+                //intent.putExtra("comic_id", comic.getId()); // Truyền thêm ID của truyện để hiển thị chi tiết
+                intent.putExtra("comic", comic);
                 context.startActivity(intent);
             }
         });

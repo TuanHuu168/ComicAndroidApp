@@ -2,7 +2,9 @@ package com.example.a4tcomic.models;
 
 //import com.google.type.DateTime;
 
-public class Comic {
+import java.io.Serializable;
+
+public class Comic implements Serializable {
     private String id;
     private String title;
     private String img_url;

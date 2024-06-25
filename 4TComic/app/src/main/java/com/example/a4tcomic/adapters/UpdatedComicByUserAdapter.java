@@ -18,15 +18,18 @@ import com.example.a4tcomic.db.AuthorsDB;
 import com.example.a4tcomic.models.Author;
 import com.example.a4tcomic.models.Comic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UpdatedComicByUserAdapter extends RecyclerView.Adapter<UpdatedComicByUserAdapter.UpdatedComicViewHolder> {
     private Context context;
     private List<Comic> comicList;
+    private List<Comic> comicListFull;
 
     public UpdatedComicByUserAdapter(Context context, List<Comic> comicList) {
         this.context = context;
         this.comicList = comicList;
+        this.comicListFull = new ArrayList<>(comicList);
     }
 
     @NonNull
@@ -47,7 +50,6 @@ public class UpdatedComicByUserAdapter extends RecyclerView.Adapter<UpdatedComic
         });
         holder.lblCommentContent.setText(comic.getDescription());
 
-        // Convert created_at from milliseconds to formatted date
         holder.lblCommentTime.setText(new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new java.util.Date(comic.getCreated_at())));
 
         Glide.with(context)
@@ -68,6 +70,15 @@ public class UpdatedComicByUserAdapter extends RecyclerView.Adapter<UpdatedComic
         return comicList.size();
     }
 
+    public List<Comic> getComicList() {
+        return comicListFull;
+    }
+
+    public void filterAdapter(List<Comic> filteredList) {
+        comicList = filteredList;
+        notifyDataSetChanged();
+    }
+
     public static class UpdatedComicViewHolder extends RecyclerView.ViewHolder {
         ImageView imgCommentComic;
         TextView lblComicTitle, lblCommentUser, lblCommentContent, lblCommentTime;
@@ -84,6 +95,7 @@ public class UpdatedComicByUserAdapter extends RecyclerView.Adapter<UpdatedComic
 
     public void updateComics(List<Comic> newComics) {
         this.comicList = newComics;
+        this.comicListFull = new ArrayList<>(newComics);
         notifyDataSetChanged();
     }
 }
