@@ -142,4 +142,24 @@ public class ComicsDB {
             public void onCancelled(@NonNull DatabaseError error) { }
         });
     }
+
+    // lấy truyện theo genre_id
+    public void getComicsByGenreId(String genre_id, final AllComicsCallback callback) {
+        mComicsRef.orderByChild("genre_id").equalTo(genre_id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Comic> comics = new ArrayList<>();
+                for (DataSnapshot comicSnapshot : snapshot.getChildren()) {
+                    Comic comic = comicSnapshot.getValue(Comic.class);
+                    comics.add(comic);
+                }
+                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                callback.onAllComicsLoaded(comics);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
 }

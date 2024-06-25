@@ -60,7 +60,6 @@ public class HomePageActivity extends AppCompatActivity{
         });
 
         // Ánh xạ
-        et_search = findViewById(R.id.et_search);
         trendingRecyclerView = findViewById(R.id.recyclerViewTrending);
         historyRecyclerView = findViewById(R.id.recyclerViewHistory);
         recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);

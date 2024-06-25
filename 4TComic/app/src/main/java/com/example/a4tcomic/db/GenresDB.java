@@ -2,6 +2,7 @@ package com.example.a4tcomic.db;
 
 import androidx.annotation.NonNull;
 
+import com.example.a4tcomic.models.Comic;
 import com.example.a4tcomic.models.Genre;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -118,6 +119,35 @@ public class GenresDB {
             }
         });
     }
+
+    public void getComicsByGenreId(String genreId, final ComicsDB.AllComicsCallback callback) {
+        mComicGenreRef.orderByChild("genre_id")
+                .equalTo(genreId)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            List<Comic> comics = new ArrayList<>();
+                            ComicsDB comicsDB = new ComicsDB();
+                            for (DataSnapshot comicSnapshot : snapshot.getChildren()) {
+                                String comicId = comicSnapshot.child("comic_id").getValue(String.class);
+                                comicsDB.getComicById(comicId, comic -> {
+                                    comics.add(comic);
+                                    comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                                    callback.onAllComicsLoaded(comics);
+                                });
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+    }
+
 
     public DatabaseReference getGenresRef() {
         return mGenresRef;

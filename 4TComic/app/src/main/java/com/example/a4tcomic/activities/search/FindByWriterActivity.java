@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a4tcomic.R;
-import com.example.a4tcomic.activities.ListComicActivity;
 import com.example.a4tcomic.db.AuthorsDB;
 
 public class FindByWriterActivity extends AppCompatActivity {

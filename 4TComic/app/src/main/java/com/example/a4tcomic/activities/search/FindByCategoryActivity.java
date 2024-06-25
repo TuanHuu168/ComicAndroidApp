@@ -14,7 +14,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
-import com.example.a4tcomic.activities.ListComicActivity;
 import com.example.a4tcomic.db.GenresDB;
 
 public class FindByCategoryActivity extends AppCompatActivity {

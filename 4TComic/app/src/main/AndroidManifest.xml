@@ -15,7 +15,7 @@
         android:theme="@style/Theme._4TComic"
         tools:targetApi="31">
         <activity
-            android:name=".activities.ListComicActivity"
+            android:name=".activities.search.ListComicActivity"
             android:exported="false" />
         <activity
             android:name=".activities.personal.UploadChapterActivity"
