@@ -10,15 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.models.Genre;
 
 import java.util.List;
 
 public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.GenreViewHolder> {
 
-    private List<String> genreList;
+    private List<Genre> genreList;
 
     @SuppressLint("NotifyDataSetChanged")
-    public void setData(List<String> genreList) {
+    public void setData(List<Genre> genreList) {
         this.genreList = genreList;
         notifyDataSetChanged();
     }
@@ -32,7 +33,7 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.GenreViewHol
 
     @Override
     public void onBindViewHolder(@NonNull GenreViewHolder holder, int position) {
-        holder.tv_genre.setText(genreList.get(position));
+        holder.tv_genre.setText(genreList.get(position).getTitle());
     }
 
     @Override

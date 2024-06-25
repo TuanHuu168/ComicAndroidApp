@@ -3,12 +3,15 @@ package com.example.a4tcomic.activities.story;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -21,22 +24,45 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.adapters.ChapterAdapter;
 import com.example.a4tcomic.adapters.GenreAdapter;
+import com.example.a4tcomic.app_interface.IClickChapter;
+import com.example.a4tcomic.db.AuthorsDB;
+import com.example.a4tcomic.db.ChaptersDB;
+import com.example.a4tcomic.db.ComicsDB;
+import com.example.a4tcomic.db.FavoritesDB;
+import com.example.a4tcomic.db.GenresDB;
+import com.example.a4tcomic.models.Author;
 import com.example.a4tcomic.models.Chapter;
+import com.example.a4tcomic.models.Comic;
+import com.example.a4tcomic.models.Genre;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StoryDetailActivity extends AppCompatActivity {
 
-    private Button btn_favorite, btn_first_chapter, btn_cmt, btn_last_chapter;
+    private Button btn_first_chapter, btn_cmt, btn_last_chapter;
     private ImageView img_banner, img_title;
-    private TextView des_tv;
+    private TextView tv_name, tv_author, des_tv, btn_favorite;
+
     private RecyclerView rcv_genres, rcv_chapters;
     private GenreAdapter genreAdapter;
     private ChapterAdapter chapterAdapter;
 
+    private ComicsDB comicsDB;
+    private AuthorsDB authorsDB;
+    private FavoritesDB favoritesDB;
+    private GenresDB genresDB;
+    private ChaptersDB chaptersDB;
+
+    private Comic currentComic;
+    private String user_id = "";
+    private String comic_id = "";
+    private String id_favorite = "";
     private boolean isExpanded = false;
     private boolean isFavorite = false;
+    private List<Genre> genres;
+    private List<Chapter> chapters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +76,8 @@ public class StoryDetailActivity extends AppCompatActivity {
         });
 
         // Tham chiếu đến các View
+        tv_name = findViewById(R.id.tv_name_story);
+        tv_author = findViewById(R.id.tv_author_story);
         img_banner = findViewById(R.id.img_banner);
         img_title = findViewById(R.id.img_title);
         btn_favorite = findViewById(R.id.btn_favorite);
@@ -64,102 +92,212 @@ public class StoryDetailActivity extends AppCompatActivity {
         ImageButton btn_back = findViewById(R.id.btn_back);
         btn_back.setOnClickListener(v -> finish());
 
-        // Banner
-        img_banner.setImageResource(R.drawable.banner);
-
-        // Title
-        img_title.setImageResource(R.drawable.img_title);
-
-        // Yêu thích
-        btn_favorite.setOnClickListener(v -> {
-            if (!isFavorite) {
-                btn_favorite.setText(R.string.btn_favorited);
-                btn_favorite.setBackgroundColor(ContextCompat.getColor(this,R.color.white));
-                btn_favorite.setTextColor(ContextCompat.getColor(this,R.color.pink_main));
-                btn_favorite.setCompoundDrawablesWithIntrinsicBounds(R.drawable.favorited, 0, 0, 0);
-                isFavorite = true;
-            } else {
-                btn_favorite.setText(R.string.btn_favorite);
-                btn_favorite.setBackgroundColor(ContextCompat.getColor(this,R.color.pink_main));
-                btn_favorite.setTextColor(ContextCompat.getColor(this,R.color.white));
-                btn_favorite.setCompoundDrawablesWithIntrinsicBounds(R.drawable.favorite_white, 0, 0, 0);
-                isFavorite = false;
-            }
-        });
-
         // Thể loại
+        genres = new ArrayList<>();
         genreAdapter = new GenreAdapter();
         GridLayoutManager gLM = new GridLayoutManager(this, 3);
         rcv_genres.setLayoutManager(gLM);
-        rcv_genres.setFocusable(false);
-        rcv_genres.setNestedScrollingEnabled(false);
-        genreAdapter.setData(getGenres());
-        rcv_genres.setAdapter(genreAdapter);
-
-        // Nội dung
-        String description = "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
-                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
-                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
-                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
-                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
-                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" +
-                "One Piece xoay quanh 1 nhóm cướp biển được gọi là Băng Hải tặc Mũ Rơm " +
-                "- Straw Hat Pirates - được thành lập và lãnh đạo bởi thuyền trưởng Monkey D. Luffy. Cậu" ;
-        des_tv.setText(description);
-        des_tv.setOnClickListener(v -> {
-            if (!isExpanded) {
-                des_tv.setMaxLines(Integer.MAX_VALUE);
-                des_tv.setEllipsize(null);
-                des_tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.up);
-                isExpanded = true;
-            } else {
-                des_tv.setMaxLines(3);
-                des_tv.setEllipsize(TextUtils.TruncateAt.END);
-                des_tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.down);
-                isExpanded = false;
-            }
-        });
 
         // Chương
-        chapterAdapter = new ChapterAdapter(this);
+        chapters = new ArrayList<>();
+        chapterAdapter = new ChapterAdapter(pdfUrl -> onChapterClick(pdfUrl+""));
         LinearLayoutManager lLM = new LinearLayoutManager(this);
         rcv_chapters.setLayoutManager(lLM);
-        rcv_chapters.setFocusable(false); // Không cho focus vào RecyclerView
-        rcv_chapters.setNestedScrollingEnabled(false);
-        chapterAdapter.setData(getChapters());
-        rcv_chapters.setAdapter(chapterAdapter);
 
+        // get data
+        comicsDB = new ComicsDB();
+        authorsDB = new AuthorsDB();
+        favoritesDB = new FavoritesDB();
+        genresDB = new GenresDB();
+        chaptersDB = new ChaptersDB();
+
+        user_id = "admin001";
+        comic_id = "comic001";
+        getComic();
+
+        // Yêu thích
+        btn_favorite.setOnClickListener(v -> {
+            setFavorite();
+            setFavoriteBtn();
+        });
+
+        // Mô tả
+        des_tv.setOnClickListener(v -> {
+            setExpanded();
+        });
+
+        // Button bottom
         btn_last_chapter.setOnClickListener(v -> {
-            Intent intent = new Intent(this, activity_read_page.class);
+            Chapter lastChapter = chapters.isEmpty() ? null : chapters.get(0);
+//            if (lastChapter == null) {
+                Toast.makeText(this, "Truyện không có chương nào" + lastChapter.getPdf_url(), Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            Intent intent = new Intent(this, ReadPageActivity.class);
+//            intent.putExtra("chapter", lastChapter.getPdf_url());
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable("chapters", (ArrayList<Chapter>) chapters);
+//            intent.putExtras(bundle);
+//            startActivity(intent);
+        });
+
+        btn_first_chapter.setOnClickListener(v -> {
+            Chapter firstChapter = chapters.isEmpty() ? null : chapters.get(chapters.size() - 1);
+//            if (firstChapter == null) {
+                Toast.makeText(this, "Truyện không có chương nào" + firstChapter.getPdf_url(), Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            Intent intent = new Intent(this, ReadPageActivity.class);
+//            intent.putExtra("chapter", firstChapter.getPdf_url());
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable("chapters", (ArrayList<Chapter>) chapters);
+//            intent.putExtras(bundle);
+//            startActivity(intent);
+        });
+
+        btn_cmt.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CommentActivity.class);
+            intent.putExtra("comic_id", comic_id);
             startActivity(intent);
+        });
+
+    }
+
+    private void getComic() {
+        comicsDB.getComicById(comic_id, comic -> {
+            if (comic != null) {
+                currentComic = comic;
+                setupUI();
+            }
         });
     }
 
-    private List<String> getGenres() {
-        List<String> genres = new ArrayList<>();
-
-        genres.add("Hành động");
-        genres.add("Phiêu lưu");
-        genres.add("Shounen");
-        genres.add("Hài hước");
-        genres.add("Drama");
-
-        return genres;
+    private void setupUI() {
+        // Banner
+        if (!currentComic.getBanner_url().equals("")) {
+            Picasso.get().load(currentComic.getBanner_url()).into(img_banner);
+        }
+        // Img title
+        if (!currentComic.getImg_url().equals("")) {
+            Picasso.get().load(currentComic.getImg_url()).into(img_title);
+        }
+        // Name
+        tv_name.setText(currentComic.getTitle());
+        // Author
+        authorsDB.getAuthor(
+                currentComic.getAuthor_id(),
+                new_author -> tv_author.setText(new_author.getName()));
+        // Favorite
+        getFavorite();
+        // Thể loại
+        getGenres();
+        // Description
+        des_tv.setText(currentComic.getDescription());
+        // Chương
+        getChapters();
     }
 
-    private List<Chapter> getChapters() {
-        List<Chapter> chapters = new ArrayList<>();
+    private void getFavorite() {
+        favoritesDB.getFavorite(user_id, comic_id, id -> {
+            if (!id.equals("")) {
+                id_favorite = id;
+                isFavorite = true;
+                setFavoriteBtn();
+            }
+            else {
+                isFavorite = false;
+                setFavoriteBtn();
+            }
+        });
+    }
 
-        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
+    private void setFavoriteBtn() {
+        if (isFavorite) {
+            btn_favorite.setText(R.string.btn_favorited);
+            btn_favorite.setSelected(true);
+            btn_favorite.setTextColor(ContextCompat.getColor(this,R.color.pink_main));
+            btn_favorite.setCompoundDrawablesWithIntrinsicBounds(R.drawable.favorited, 0, 0, 0);
 
-        chapters.add(new Chapter(R.drawable.chapter_1, "Chapter 1", "21/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_2, "Chapter 2", "22/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_3, "Chapter 3", "23/2/2003"));
-        chapters.add(new Chapter(R.drawable.chapter_4, "Chapter 4", "24/2/2003"));
+        } else {
+            btn_favorite.setText(R.string.btn_favorite);
+            btn_favorite.setTextColor(ContextCompat.getColor(this,R.color.white));
+            btn_favorite.setSelected(false);
+            btn_favorite.setCompoundDrawablesWithIntrinsicBounds(R.drawable.favorite_white, 0, 0, 0);
+        }
+    }
 
-        return chapters;
+    private void setFavorite() {
+        long created_at = convertTime();
+        if (isFavorite){
+            favoritesDB.removeFavorite(id_favorite);
+            isFavorite = false;
+        }
+        else {
+            favoritesDB.addFavorite(comic_id, user_id, created_at);
+            isFavorite = true;
+        }
+    }
+
+    // Lấy thời gian hiện tại trên thiết bị di động
+    private long convertTime() {
+        long time = 0;
+        String dateTime = android.text.format.DateFormat.format("yyyy-MM-dd HH:mm:ss", new java.util.Date()).toString();
+        // chuyển từ string sang long
+        if (!TextUtils.isEmpty(dateTime)) {
+            time = Long.parseLong(dateTime.replace("-", "")
+                    .replace(" ", "")
+                    .replace(":", ""));
+        }
+        return time;
+    }
+
+    private void setExpanded() {
+        if (!isExpanded) {
+            des_tv.setMaxLines(Integer.MAX_VALUE);
+            des_tv.setEllipsize(null);
+            des_tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.up);
+            isExpanded = true;
+        } else {
+            des_tv.setMaxLines(3);
+            des_tv.setEllipsize(TextUtils.TruncateAt.END);
+            des_tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.down);
+            isExpanded = false;
+        }
+    }
+
+    private void getGenres() {
+        rcv_genres.setFocusable(false);
+        rcv_genres.setNestedScrollingEnabled(false);
+        genreAdapter.setData(genres);
+        rcv_genres.setAdapter(genreAdapter);
+
+        genresDB.getGenresByComicId(comic_id, genreList -> {
+            genres.clear();
+            genres.addAll(genreList);
+            genreAdapter.notifyDataSetChanged();
+        });
+    }
+
+    private void getChapters() {
+        rcv_chapters.setFocusable(false);
+        rcv_chapters.setNestedScrollingEnabled(false);
+        chapterAdapter.setData(chapters);
+        rcv_chapters.setAdapter(chapterAdapter);
+
+        chaptersDB.getChapters(comic_id, getChapter -> {
+            chapters.clear();
+            chapters.addAll(getChapter);
+            chapterAdapter.notifyDataSetChanged();
+        });
+    }
+
+    private void onChapterClick(String pdfUrl) {
+        Toast.makeText(this, "Đang đọc..." + pdfUrl, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ReadPageActivity.class);
+        intent.putExtra("pdf_url", pdfUrl);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("chapters", (ArrayList<Chapter>) chapters);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

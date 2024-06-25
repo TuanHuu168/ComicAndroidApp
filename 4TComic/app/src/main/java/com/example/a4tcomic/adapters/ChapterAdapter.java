@@ -1,6 +1,7 @@
 package com.example.a4tcomic.adapters;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,19 +9,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.app_interface.IClickChapter;
 import com.example.a4tcomic.models.Chapter;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterViewHolder> {
     private List<Chapter> listChapter;
-    private Context context;
+    private IClickChapter iClickChapter;
 
-    public ChapterAdapter(Context context) {
-        this.context = context;
+    public ChapterAdapter(IClickChapter iClickChapter) {
+        this.iClickChapter = iClickChapter;
     }
 
     public void setData(List<Chapter> listChapter) {
@@ -41,11 +45,27 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         if (chapter == null) {
             return;
         }
-        String title_time = context.getString(R.string.update_time_title);
-        holder.img_chapter.setImageResource(chapter.getResourceId());
-        holder.tv_name_chapter.setText(chapter.getName());
-        holder.chapterTimeUpdate.setText(title_time + " " + chapter.getTimeUpdate());
 
+        if (!chapter.getImg_url().equals(""))
+            Picasso.get().load(chapter.getImg_url()).into(holder.img_chapter);
+
+        holder.tv_name_chapter.setText(chapter.getOrder() + ": " + chapter.getTitle());
+
+        if (chapter.getCreated_at() > 0)
+            holder.chapterTimeUpdate.setText(" " + convertTime(chapter.getCreated_at()) );
+
+        holder.cardView.setOnClickListener(v -> {
+            iClickChapter.onClickChapter(chapter.getPdf_url()+"");
+        });
+    }
+
+    public String convertTime(Long time) {
+        String date = "";
+        String year = String.valueOf(time).substring(0, 4);
+        String month = String.valueOf(time).substring(4, 6);
+        String day = String.valueOf(time).substring(6, 8);
+        date = day + "/" + month + "/" + year;
+        return date;
     }
 
     @Override
@@ -57,12 +77,14 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
     }
 
     public static class ChapterViewHolder extends RecyclerView.ViewHolder {
-        private final ImageView img_chapter;
-        private final TextView tv_name_chapter;
-        private final TextView chapterTimeUpdate;
+        private ImageView img_chapter;
+        private TextView tv_name_chapter;
+        private TextView chapterTimeUpdate;
+        private CardView cardView;
 
         public ChapterViewHolder(@NonNull View itemView) {
             super(itemView);
+            cardView = itemView.findViewById(R.id.card_view_chapter);
             img_chapter = itemView.findViewById(R.id.img_chapter);
             tv_name_chapter = itemView.findViewById(R.id.tv_name_chapter);
             chapterTimeUpdate = itemView.findViewById(R.id.tv_time_update);

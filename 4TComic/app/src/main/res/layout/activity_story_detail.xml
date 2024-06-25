@@ -69,11 +69,11 @@
                     <ImageView
                         android:id="@+id/img_title"
                         android:layout_width="100dp"
-                        android:layout_height="150dp"
+                        android:layout_height="140dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginEnd="16dp"
-                        android:scaleType="center"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/img_title" />
 
                     <TextView
@@ -82,13 +82,13 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_toEndOf="@+id/img_title"
-                        android:text="@string/name_story"
+                        android:text="@string/app_name"
                         android:textColor="@color/white"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tv_author_story"
+                        android:id="@+id/title_author"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignStart="@+id/tv_name_story"
@@ -98,18 +98,31 @@
                         android:textSize="16sp"
                         android:textStyle="italic" />
 
-                    <Button
+                    <TextView
+                        android:id="@+id/tv_author_story"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/title_author"
+                        android:layout_below="@+id/tv_name_story"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="italic|bold"
+                        android:layout_marginStart="4dp"/>
+
+                    <TextView
                         android:id="@+id/btn_favorite"
                         android:layout_width="130dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_alignStart="@+id/tv_name_story"
                         android:layout_alignParentBottom="true"
                         android:paddingEnd="14dp"
                         android:paddingStart="12dp"
-                        android:backgroundTint="@color/pink_main"
+                        android:background="@drawable/background_btn_favorite"
                         android:drawableLeft="@drawable/favorite_white"
                         android:text="@string/btn_favorite"
                         android:textColor="@android:color/white"
+                        android:gravity="center"
                         android:textStyle="bold"/>
 
                 </RelativeLayout>
@@ -174,7 +187,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcv_chapters"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -196,31 +209,32 @@
 
         <Button
             android:id="@+id/btn_last_chapter"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:text="@string/btn_new"
             android:textColor="@color/pink_main"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+
+            />
 
         <Button
             android:id="@+id/btn_cmt"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:text="@string/btn_cmt"
             android:textColor="@color/pink_main"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"/>
 
         <Button
             android:id="@+id/btn_first_chapter"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/white"

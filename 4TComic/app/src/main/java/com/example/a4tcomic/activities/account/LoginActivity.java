@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
                 startActivity(homePageIntent);
+                finish();
             }
         });
     }

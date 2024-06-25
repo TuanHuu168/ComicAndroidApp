@@ -3,11 +3,11 @@
     <string name="app_name">4TComic</string>
 
     <string name="name_story">ONE PIECE</string>
-    <string name="author_story">created by Oda Eiichiro</string>
+    <string name="author_story">created by</string>
     <string name="genre_title">Genre</string>
     <string name="des_title">Description</string>
     <string name="chapter_title">Chapter</string>
-    <string name="update_time_title">Updated at</string>
+    <string name="update_time_title">Updated at:</string>
 
     <string name="btn_favorite">Favorite</string>
     <string name="btn_favorited">Favorited</string>
@@ -28,11 +28,14 @@
     <string name="title_dialog_logout">Logout</string>
     <string name="message_logout">You will be returned to the login screen!</string>
 
-    <string name="select_img_title">Select Profile Picture</string>
+    <string name="select_img_title">Change avatar</string>
+    <string name="btn_change_avatar">Change image</string>
+    <string name="btn_delete_avatar">Delete image</string>
     <string name="save_btn_title">Save</string>
     <string name="edit_name_title">Set Display Name</string>
-    <string name="num_character">18 / 50</string>
+    <string name="num_character">0 / 50</string>
     <string name="nva_name">Nguyen Van A</string>
+    <string name="name_user">Unknown</string>
 
     <string name="email_title">Linked Email:</string>
     <string name="delete_account">Delete Account</string>
