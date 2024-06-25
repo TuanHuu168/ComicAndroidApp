@@ -1,5 +1,4 @@
 package com.example.a4tcomic.activities.personal;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -34,6 +33,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.adapters.CategoryAdapter;
+import com.example.a4tcomic.db.AuthorsDB;
+import com.example.a4tcomic.db.ComicsDB;
+import com.example.a4tcomic.db.GenresDB;
+import com.example.a4tcomic.models.Author;
+import com.example.a4tcomic.models.Comic;
+import com.example.a4tcomic.models.Genre;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UploadComicActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_COVER_REQUEST = 1;
@@ -96,6 +110,7 @@ public class UploadComicActivity extends AppCompatActivity {
         });
 
         // Đổi màu radioButton
+        ColorStateList colorStateList = ContextCompat.getColorStateList(this, R.color.radio_color);
         rdTerms.setButtonTintList(colorStateList);
 
         // Đổi màu chữ và gạch chân điều khoản & dịch vụ

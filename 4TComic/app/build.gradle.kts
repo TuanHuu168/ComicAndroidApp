@@ -45,16 +45,15 @@ dependencies {
     implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation ("androidx.recyclerview:recyclerview:1.3.2")
     implementation ("androidx.cardview:cardview:1.0.0")
-    implementation("com.google.firebase:firebase-storage")
-    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation ("com.google.firebase:firebase-storage")
+    implementation (platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation ("com.google.firebase:firebase-database:20.2.1")
     implementation ("com.google.firebase:firebase-auth:22.0.0")
-    implementation ("com.google.protobuf:protobuf-java:3.20.0")
     implementation ("com.github.bumptech.glide:glide:4.12.0")
 
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
-}
+
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 }

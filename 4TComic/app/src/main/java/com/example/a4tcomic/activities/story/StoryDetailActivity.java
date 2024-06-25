@@ -129,10 +129,10 @@ public class StoryDetailActivity extends AppCompatActivity {
         // Button bottom
         btn_last_chapter.setOnClickListener(v -> {
             Chapter lastChapter = chapters.isEmpty() ? null : chapters.get(0);
-//            if (lastChapter == null) {
+            if (lastChapter == null) {
                 Toast.makeText(this, "Truyện không có chương nào" + lastChapter.getPdf_url(), Toast.LENGTH_SHORT).show();
-//                return;
-//            }
+                return;
+            }
 //            Intent intent = new Intent(this, ReadPageActivity.class);
 //            intent.putExtra("chapter", lastChapter.getPdf_url());
 //            Bundle bundle = new Bundle();

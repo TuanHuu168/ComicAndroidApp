@@ -94,9 +94,6 @@ public class HomePageActivity extends AppCompatActivity{
             startActivity(advancedSearchIntent);
         });
 
-        // hide keyboard
-        findViewById(R.id.main).setOnTouchListener(this);
-
         // Tạo slider vào thêm ảnh vào slider
         ImageSlider imageSlider = findViewById(R.id.imageSlider);
         ArrayList<SlideModel> slideModels = new ArrayList<>();
