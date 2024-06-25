@@ -37,7 +37,7 @@
             android:layout_marginRight="45dp"
             android:fontFamily="@font/faustina_bold"
             android:gravity="center"
-            android:text="@string/upload_text"
+            android:text="@string/upload_chapter"
             android:textColor="@color/white"
             android:textSize="22dp"
             android:textStyle="bold" />
@@ -88,6 +88,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/white_edt_background"
                         android:ems="10"
+                        android:enabled="false"
                         android:fontFamily="@font/faustina_medium"
                         android:hint="@string/comic_name_text"
                         android:inputType="text"
@@ -103,12 +104,12 @@
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/faustina_bold"
-                        android:text="@string/author_text"
+                        android:text="@string/title"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
                     <EditText
-                        android:id="@+id/edtAuthor"
+                        android:id="@+id/edtTitle"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
@@ -116,7 +117,7 @@
                         android:background="@drawable/white_edt_background"
                         android:ems="10"
                         android:fontFamily="@font/faustina_medium"
-                        android:hint="@string/author_text"
+                        android:hint="@string/title"
                         android:inputType="text"
                         android:padding="10dp"
                         android:textColor="@color/black"
@@ -129,61 +130,32 @@
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/faustina_bold"
-                        android:text="@string/category_text"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-
-                    <Spinner
-                        android:id="@+id/spCategory"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_spinner_background" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvSelectedCategories"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="8dp"
-                        android:layout_marginBottom="16dp"/>
-
-                    <TextView
-                        android:id="@+id/lblSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/faustina_bold"
-                        android:text="@string/summary_text"
+                        android:text="@string/chapter"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
                     <EditText
-                        android:id="@+id/edtSummary"
+                        android:id="@+id/edtChapter"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
+                        android:layout_height="40dp"
+                        android:hint="@string/chapter"
                         android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_edt_multi_line_background"
-                        android:ems="10"
                         android:fontFamily="@font/faustina_medium"
-                        android:gravity="start|top"
-                        android:hint="@string/edt_summary_text"
-                        android:inputType="textMultiLine"
                         android:padding="10dp"
-                        android:textColor="@color/black" />
+                        android:layout_weight="1"
+                        android:background="@drawable/white_edt_background" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+
                             android:layout_weight="1"
                             android:gravity="center_horizontal"
                             android:orientation="vertical">
@@ -203,7 +175,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/cover" />
+                                app:srcCompat="@drawable/ic_upload" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -214,22 +186,35 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/lblContentImage"
+                                android:id="@+id/lblPDFSelector"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
                                 android:fontFamily="@font/faustina_bold"
-                                android:text="@string/content_image"
+                                android:text="@string/pdf_selector"
                                 android:textColor="@color/white"
                                 android:textSize="16dp" />
 
                             <ImageView
-                                android:id="@+id/imgAvatar"
+                                android:id="@+id/imgPDF"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_marginTop="10dp"
                                 app:srcCompat="@drawable/ic_upload" />
                         </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -256,7 +241,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/pink"
                 android:fontFamily="@font/faustina_bold"
-                android:text="@string/upload_text"
+                android:text="@string/upload_chapter"
                 android:textSize="16sp"
                 app:cornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -3,6 +3,7 @@ package com.example.a4tcomic.db;
 import androidx.annotation.NonNull;
 
 import com.example.a4tcomic.models.Author;
+import com.example.a4tcomic.models.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -69,10 +70,10 @@ public class AuthorsDB {
     }
 
     // thêm tác giả
-    public void addAuthor(String name) {
+    public void addAuthor(Author author) {
         String key = mAuthorsRef.push().getKey();
-        mAuthorsRef.child(key).child("id").setValue(key);
-        mAuthorsRef.child(key).child("name").setValue(name);
+        author.setId(key);
+        mAuthorsRef.child(key).setValue(author);
     }
 
     public DatabaseReference getAuthorsRef() {

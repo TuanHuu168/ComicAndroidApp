@@ -53,108 +53,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:gravity="center_horizontal"
             android:padding="16dp">
 
-            <!-- Danh sách tài khoản -->
-            <LinearLayout
-                android:id="@+id/AccountList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
 
-                <TextView
-                    android:id="@+id/lblAccountTitle"
-                    android:layout_width="260dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/title_holder"
-                    android:fontFamily="@font/faustina_bold"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:text="@string/account_list_text"
-                    android:textColor="@color/white"
-                    android:textSize="18dp" />
+            <Button
+                android:id="@+id/btnAccount"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/faustina_bold"
+                android:text="@string/account_list_text"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:cornerRadius="20dp" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/item_holder"
-                    android:orientation="vertical"
-                    android:padding="16dp">
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recycler_view_account"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        android:scrollbars="none"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-                </LinearLayout>
-            </LinearLayout>
+            <Button
+                android:id="@+id/btnUpdated"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/faustina_bold"
+                android:text="@string/recently_updated"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:cornerRadius="20dp" />
 
-            <!-- Truyện mới đăng -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="15dp">
+            <Button
+                android:id="@+id/btnComment"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/faustina_bold"
+                android:text="@string/recently_comment"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:cornerRadius="20dp" />
 
-                <TextView
-                    android:id="@+id/lblRecentlyUpdatedTitle"
-                    android:layout_width="260dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/title_holder"
-                    android:fontFamily="@font/faustina_bold"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:text="@string/recently_updated"
-                    android:textColor="@color/white"
-                    android:textSize="18dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/item_holder"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerViewRecentlyUpdated"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        android:scrollbars="none"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/lblRecentlyComment"
-                    android:layout_width="260dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/title_holder"
-                    android:fontFamily="@font/faustina_bold"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:text="@string/recently_comment"
-                    android:textColor="@color/white"
-                    android:textSize="18dp" />
-
-                <ListView
-                    android:id="@+id/list_view_comment"
-                    android:layout_width="match_parent"
-                    android:layout_height="449dp"
-                    android:layout_marginTop="10dp"
-                    android:scrollbars="none"
-                    android:divider="@android:color/transparent"
-                    android:dividerHeight="0dp"
-                    tools:listitem="@layout/item_comment" />
-            </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

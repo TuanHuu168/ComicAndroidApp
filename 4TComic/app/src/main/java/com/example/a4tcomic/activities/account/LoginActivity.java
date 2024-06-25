@@ -59,10 +59,10 @@ public class LoginActivity extends AppCompatActivity {
         String email = sharedPreferences.getString("email", "");
         String password = sharedPreferences.getString("password", "");
         int status = sharedPreferences.getInt("status", 0);
-
-//        if (!userId.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-//            autoLogin(userId, email, password, status);
-//        }
+        Toast.makeText(this, userId, Toast.LENGTH_LONG).show();
+        if (!userId.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+            autoLogin(userId, email, password, status);
+        }
 
         // Chuyển trang quên mật khẩu và đăng ký
         lblForgot.setOnClickListener(new View.OnClickListener() {
@@ -87,33 +87,33 @@ public class LoginActivity extends AppCompatActivity {
                 String username = edtUserName.getText().toString().trim();
                 String password = edtPassword.getText().toString().trim();
 
-//                if (username.isEmpty() || password.isEmpty()) {
-//                    Toast.makeText(LoginActivity.this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
-//                } else {
-//                    usersDB.getAllUsers(new UsersDB.AllUsersCallback() {
-//                        @Override
-//                        public void onAllUsersLoaded(List<User> users) {
-//                            boolean userFound = false;
-//                            for (User user : users) {
-//                                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-//                                    if (user.getStatus() == 1) {
-//                                        Toast.makeText(LoginActivity.this, getString(R.string.account_locked), Toast.LENGTH_SHORT).show();
-//                                        return;
-//                                    }
-//                                    userFound = true;
-//                                    saveLoginState(user.getId(), username, user.getEmail(), password, user.getStatus());
+               if (username.isEmpty() || password.isEmpty()) {
+                   Toast.makeText(LoginActivity.this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
+               } else {
+                   usersDB.getAllUsers(new UsersDB.AllUsersCallback() {
+                       @Override
+                       public void onAllUsersLoaded(List<User> users) {
+                           boolean userFound = false;
+                           for (User user : users) {
+                               if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                                   if (user.getStatus() == 1) {
+                                       Toast.makeText(LoginActivity.this, getString(R.string.account_locked), Toast.LENGTH_SHORT).show();
+                                       return;
+                                   }
+                                   userFound = true;
+                                   saveLoginState(user.getId(), username, user.getEmail(), password, user.getStatus());
                                     Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
                                     startActivity(homePageIntent);
-//                                    finish();
-//                                    break;
-//                                }
-//                            }
-//                            if (!userFound) {
-//                                Toast.makeText(LoginActivity.this, getString(R.string.incorrect_credentials), Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                    });
-//                }
+                                   finish();
+                                   break;
+                               }
+                           }
+                           if (!userFound) {
+                               Toast.makeText(LoginActivity.this, getString(R.string.incorrect_credentials), Toast.LENGTH_SHORT).show();
+                           }
+                       }
+                   });
+               }
             }
         });
     }
@@ -137,8 +137,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onUserLoaded(User user) {
                 boolean check = false;
                 if (user != null && user.getEmail().equals(email) && user.getPassword().equals(password)) {
-                    if (status == 1) {
-                        check = false;
+                    if (status == 0) {
+                        check = true;
                     }
                 }
                 if (check) {

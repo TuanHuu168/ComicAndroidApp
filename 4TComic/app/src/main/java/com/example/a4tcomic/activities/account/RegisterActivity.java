@@ -150,24 +150,24 @@ public class RegisterActivity extends AppCompatActivity {
                 newUser.setUsername(username);
                 newUser.setEmail(email);
                 newUser.setPassword(password);
-                newUser.setCreated_at(convertTime()); // Thiết lập thời gian tạo acc
+                newUser.setCreated_at(System.currentTimeMillis()); // Thiết lập thời gian tạo acc
 
                 checkUserExistsAndRegister(username, email, newUser);
             }
         });
     }
 
-    private long convertTime() {
-        long time = 0;
-        String dateTime = android.text.format.DateFormat.format("yyyy-MM-dd HH:mm:ss", new java.util.Date()).toString();
-        // chuyển từ string sang long
-        if (!TextUtils.isEmpty(dateTime)) {
-            time = Long.parseLong(dateTime.replace("-", "")
-                    .replace(" ", "")
-                    .replace(":", ""));
-        }
-        return time;
-    }
+//    private long convertTime() {
+//        long time = 0;
+//        String dateTime = android.text.format.DateFormat.format("yyyy-MM-dd HH:mm:ss", new java.util.Date()).toString();
+//        // chuyển từ string sang long
+//        if (!TextUtils.isEmpty(dateTime)) {
+//            time = Long.parseLong(dateTime.replace("-", "")
+//                    .replace(" ", "")
+//                    .replace(":", ""));
+//        }
+//        return time;
+//    }
 
     private boolean isValidEmail(String email) {
         String emailPattern = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";

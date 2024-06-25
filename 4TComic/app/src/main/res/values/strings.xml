@@ -66,7 +66,7 @@
     <string name="search_text">Search Comics…</string>
     <string name="trending_text">Trending</string>
     <string name="history_text">History</string>
-    <string name="recently_updated">Recently Updated</string>
+    <string name="recently_updated">Recently Updated Comic</string>
     <string name="admin_text">Admin Page</string>
     <string name="account_list_text">Recently Created Account</string>
     <string name="recently_comment">Recently Comment</string>
@@ -78,14 +78,18 @@
     <string name="summary_text">Summary</string>
     <string name="edt_summary_text">Summary Comic Contents</string>
     <string name="cover_image_text">Cover Image</string>
-    <string name="content_image">Contents Image</string>
+    <string name="content_image">Avatar Image</string>
     <string name="upload_terms_text">I agree to the terms &amp; services when posting a story</string>
+    <string name="select_category">Select categories</string>
+    <string name="select_img">Please select both cover and avatar images.</string>
+    <string name="upload_chapter">Upload chapter</string>
+    <string name="pdf_selector">Select PDF file</string>
 
     <string name="titleBookcase">Bookshelf</string>
     <string name="History">History</string>
     <string name="Follow">Follow</string>
     <string name="hintSearch">Search</string>
-    <string name="title">Star Sword Warrior</string>
+    <string name="title">Title</string>
     <string name="reading">"Reading chapter: "</string>
     <string name="all">Select all</string>
     <string name="remove">Delete</string>
@@ -93,6 +97,6 @@
     <string name="filterNewest">Newest</string>
     <string name="titleChapter">Chapter 1</string>
     <string name="ChooseChapters">Choose chapter</string>
-    <string name="chapter">Chapter 1</string>
+    <string name="chapter">Chapter</string>
 
 </resources>

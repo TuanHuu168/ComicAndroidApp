@@ -1,5 +1,7 @@
 package com.example.a4tcomic.db;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.a4tcomic.models.Comic;
@@ -92,6 +94,7 @@ public class FavoritesDB {
                     if (comic_id != null) {
                         comicCounts.put(comic_id, comicCounts.getOrDefault(comic_id, 0) + 1);
                     }
+
                 }
 
                 List<Map.Entry<String, Integer>> sortedComics = new ArrayList<>(comicCounts.entrySet());
@@ -100,10 +103,12 @@ public class FavoritesDB {
                 ComicsDB comicsDB = new ComicsDB();
                 List<Comic> comics = new ArrayList<>();
                 for (Map.Entry<String, Integer> entry : sortedComics) {
-                    comicsDB.getComicById(entry.getKey(), comic ->
-                            comics.add(comic));
+                    comicsDB.getComicById(entry.getKey(), comic -> {
+                        comics.add(comic);
+                        callback.onAllComicsLoaded(comics);
+                    });
                 }
-                callback.onAllComicsLoaded(comics);
+
             }
 
             @Override

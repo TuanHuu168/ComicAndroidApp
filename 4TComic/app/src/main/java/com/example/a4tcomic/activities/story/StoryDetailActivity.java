@@ -3,6 +3,7 @@ package com.example.a4tcomic.activities.story;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -22,6 +23,7 @@ import com.example.a4tcomic.R;
 import com.example.a4tcomic.adapters.ChapterAdapter;
 import com.example.a4tcomic.adapters.GenreAdapter;
 import com.example.a4tcomic.models.Chapter;
+import com.example.a4tcomic.models.Comic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,6 +88,10 @@ public class StoryDetailActivity extends AppCompatActivity {
                 isFavorite = false;
             }
         });
+
+        // Nhận đối tượng Comic từ Intent
+        Comic comic = (Comic) getIntent().getSerializableExtra("comic");
+        Log.d("Ten truyen", comic.getTitle());
 
         // Thể loại
         genreAdapter = new GenreAdapter();
