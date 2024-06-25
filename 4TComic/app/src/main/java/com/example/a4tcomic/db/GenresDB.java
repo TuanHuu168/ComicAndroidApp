@@ -60,20 +60,20 @@ public class GenresDB {
                             if (genre_id != null)
 
                                 mGenresRef.child(genre_id).addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                String genre_name;
-                                                if (snapshot.exists()) {
-                                                    genre_name = snapshot.child("title")
-                                                            .getValue(String.class);
-                                                } else genre_name = "Unknown";
-                                                Genre new_genre = new Genre(genre_id, genre_name);
-                                                genreList.add(new_genre);
-                                                callback.onGenres(genreList);
-                                            }
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError error) {}
-                                        });
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        String genre_name;
+                                        if (snapshot.exists()) {
+                                            genre_name = snapshot.child("title")
+                                                    .getValue(String.class);
+                                        } else genre_name = "Unknown";
+                                        Genre new_genre = new Genre(genre_id, genre_name);
+                                        genreList.add(new_genre);
+                                        callback.onGenres(genreList);
+                                    }
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {}
+                                });
                         }
                     }
                     @Override
@@ -97,11 +97,37 @@ public class GenresDB {
         mComicGenreRef.child(key).child("comic_id").setValue(comicId);
     }
 
+    // lấy id thể loại bằng tên thể loại
+    public void getGenreIdByName(final String genreName, final GenreIdCallback callback) {
+        mGenresRef.orderByChild("title").equalTo(genreName).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot genreSnapshot : snapshot.getChildren()) {
+                        String genreId = genreSnapshot.getKey();
+                        callback.onGenreIdLoaded(genreId);
+                        return;
+                    }
+                }
+                callback.onGenreIdLoaded(null);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                callback.onGenreIdLoaded(null);
+            }
+        });
+    }
+
     public DatabaseReference getGenresRef() {
         return mGenresRef;
     }
 
     public DatabaseReference getComicGenreRef() {
         return mComicGenreRef;
+    }
+
+    public interface GenreIdCallback {
+        void onGenreIdLoaded(String genreId);
     }
 }

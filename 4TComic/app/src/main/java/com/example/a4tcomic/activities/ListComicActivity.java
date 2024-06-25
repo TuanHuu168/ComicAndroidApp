@@ -36,20 +36,33 @@ public class ListComicActivity extends AppCompatActivity {
         comicsDB = new ComicsDB();
 
         String authorId = getIntent().getStringExtra("authorId");
-        Toast.makeText(ListComicActivity.this, authorId, Toast.LENGTH_SHORT).show();
+        String userId = getIntent().getStringExtra("userId");
 
-        comicsDB.getComicsByAuthorId(authorId, new ComicsDB.AllComicsCallback() {
-            @Override
-            public void onAllComicsLoaded(List<Comic> comics) {
-                if (comics != null && !comics.isEmpty()) {
-                    // Update RecyclerView with the loaded comics
-                    comicAdapter.setComics(comics);
-                } else {
-                    // Handle case where no comics are found for the author
-                    Log.d("ListComicActivity", "No comics found for authorId: " + authorId);
-                    Toast.makeText(ListComicActivity.this, "Không tìm thấy truyện của tác giả", Toast.LENGTH_SHORT).show();
+        if(authorId != null){
+            comicsDB.getComicsByAuthorId(authorId, new ComicsDB.AllComicsCallback() {
+                @Override
+                public void onAllComicsLoaded(List<Comic> comics) {
+                    if (comics != null && !comics.isEmpty()) {
+                        comicAdapter.setComics(comics);
+                    } else {
+                        Log.d("ListComicActivity", "No comics found for authorId: " + authorId);
+                        Toast.makeText(ListComicActivity.this, "Không tìm thấy truyện của tác giả", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
+            });
+        }
+        else if (userId != null) {
+            comicsDB.getComicByUserId(userId, new ComicsDB.AllComicsCallback() {
+                @Override
+                public void onAllComicsLoaded(List<Comic> comics) {
+                    if (comics != null && !comics.isEmpty()) {
+                        comicAdapter.setComics(comics);
+                    } else {
+                        Log.d("ListComicActivity", "No comics found for userId: " + userId);
+                        Toast.makeText(ListComicActivity.this, "Không tìm thấy truyện của người dịch", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
     }
 }

@@ -125,34 +125,21 @@ public class ComicsDB {
                 });
     }
 
-    public void getComicsByAuthor(String author_id, final AllComicsCallback callback) {
-        mComicsRef.orderByChild("author_id")
-                .equalTo(author_id)
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        List<Comic> comics = new ArrayList<>();
-                        for (DataSnapshot comicSnapshot : snapshot.getChildren()) {
-                            Comic comic = comicSnapshot.getValue(Comic.class);
-                            comics.add(comic);
-                        }
-                        comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
-                        callback.onAllComicsLoaded(comics);
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) { }
-                });
+    // lấy truyện theo user_id người dịch
+    public void getComicByUserId(String user_id, final AllComicsCallback callback) {
+        mComicsRef.orderByChild("user_id").equalTo(user_id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Comic> comics = new ArrayList<>();
+                for (DataSnapshot comicSnapshot : snapshot.getChildren()) {
+                    Comic comic = comicSnapshot.getValue(Comic.class);
+                    comics.add(comic);
+                }
+                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                callback.onAllComicsLoaded(comics);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) { }
+        });
     }
-
-    public void addComic(Comic comic) {
-        String key = mComicsRef.push().getKey();
-        comic.setId(key);
-        mComicsRef.child(key).setValue(comic);
-    }
-
-    // xóa truyện theo id_comic
-    public void deleteComic(String comic_id) {
-        mComicsRef.child(comic_id).removeValue();
-    }
-
 }
