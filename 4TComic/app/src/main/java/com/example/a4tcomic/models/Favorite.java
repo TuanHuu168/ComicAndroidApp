@@ -6,7 +6,7 @@ public class Favorite {
     private String user_id;
     private long created_at;
 
-    public Favorite(String id, String comic_id, String user_id, int created_at) {
+    public Favorite(String id, String comic_id, String user_id, long created_at) {
         this.id = id;
         this.comic_id = comic_id;
         this.user_id = user_id;

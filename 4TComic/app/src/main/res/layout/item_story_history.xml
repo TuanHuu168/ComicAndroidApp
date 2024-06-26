@@ -19,8 +19,9 @@
 
             <ImageButton
                 android:id="@+id/imgBtnItemHistory"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/tinhtukiemsi"
@@ -62,8 +63,9 @@
                             android:textColor="@color/black"
                             android:textSize="15dp"
                             tools:ignore="TextSizeCheck" />
+
                         <TextView
-                            android:id="@+id/valueChapter"
+                            android:id="@+id/valueChapterHistory"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2"
@@ -71,14 +73,6 @@
                             android:textSize="15dp"
                             tools:ignore="TextSizeCheck" />
 
-                        <TextView
-                            android:id="@+id/maxChapter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="/7"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            tools:ignore="TextSizeCheck" />
                     </LinearLayout>
                     <RadioButton
                         android:id="@+id/radio_button_book_History"
@@ -98,11 +92,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp">
+
                         <ImageButton
                             android:layout_width="40dp"
                             android:layout_height="30dp"
                             android:background="@null"
                             android:src="@drawable/ic_heart"
+                            android:visibility="invisible"
                             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                         <TextView
@@ -110,17 +106,19 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="100"
-                            android:textColor="@color/black" />
+                            android:visibility="invisible" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp">
+
                         <ImageButton
                             android:layout_width="40dp"
                             android:layout_height="30dp"
                             android:background="@null"
                             android:src="@drawable/ic_eye"
+                            android:visibility="invisible"
                             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                         <TextView
@@ -128,7 +126,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="100"
-                            android:textColor="@color/black" />
+                            android:visibility="invisible" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -139,6 +137,7 @@
                             android:layout_height="30dp"
                             android:background="@null"
                             android:src="@drawable/ic_comment"
+                            android:visibility="invisible"
                             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                         <TextView
@@ -146,7 +145,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="100"
-                            android:textColor="@color/black" />
+                            android:visibility="invisible" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

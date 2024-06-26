@@ -2,21 +2,29 @@ package com.example.a4tcomic.models;
 
 public class ListBookCase {
 
-    private  int imageBook;
+    private  String imageBook;
     private String nameBook;
     private boolean ischecked;
+    private int orderChapter;
 
-    public ListBookCase(int imageBook, String nameBook) {
+    public ListBookCase(String imageBook, String nameBook, int orderChapter) {
+        this.imageBook = imageBook;
+        this.nameBook = nameBook;
+        this.ischecked = false;
+        this.orderChapter = orderChapter;
+    }
+
+    public ListBookCase(String imageBook, String nameBook) {
         this.imageBook = imageBook;
         this.nameBook = nameBook;
         this.ischecked = false;
     }
 
-    public int getImageBook() {
+    public String getImageBook() {
         return imageBook;
     }
 
-    public void setImageBook(int imageBook) {
+    public void setImageBook(String imageBook) {
         this.imageBook = imageBook;
     }
 
@@ -33,5 +41,13 @@ public class ListBookCase {
 
     public void setChecked(boolean checked) {
         ischecked = checked;
+    }
+
+    public int getOrderChapter() {
+        return orderChapter;
+    }
+
+    public void setOrderChapter(int orderChapter) {
+        this.orderChapter = orderChapter;
     }
 }

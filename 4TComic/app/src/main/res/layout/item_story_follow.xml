@@ -49,10 +49,12 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <LinearLayout
                         android:id="@+id/lyReadingChapter"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp">
+                        android:layout_height="30dp"
+                        android:visibility="invisible">
 
                         <TextView
                             android:id="@+id/readChapter"
@@ -62,6 +64,7 @@
                             android:textColor="@color/black"
                             android:textSize="15dp"
                             tools:ignore="TextSizeCheck" />
+
                         <TextView
                             android:id="@+id/valueChapter"
                             android:layout_width="wrap_content"
@@ -91,13 +94,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"/>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp">
+
                         <ImageButton
                             android:layout_width="40dp"
                             android:layout_height="30dp"
@@ -109,13 +116,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="100"
-                            android:textColor="@color/black" />
+                            android:text="100" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp">
+
                         <ImageButton
                             android:layout_width="40dp"
                             android:layout_height="30dp"
@@ -127,9 +135,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="100"
-                            android:textColor="@color/black" />
+                            android:text="100" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
@@ -145,8 +153,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="100"
-                            android:textColor="@color/black" />
+                            android:text="100" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
