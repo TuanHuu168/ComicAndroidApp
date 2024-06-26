@@ -1,6 +1,7 @@
 package com.example.a4tcomic.activities.story;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -111,8 +112,12 @@ public class StoryDetailActivity extends AppCompatActivity {
         genresDB = new GenresDB();
         chaptersDB = new ChaptersDB();
 
-        user_id = "admin001";
-        comic_id = "comic001";
+        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        user_id = sharedPreferences.getString("id", "");
+        Comic comic = (Comic) getIntent().getSerializableExtra("comic");
+        comic_id = comic.getId();
+//        user_id = "admin001";
+//        comic_id = "comic001";
         getComic();
 
         // Yêu thích
@@ -157,7 +162,7 @@ public class StoryDetailActivity extends AppCompatActivity {
 
         btn_cmt.setOnClickListener(v -> {
             Intent intent = new Intent(this, CommentActivity.class);
-            intent.putExtra("comic_id", comic_id);
+            intent.putExtra("comicId", comic_id);
             startActivity(intent);
         });
 

@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = sharedPreferences.getString("email", "");
         String password = sharedPreferences.getString("password", "");
         int status = sharedPreferences.getInt("status", 0);
-        Toast.makeText(this, userId, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, userId, Toast.LENGTH_LONG).show();
         if (!userId.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
             autoLogin(userId, email, password, status);
         }

@@ -3,6 +3,8 @@ package com.example.a4tcomic.db;
 import android.util.Pair;
 
 import androidx.annotation.NonNull;
+
+import com.example.a4tcomic.models.Chapter;
 import com.example.a4tcomic.models.Comic;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -52,30 +54,21 @@ public class ComicsDB {
         });
     }
 
+
     private void fetchLatestChaptersAndSort(List<Comic> comics, final AllComicsCallback callback) {
         ChaptersDB chaptersDB = new ChaptersDB();
-        List<Pair<Comic, Long>> comicsWithLatestChapterTime = new ArrayList<>();
+        List<Comic> sortedComics = new ArrayList<>();
 
         for (Comic comic : comics) {
-            chaptersDB.getChapters(comic.getId(), new ChaptersDB.ChaptersCallback() {
+            chaptersDB.getLastestChapter(comic.getId(), new ChaptersDB.ChapterCallback() {
                 @Override
-                public void onChaptersLoaded(List<Chapter> chapters) {
-                    long latestChapterTime = 0;
-                    if (!chapters.isEmpty()) {
-                        latestChapterTime = chapters.get(0).getCreated_at(); // Chương đầu tiên là chương mới nhất
-                    }
-                    comicsWithLatestChapterTime.add(new Pair<>(comic, latestChapterTime));
+                public void onChapterLoaded(Chapter latestChapter) {
+                    comic.setCreated_at(latestChapter != null ? latestChapter.getCreated_at() : 0);
+                    sortedComics.add(comic);
 
-                    if (comicsWithLatestChapterTime.size() == comics.size()) {
-                        // Đảm bảo đã lấy được thời gian chương mới nhất cho tất cả truyện
-                        Collections.sort(comicsWithLatestChapterTime, (o1, o2) -> Long.compare(o2.second, o1.second));
-
-                        // Tạo danh sách comic đã sắp xếp
-                        List<Comic> sortedComics = new ArrayList<>();
-                        for (Pair<Comic, Long> pair : comicsWithLatestChapterTime) {
-                            sortedComics.add(pair.first);
-                        }
-
+                    if (sortedComics.size() == comics.size()) {
+                        // Sắp xếp danh sách truyện dựa trên thời gian chương mới nhất
+                        Collections.sort(sortedComics, (o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
                         callback.onAllComicsLoaded(sortedComics);
                     }
                 }

@@ -1,6 +1,7 @@
 package com.example.a4tcomic.adapters;
 
 import android.content.Context;
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,9 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
     @Override
     public void onBindViewHolder(@NonNull CommentViewHolder holder, int position) {
         Comment comment = commentList.get(position);
+        String timeAgo = getTimeAgo(comment.getCreated_at());
         holder.tvContentComment.setText(comment.getBody());
+        holder.tvTime.setText(timeAgo);
 
         usersDB.getUserById(comment.getUser_id(), new UsersDB.UserCallback() {
             @Override
@@ -63,6 +66,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
         return commentList.size();
     }
 
+    private String getTimeAgo(long time) {
+        long now = System.currentTimeMillis();
+        return DateUtils.getRelativeTimeSpanString(time, now, DateUtils.MINUTE_IN_MILLIS).toString();
+    }
+
     public void loadComments(String comicId) {
         commentsDB.getComments(comicId, new CommentsDB.CommentsCallback() {
             @Override
@@ -75,7 +83,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
     }
 
     public static class CommentViewHolder extends RecyclerView.ViewHolder {
-        TextView tvContentComment, tvNameUser;
+        TextView tvContentComment, tvNameUser, tvTime;
         ImageView imgUser;
 
         public CommentViewHolder(@NonNull View itemView) {
@@ -83,6 +91,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
             tvContentComment = itemView.findViewById(R.id.tvContentComment);
             tvNameUser = itemView.findViewById(R.id.tvNameUser);
             imgUser = itemView.findViewById(R.id.imgUser);
+            tvTime = itemView.findViewById(R.id.tvTime);
         }
     }
 }

@@ -106,5 +106,9 @@
     <string name="titleChapter">Chapter 1</string>
     <string name="ChooseChapters">Choose chapter</string>
     <string name="chapter">Chapter</string>
+    <string name="chapter_upload_success">Chapter uploaded successfully!</string>
+    <string name="pdf_upload_fail">Failed to upload PDF.</string>
+    <string name="cover_image_upload_fail">Failed to upload cover image.</string>
+    <string name="comic_upload_success">Comic uploaded successfully!</string>
 
 </resources>

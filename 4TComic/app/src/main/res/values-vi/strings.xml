@@ -106,4 +106,8 @@
     <string name="titleChapter">Chương 1</string>
     <string name="ChooseChapters">Chọn chương</string>
     <string name="chapter">Chương</string>
+    <string name="chapter_upload_success">Tải lên chương truyện thành công!</string>
+    <string name="pdf_upload_fail">Tải lên PDF thất bại.</string>
+    <string name="cover_image_upload_fail">Tải lên ảnh bìa thất bại.</string>
+    <string name="comic_upload_success">Tải lên truyện thành công!</string>
 </resources>

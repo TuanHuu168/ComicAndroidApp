@@ -261,7 +261,7 @@ public class UploadComicActivity extends AppCompatActivity {
                                     avatarRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                         @Override
                                         public void onSuccess(Uri avatarUri) {
-                                            saveComicToFirebase(comicName, coverUri.toString(), avatarUri.toString(), authorId, summary);
+                                            saveComicToFirebase(comicName, avatarUri.toString(), coverUri.toString(), authorId, summary);
                                         }
                                     });
                                 }
@@ -304,7 +304,7 @@ public class UploadComicActivity extends AppCompatActivity {
                 }
             }
         });
-        Toast.makeText(this, "Comic uploaded successfully!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.comic_upload_success), Toast.LENGTH_SHORT).show();
         finish();
     }
 }
