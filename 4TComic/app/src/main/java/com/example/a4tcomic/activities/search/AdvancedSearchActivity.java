@@ -69,12 +69,12 @@ public class AdvancedSearchActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         } else {
-                            Toast.makeText(AdvancedSearchActivity.this, "Không tìm thấy người dùng", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdvancedSearchActivity.this, R.string.toast_user_not_found, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             } else {
-                Toast.makeText(AdvancedSearchActivity.this, "Vui lòng nhập tên người dùng", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdvancedSearchActivity.this, R.string.toast_enter_username, Toast.LENGTH_SHORT).show();
             }
         });
     }

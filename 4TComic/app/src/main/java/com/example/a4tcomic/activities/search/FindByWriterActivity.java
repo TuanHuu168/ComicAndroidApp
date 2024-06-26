@@ -59,13 +59,14 @@ public class FindByWriterActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         } else {
-                            Toast.makeText(FindByWriterActivity.this, "Không tìm thấy tác giả", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FindByWriterActivity.this, R.string.toast_author_not_found, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             } else {
-                Toast.makeText(FindByWriterActivity.this, "Vui lòng nhập tên tác giả", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FindByWriterActivity.this, R.string.toast_please_enter_author, Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

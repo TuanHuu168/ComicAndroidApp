@@ -27,6 +27,7 @@ public class AccountActivity extends AppCompatActivity {
     private ImageButton btn_return;
     private User curUser;
     private String id_user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class AccountActivity extends AppCompatActivity {
 
         changePassword.setOnClickListener(v -> {
             Intent intent = new Intent(this, ChangePasswordActivity.class);
-            intent.putExtra("curUser",curUser);
+            intent.putExtra("curUser", curUser);
             startActivity(intent);
         });
 
@@ -68,10 +69,9 @@ public class AccountActivity extends AppCompatActivity {
         usersDB.getUserById(id_user, user -> {
             curUser = user;
         });
-
     }
 
-    private void delAcc(){
+    private void delAcc() {
         UsersDB usersDB = new UsersDB();
         usersDB.deleteUserByUser(curUser.getId());
         Intent intent = new Intent(this, LoginActivity.class);
@@ -81,13 +81,13 @@ public class AccountActivity extends AppCompatActivity {
 
     private void setDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.title_dialog_warning);
-        builder.setMessage(R.string.mes_delete_account);
+        builder.setTitle(getString(R.string.title_dialog_warning));
+        builder.setMessage(getString(R.string.mes_delete_account));
 
-        builder.setPositiveButton(R.string.string_no, (dialog, which) -> {
+        builder.setPositiveButton(getString(R.string.string_no), (dialog, which) -> {
             dialog.dismiss();
         });
-        builder.setNeutralButton(R.string.delete_account, (dialog, which) -> {
+        builder.setNeutralButton(getString(R.string.delete_account), (dialog, which) -> {
             delAcc();
         });
         AlertDialog dialog = builder.create();
@@ -96,7 +96,7 @@ public class AccountActivity extends AppCompatActivity {
         Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
         Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
 
-        // Dat mau chu va do bong cho cac nut
+        // Set text color and shadow for buttons
         positiveButton.setTextColor(Color.parseColor("#50CAFF"));
         positiveButton.setTextSize(16.0f);
         positiveButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));

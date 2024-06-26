@@ -59,7 +59,7 @@ public class ListComicActivity extends AppCompatActivity {
                         comicAdapter.setComics(comics);
                     } else {
                         Log.d("ListComicActivity", "No comics found for authorId: " + authorId);
-                        Toast.makeText(ListComicActivity.this, "Không tìm thấy truyện của tác giả", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ListComicActivity.this, R.string.toast_comic_author_not_found, Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -72,26 +72,25 @@ public class ListComicActivity extends AppCompatActivity {
                         comicAdapter.setComics(comics);
                     } else {
                         Log.d("ListComicActivity", "No comics found for userId: " + userId);
-                        Toast.makeText(ListComicActivity.this, "Không tìm thấy truyện của người dịch", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ListComicActivity.this, R.string.toast_comic_translator_not_found, Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
         else if (genreId != null) {
-         genresDB.getComicsByGenreId(genreId, new ComicsDB.AllComicsCallback() {
-             @Override
-             public void onAllComicsLoaded(List<Comic> comics) {
-                 if (comics != null && !comics.isEmpty()) {
-                     comicAdapter.setComics(comics);
-                 }
-                 else {
-                     Log.d("ListComicActivity", "No comics found for genreId: " + genreId);
-                     Toast.makeText(ListComicActivity.this, "Không tìm thấy truyện của thể loại", Toast.LENGTH_SHORT).show();
-                 }
-             }
-         });
+            genresDB.getComicsByGenreId(genreId, new ComicsDB.AllComicsCallback() {
+                @Override
+                public void onAllComicsLoaded(List<Comic> comics) {
+                    if (comics != null && !comics.isEmpty()) {
+                        comicAdapter.setComics(comics);
+                    } else {
+                        Log.d("ListComicActivity", "No comics found for genreId: " + genreId);
+                        Toast.makeText(ListComicActivity.this, R.string.toast_comic_genre_not_found, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
         }
-        else{
+        else {
             comicsDB.getAllComics(new ComicsDB.AllComicsCallback() {
                 @Override
                 public void onAllComicsLoaded(List<Comic> comics) {
@@ -99,12 +98,13 @@ public class ListComicActivity extends AppCompatActivity {
                         comicAdapter.setComics(comics);
                     } else {
                         Log.d("ListComicActivity", "No comics found");
-                        Toast.makeText(ListComicActivity.this, "Không tìm thấy truyện", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ListComicActivity.this, R.string.toast_comic_not_found, Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
 
+        // Sự kiện khi click vào nút tìm kiếm
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,15 +117,15 @@ public class ListComicActivity extends AppCompatActivity {
                                 comicAdapter.setComics(comics);
                             } else {
                                 Log.d("ListComicActivity", "No comics found with title: " + searchText);
-                                Toast.makeText(ListComicActivity.this, "Không tìm thấy truyện với tên: " + searchText, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ListComicActivity.this, R.string.title_not_found, Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 } else {
-                    Toast.makeText(ListComicActivity.this, "Vui lòng nhập tên truyện", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ListComicActivity.this, R.string.toast_missing_search_text, Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
     }
 }
+
