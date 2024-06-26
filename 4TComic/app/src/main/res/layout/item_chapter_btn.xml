@@ -13,4 +13,5 @@
     android:textAllCaps="false"
     android:textColor="#FFFFFF"
     android:textSize="12dp"
+    app:cornerRadius="20dp"
     tools:ignore="TouchTargetSizeCheck,TextSizeCheck" />

@@ -104,6 +104,7 @@ public class PersonalActivity extends AppCompatActivity {
         btn_setting.setOnClickListener(v -> {
             Intent intent = new Intent(this, GraphicSettingActivity.class);
             startActivity(intent);
+            finish();
         });
 
         btn_admin.setOnClickListener(v -> {
@@ -151,10 +152,15 @@ public class PersonalActivity extends AppCompatActivity {
             return;
         }
         tv_name.setText(currentUser.getUsername());
-        if (!currentUser.getAvatar_url().equals(""))
-            Picasso.get().load(currentUser.getAvatar_url()).into(iv_avatar);
-        else
+        try{
+            if (!currentUser.getAvatar_url().equals(""))
+                Picasso.get().load(currentUser.getAvatar_url()).into(iv_avatar);
+            else
+                iv_avatar.setImageResource(R.drawable.avatar);
+        }catch (Exception e){
             iv_avatar.setImageResource(R.drawable.avatar);
+        }
+
     }
 
     private void setDialogLogout() {

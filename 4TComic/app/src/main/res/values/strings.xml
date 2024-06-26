@@ -25,9 +25,9 @@
     <string name="btn_favorite">Favorite</string>
     <string name="btn_favorited">Favorited</string>
 
-    <string name="btn_new">Read Latest</string>
+    <string name="btn_new">Last chapter</string>
     <string name="btn_cmt">Comment</string>
-    <string name="btn_first_chapter">Read from the Beginning</string>
+    <string name="btn_first_chapter">Chapter 1</string>
 
     <string name="personal_title">Personal</string>
     <string name="edit_profile_title">Edit Profile</string>
@@ -179,5 +179,17 @@
     <string name="chapterr">Chapter</string>
 
     <string name="noti_update_chapter">Updated new chapter: </string>
+
+</resources>
+    <string name="on_text">On</string>
+    <string name="off_text">Off</string>
+
+    <string-array name="language_options">
+        <item>en</item>
+        <item>vi</item>
+    </string-array>
+    <string name="nightmode">Night mode</string>
+    <string name="lang_text">Language</string>
+    <string name="graphic_setting">Graphic setting</string>
 
 </resources>
