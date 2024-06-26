@@ -21,6 +21,9 @@
             android:name=".activities.personal.UploadChapterActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.ListComicActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.personal.HomeUploadActivity"
             android:exported="false" />
         <activity
