@@ -9,12 +9,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.adapters.NotificationAdapter;
+import com.example.a4tcomic.db.ChaptersDB;
 
 public class NotificationActivity extends AppCompatActivity {
 
     private ImageButton btnHomePage, btnArchive, btnNotification, btnSetting;
+    private RecyclerView recyclerNotification;
+    private NotificationAdapter notificationAdapter;
+    private ChaptersDB chaptersDB;
+    private String userId; // Thêm userId của người dùng hiện tại
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,15 @@ public class NotificationActivity extends AppCompatActivity {
         btnArchive = findViewById(R.id.btnArchive);
         btnNotification = findViewById(R.id.btnNotification);
         btnSetting = findViewById(R.id.btnSetting);
+        recyclerNotification = findViewById(R.id.recyclerNotification);
+
+        // Giả định rằng userId được truyền vào từ Intent hoặc được lấy từ SharedPreferences
+        userId = getIntent().getStringExtra("userId");
+
+        notificationAdapter = new NotificationAdapter(this, userId);
+        recyclerNotification.setLayoutManager(new LinearLayoutManager(this));
+        recyclerNotification.setAdapter(notificationAdapter);
+        chaptersDB = new ChaptersDB();
 
         btnHomePage.setOnClickListener(v -> {
             Intent settingIntent = new Intent(this, HomePageActivity.class);
