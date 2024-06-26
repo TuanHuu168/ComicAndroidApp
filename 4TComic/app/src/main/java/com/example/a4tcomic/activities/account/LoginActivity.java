@@ -24,7 +24,7 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
 
     // Khai báo
-    EditText edtUserName, edtPassword;
+    EditText edtPassword, edtEmail;
     TextView lblForgot, lblRegister;
     Button btnLogin;
     UsersDB usersDB;
@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         // Ánh xạ
-        edtUserName = findViewById(R.id.edtUserName);
+        edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         lblForgot = findViewById(R.id.lblForgot);
         lblRegister = findViewById(R.id.lblRegister);
@@ -55,11 +55,10 @@ public class LoginActivity extends AppCompatActivity {
         // Kiểm tra trạng thái đăng nhập
         SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
         String userId = sharedPreferences.getString("id", "");
-        String username = sharedPreferences.getString("username", "");
         String email = sharedPreferences.getString("email", "");
         String password = sharedPreferences.getString("password", "");
         int status = sharedPreferences.getInt("status", 0);
-        Toast.makeText(this, userId, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, userId, Toast.LENGTH_LONG).show();
         if (!userId.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
             autoLogin(userId, email, password, status);
         }
@@ -84,10 +83,10 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = edtUserName.getText().toString().trim();
+                String email = edtEmail.getText().toString().trim();
                 String password = edtPassword.getText().toString().trim();
 
-               if (username.isEmpty() || password.isEmpty()) {
+               if (email.isEmpty() || password.isEmpty()) {
                    Toast.makeText(LoginActivity.this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
                } else {
                    usersDB.getAllUsers(new UsersDB.AllUsersCallback() {
@@ -95,13 +94,13 @@ public class LoginActivity extends AppCompatActivity {
                        public void onAllUsersLoaded(List<User> users) {
                            boolean userFound = false;
                            for (User user : users) {
-                               if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                               if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
                                    if (user.getStatus() == 1) {
                                        Toast.makeText(LoginActivity.this, getString(R.string.account_locked), Toast.LENGTH_SHORT).show();
                                        return;
                                    }
                                    userFound = true;
-                                   saveLoginState(user.getId(), username, user.getEmail(), password, user.getStatus());
+                                   saveLoginState(user.getId(), user.getEmail(), password, user.getStatus());
                                     Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
                                     startActivity(homePageIntent);
                                    finish();
@@ -118,11 +117,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void saveLoginState(String id, String username, String email, String password, int status) {
+    private void saveLoginState(String id, String email, String password, int status) {
         SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("id", id);
-        editor.putString("username", username);
         editor.putString("email", email);
         editor.putString("password", password);
         editor.putInt("status", status);

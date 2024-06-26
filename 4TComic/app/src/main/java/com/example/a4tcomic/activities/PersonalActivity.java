@@ -23,6 +23,7 @@ import com.example.a4tcomic.activities.account.LoginActivity;
 import com.example.a4tcomic.activities.admin.AdminActivity;
 import com.example.a4tcomic.activities.personal.AccountActivity;
 import com.example.a4tcomic.activities.personal.GraphicSettingActivity;
+import com.example.a4tcomic.activities.personal.HomeUploadActivity;
 import com.example.a4tcomic.activities.personal.ProfileActivity;
 import com.example.a4tcomic.activities.personal.UploadComicActivity;
 import com.example.a4tcomic.db.UsersDB;
@@ -116,8 +117,8 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         btn_upload_story.setOnClickListener(v -> {
-            Intent intent = new Intent(this, UploadComicActivity.class);
-            intent.putExtra("user_id", user_id);
+            Intent intent = new Intent(this, HomeUploadActivity.class);
+            intent.putExtra("userId", user_id);
             startActivity(intent);
         });
 
@@ -127,7 +128,9 @@ public class PersonalActivity extends AppCompatActivity {
 
         // nhận dữ liệu
         usersDB = new UsersDB();
-        user_id = "admin001";
+        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        user_id = sharedPreferences.getString("id", "");
+        //user_id = "admin001";
 
     }
 
@@ -165,6 +168,13 @@ public class PersonalActivity extends AppCompatActivity {
         builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
+            SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
             finish();
         });
         AlertDialog dialog = builder.create();

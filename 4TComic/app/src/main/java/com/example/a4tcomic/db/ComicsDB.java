@@ -1,6 +1,10 @@
 package com.example.a4tcomic.db;
 
+import android.util.Pair;
+
 import androidx.annotation.NonNull;
+
+import com.example.a4tcomic.models.Chapter;
 import com.example.a4tcomic.models.Comic;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -8,6 +12,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class ComicsDB {
@@ -38,8 +44,9 @@ public class ComicsDB {
                     Comic comic = comicSnapshot.getValue(Comic.class);
                     comics.add(comic);
                 }
-                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
-                callback.onAllComicsLoaded(comics);
+//                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+//                callback.onAllComicsLoaded(comics);
+                fetchLatestChaptersAndSort(comics, callback);
             }
 
             @Override
@@ -47,17 +54,42 @@ public class ComicsDB {
         });
     }
 
-    // lấy truyện theo id
+
+    private void fetchLatestChaptersAndSort(List<Comic> comics, final AllComicsCallback callback) {
+        ChaptersDB chaptersDB = new ChaptersDB();
+        List<Comic> sortedComics = new ArrayList<>();
+
+        for (Comic comic : comics) {
+            chaptersDB.getLastestChapter(comic.getId(), new ChaptersDB.ChapterCallback() {
+                @Override
+                public void onChapterLoaded(Chapter latestChapter) {
+                    comic.setCreated_at(latestChapter != null ? latestChapter.getCreated_at() : 0);
+                    sortedComics.add(comic);
+
+                    if (sortedComics.size() == comics.size()) {
+                        // Sắp xếp danh sách truyện dựa trên thời gian chương mới nhất
+                        Collections.sort(sortedComics, (o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                        callback.onAllComicsLoaded(sortedComics);
+                    }
+                }
+            });
+        }
+    }
+
+
+
+    // tìm truyện theo id
     public void getComicById(String comic_id, final ComicCallback callback) {
         mComicsRef.child(comic_id).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Comic comic = snapshot.getValue(Comic.class);
-                        callback.onComicLoaded(comic);
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) { }
-                });
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Comic comic = snapshot.getValue(Comic.class);
+                callback.onComicLoaded(comic);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) { }
+        });
     }
 
     // thêm truyện mới

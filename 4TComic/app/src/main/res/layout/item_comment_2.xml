@@ -2,13 +2,14 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:background="@drawable/box_coment"
     android:orientation="vertical"
     android:padding="16dp" >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
@@ -24,7 +25,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/image4" />
         </androidx.cardview.widget.CardView>
 
@@ -33,7 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/faustina"
             android:text="Cổ Trần Xa"
             android:textColor="#000000"
@@ -42,22 +44,26 @@
 
         <TextView
             android:id="@+id/tvTime"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
             android:text="1 phút trước"
+            android:textAlignment="textEnd"
             android:textColor="#000000" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentTop="true"
             android:layout_gravity="center"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="5dp"
             android:paddingTop="10dp"
             app:srcCompat="@drawable/three_dot_3x" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/tvContentComment"
@@ -70,6 +76,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"
+        android:gravity="right"
         android:orientation="horizontal">
 
         <ImageView
@@ -82,7 +89,6 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="10" />
     </LinearLayout>
 </LinearLayout>

@@ -63,6 +63,7 @@ public class UploadChapterActivity extends AppCompatActivity {
         String comicName = getIntent().getStringExtra("comicName");
         comicId = getIntent().getStringExtra("comicId");
         edtComicName.setText(comicName);
+        setLastestChapterNumber(comicId);
 
         btnBack.setOnClickListener(v -> finish());
 
@@ -71,6 +72,20 @@ public class UploadChapterActivity extends AppCompatActivity {
         imgPDF.setOnClickListener(v -> openFileChooser(PICK_PDF_REQUEST));
 
         btnUpload.setOnClickListener(v -> uploadChapter());
+    }
+
+    private void setLastestChapterNumber(String comicId){
+        ChaptersDB chaptersDB = new ChaptersDB();
+        chaptersDB.getLastestChapter(comicId, new ChaptersDB.ChapterCallback() {
+            @Override
+            public void onChapterLoaded(Chapter lastestChapter) {
+                if (lastestChapter == null) {
+                    edtChapter.setText("1");
+                } else {
+                    edtChapter.setText(String.valueOf(lastestChapter.getOrder() + 1));
+                }
+            }
+        });
     }
 
     private void openFileChooser(int requestCode) {
@@ -98,7 +113,7 @@ public class UploadChapterActivity extends AppCompatActivity {
     private void uploadChapter() {
 
         if (coverImageUri == null || pdfUri == null || edtTitle.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Please fill all fields and select files.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -125,7 +140,7 @@ public class UploadChapterActivity extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(UploadChapterActivity.this, "Failed to upload PDF.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UploadChapterActivity.this, getString(R.string.pdf_upload_fail), Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -134,7 +149,7 @@ public class UploadChapterActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(UploadChapterActivity.this, "Failed to upload cover image.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UploadChapterActivity.this, getString(R.string.cover_image_upload_fail), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -143,7 +158,7 @@ public class UploadChapterActivity extends AppCompatActivity {
         ChaptersDB chaptersDB = new ChaptersDB();
         Chapter chapter = new Chapter("", title, coverUrl, pdfUrl, Integer.parseInt(edtChapter.getText().toString()), comicId, System.currentTimeMillis());
         chaptersDB.addChapter(chapter);
-        Toast.makeText(this, "Chapter uploaded successfully!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.chapter_upload_success), Toast.LENGTH_SHORT).show();
         finish();
     }
 }
