@@ -32,7 +32,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:paddingEnd="30dp"
-            android:text="Danh sách truyện"
+            android:text="@string/title_list_comic"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25sp"

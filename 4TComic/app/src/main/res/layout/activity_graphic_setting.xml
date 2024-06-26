@@ -34,7 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cài đặt giao diện"
+            android:text="@string/title_setting"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="22sp"
@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Chế độ giao diện tối"
+                android:text="@string/dark_mode"
                 android:textColor="#FFB3C6"
                 android:textSize="16sp" />
 
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Ngôn ngữ giao diện"
+                android:text="@string/language"
                 android:textColor="#FFB3C6"
                 android:textSize="16sp" />
 

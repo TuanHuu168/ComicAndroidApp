@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="50dp"
             android:layout_weight="1"
-            android:text="Bình luận"
+            android:text="@string/title_comment"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25sp"
@@ -52,7 +52,7 @@
             android:layout_height="95dp"
             android:background="@null"
             android:ems="10"
-            android:hint="Bình luận ..."
+            android:hint="@string/hint_comment"
             android:inputType="text"
             android:paddingLeft="20dp"
             android:paddingBottom="60dp" />
@@ -64,7 +64,7 @@
             android:layout_gravity="right"
             android:backgroundTint="#50CAFF"
             android:gravity="center"
-            android:text="Post"
+            android:text="@string/post_comment"
             app:cornerRadius="20dp" />
     </LinearLayout>
 
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Mới nhất"
+                android:text="@string/new_comment"
                 android:textSize="16sp" />
 
             <ImageButton
@@ -112,7 +112,6 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="50dp"
                 android:layout_weight="1"
-                android:text="100k comment"
                 android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
