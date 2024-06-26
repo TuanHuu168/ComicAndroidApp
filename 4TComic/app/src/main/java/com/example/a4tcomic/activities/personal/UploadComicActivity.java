@@ -90,10 +90,12 @@ public class UploadComicActivity extends AppCompatActivity {
         spCategory = findViewById(R.id.spCategory);
         rvSelectedCategories = findViewById(R.id.rvSelectedCategories);
         btnBack = findViewById(R.id.btnBack);
-
+        btnUpload = findViewById(R.id.btnUpload);
 
         btnBack.setOnClickListener(v -> { finish(); });
         comicsDB = new ComicsDB();
+        genresDB = new GenresDB();
+        authorsDB = new AuthorsDB();
 
         selectedCategories = new ArrayList<>();
         categoryAdapter = new CategoryAdapter(selectedCategories);

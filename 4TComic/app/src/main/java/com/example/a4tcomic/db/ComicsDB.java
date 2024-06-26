@@ -1,5 +1,7 @@
 package com.example.a4tcomic.db;
 
+import android.util.Pair;
+
 import androidx.annotation.NonNull;
 
 import com.example.a4tcomic.models.Chapter;
@@ -13,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,12 +47,44 @@ public class ComicsDB {
                     Comic comic = comicSnapshot.getValue(Comic.class);
                     comics.add(comic);
                 }
-                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
-                callback.onAllComicsLoaded(comics);
+//                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+//                callback.onAllComicsLoaded(comics);
+                fetchLatestChaptersAndSort(comics, callback);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) { }
         });
+    }
+
+    private void fetchLatestChaptersAndSort(List<Comic> comics, final AllComicsCallback callback) {
+        ChaptersDB chaptersDB = new ChaptersDB();
+        List<Pair<Comic, Long>> comicsWithLatestChapterTime = new ArrayList<>();
+
+        for (Comic comic : comics) {
+            chaptersDB.getChapters(comic.getId(), new ChaptersDB.ChaptersCallback() {
+                @Override
+                public void onChaptersLoaded(List<Chapter> chapters) {
+                    long latestChapterTime = 0;
+                    if (!chapters.isEmpty()) {
+                        latestChapterTime = chapters.get(0).getCreated_at(); // Chương đầu tiên là chương mới nhất
+                    }
+                    comicsWithLatestChapterTime.add(new Pair<>(comic, latestChapterTime));
+
+                    if (comicsWithLatestChapterTime.size() == comics.size()) {
+                        // Đảm bảo đã lấy được thời gian chương mới nhất cho tất cả truyện
+                        Collections.sort(comicsWithLatestChapterTime, (o1, o2) -> Long.compare(o2.second, o1.second));
+
+                        // Tạo danh sách comic đã sắp xếp
+                        List<Comic> sortedComics = new ArrayList<>();
+                        for (Pair<Comic, Long> pair : comicsWithLatestChapterTime) {
+                            sortedComics.add(pair.first);
+                        }
+
+                        callback.onAllComicsLoaded(sortedComics);
+                    }
+                }
+            });
+        }
     }
 
     // lấy truyện theo user_id người đăng
