@@ -5,12 +5,16 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -18,11 +22,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.adapters.ChaptersAdapter;
 import com.example.a4tcomic.adapters.ReadingPagerAdapter;
+import com.example.a4tcomic.models.Chapter;
+import com.github.barteksc.pdfviewer.PDFView;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -31,53 +38,82 @@ import java.util.stream.Collectors;
 
 public class ReadPageActivity extends AppCompatActivity {
 
-    ImageButton btnBack;
-    private ViewPager2 viewPager;
-    private ReadingPagerAdapter adapter;
-    private List<Integer> pageImages;
-    private ImageButton btnSelectChapter, btnPrevious, btnNext;
+    private ImageButton btnSelectChapter, btnPrevious, btnNext, btnBack, btnMusic;
+    private TextView tvPage;
+    private PDFView pdfView;
+    private ProgressBar progressBar;
+
     private List<String> chapters;
+    private List<Chapter> chapterList;
+    private Chapter currentChapter;
+    Boolean isMusicPlaying = false;
+
+    private static final String TAG = "ReadPageActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_page);
 
-        btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(v -> finish());
-
-        // Khởi tạo danh sách các trang truyện
-        pageImages = new ArrayList<>();
-        pageImages.add(R.drawable.ic_page1);
-        pageImages.add(R.drawable.ic_page1);
-        pageImages.add(R.drawable.ic_page1);
-        // Thêm các trang khác vào danh sách
-        viewPager = findViewById(R.id.vpChapter);
-        viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL); // Đặt hướng cuộn dọc
-        adapter = new ReadingPagerAdapter(pageImages);
-        viewPager.setAdapter(adapter);
-
+        tvPage = findViewById(R.id.tvPageNumber);
+        pdfView = findViewById(R.id.pdfView);
         btnSelectChapter = findViewById(R.id.btnChooseChapters);
         btnPrevious = findViewById(R.id.btnLeftArrow);
         btnNext = findViewById(R.id.btnRightArrow);
+        btnBack = findViewById(R.id.btnBack);
+        progressBar = findViewById(R.id.progressBar);
+
+        btnBack.setOnClickListener(v -> finish());
+
+        // nhận dữ liệu
+        chapterList = (List<Chapter>) getIntent().getSerializableExtra("chapterList");
+        Log.d(TAG, "list chapter size: " + chapterList.size());
+        currentChapter = (Chapter) getIntent().getSerializableExtra("chapter");
+        Log.d(TAG, "current chapter: " + currentChapter.getTitle());
 
         // Khởi tạo danh sách các chương
         chapters = new ArrayList<>();
-        for (int i = 1; i <= 165; i++) {
+        for (Chapter chapter : chapterList) {
+            int i = chapter.getOrder();
             chapters.add("Chương " + i);
         }
 
-        btnSelectChapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog();
-            }
-        });
+        loadPDF();
+
+        btnSelectChapter.setOnClickListener(v -> showDialog());
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+    }
+
+    private void loadPDF() {
+        StorageReference ref = FirebaseStorage.getInstance().getReferenceFromUrl(currentChapter.getPdf_url());
+        ref.getBytes(Long.MAX_VALUE).addOnSuccessListener(bytes -> {
+            pdfView.fromBytes(bytes)
+                    .swipeHorizontal(false) // cuộn theo chiều dọc
+                    .enableAntialiasing(true) // cải thiện chất lượng hiển thị
+                    .onPageChange( (page, pageCount) -> {
+                        int i = page + 1;
+                        tvPage.setText(i + "/" + pageCount);
+                        Log.d(TAG, "loadPDF: " + i + "/" + pageCount);
+                    })
+                    .onError(t -> {
+                        Toast.makeText(this, "Lỗi khi tải PDF", Toast.LENGTH_SHORT).show();
+                        Log.e(TAG, "loadPDF: ", t);
+                    })
+                    .onPageError((page, t) -> {
+                        Toast.makeText(this, "Lỗi khi tải trang" + page + " " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.e(TAG, "loadPDF: ", t);
+                    })
+                    .load();
+            progressBar.setVisibility(View.GONE);
+        }).addOnFailureListener(e -> {
+            Toast.makeText(this, "Lỗi khi tải PDF", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "loadPDF: ", e);
+            progressBar.setVisibility(View.GONE);
         });
     }
 

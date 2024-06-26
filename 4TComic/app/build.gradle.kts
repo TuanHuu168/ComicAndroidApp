@@ -47,4 +47,12 @@ dependencies {
     implementation ("androidx.cardview:cardview:1.0.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+<<<<<<< Updated upstream
 }
+=======
+
+    implementation ("com.squareup.picasso:picasso:2.71828")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
+}
+>>>>>>> Stashed changes

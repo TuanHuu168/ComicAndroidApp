@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -24,13 +23,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.adapters.ChapterAdapter;
 import com.example.a4tcomic.adapters.GenreAdapter;
-import com.example.a4tcomic.app_interface.IClickChapter;
 import com.example.a4tcomic.db.AuthorsDB;
 import com.example.a4tcomic.db.ChaptersDB;
-import com.example.a4tcomic.db.ComicsDB;
 import com.example.a4tcomic.db.FavoritesDB;
 import com.example.a4tcomic.db.GenresDB;
-import com.example.a4tcomic.models.Author;
 import com.example.a4tcomic.models.Chapter;
 import com.example.a4tcomic.models.Comic;
 import com.example.a4tcomic.models.Genre;
@@ -49,7 +45,6 @@ public class StoryDetailActivity extends AppCompatActivity {
     private GenreAdapter genreAdapter;
     private ChapterAdapter chapterAdapter;
 
-    private ComicsDB comicsDB;
     private AuthorsDB authorsDB;
     private FavoritesDB favoritesDB;
     private GenresDB genresDB;
@@ -100,20 +95,22 @@ public class StoryDetailActivity extends AppCompatActivity {
 
         // Chương
         chapters = new ArrayList<>();
-        chapterAdapter = new ChapterAdapter(pdfUrl -> onChapterClick(pdfUrl+""));
+        chapterAdapter = new ChapterAdapter(chapter -> {
+            goToReadPage(chapter);
+        });
         LinearLayoutManager lLM = new LinearLayoutManager(this);
         rcv_chapters.setLayoutManager(lLM);
 
-        // get data
-        comicsDB = new ComicsDB();
         authorsDB = new AuthorsDB();
         favoritesDB = new FavoritesDB();
         genresDB = new GenresDB();
         chaptersDB = new ChaptersDB();
 
-        user_id = "admin001";
-        comic_id = "comic001";
-        getComic();
+        // get data
+        currentComic = (Comic) getIntent().getSerializableExtra("comic");
+        user_id = currentComic.getUser_id();
+        comic_id = currentComic.getId();
+        setupUI();
 
         // Yêu thích
         btn_favorite.setOnClickListener(v -> {
@@ -129,6 +126,7 @@ public class StoryDetailActivity extends AppCompatActivity {
         // Button bottom
         btn_last_chapter.setOnClickListener(v -> {
             Chapter lastChapter = chapters.isEmpty() ? null : chapters.get(0);
+<<<<<<< Updated upstream
 //            if (lastChapter == null) {
                 Toast.makeText(this, "Truyện không có chương nào" + lastChapter.getPdf_url(), Toast.LENGTH_SHORT).show();
 //                return;
@@ -139,20 +137,15 @@ public class StoryDetailActivity extends AppCompatActivity {
 //            bundle.putSerializable("chapters", (ArrayList<Chapter>) chapters);
 //            intent.putExtras(bundle);
 //            startActivity(intent);
+=======
+            goToReadPage(lastChapter);
+>>>>>>> Stashed changes
         });
 
         btn_first_chapter.setOnClickListener(v -> {
             Chapter firstChapter = chapters.isEmpty() ? null : chapters.get(chapters.size() - 1);
-//            if (firstChapter == null) {
-                Toast.makeText(this, "Truyện không có chương nào" + firstChapter.getPdf_url(), Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-//            Intent intent = new Intent(this, ReadPageActivity.class);
-//            intent.putExtra("chapter", firstChapter.getPdf_url());
-//            Bundle bundle = new Bundle();
-//            bundle.putSerializable("chapters", (ArrayList<Chapter>) chapters);
-//            intent.putExtras(bundle);
-//            startActivity(intent);
+            goToReadPage(firstChapter);
+
         });
 
         btn_cmt.setOnClickListener(v -> {
@@ -163,13 +156,15 @@ public class StoryDetailActivity extends AppCompatActivity {
 
     }
 
-    private void getComic() {
-        comicsDB.getComicById(comic_id, comic -> {
-            if (comic != null) {
-                currentComic = comic;
-                setupUI();
-            }
-        });
+    private void goToReadPage(Chapter chapter) {
+        if (chapter == null) {
+            Toast.makeText(this, "Truyện không có chương nào", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Intent intent = new Intent(this, ReadPageActivity.class);
+        intent.putExtra("chapterList", (ArrayList<Chapter>) chapters);
+        intent.putExtra("chapter", chapter);
+        startActivity(intent);
     }
 
     private void setupUI() {
@@ -227,7 +222,7 @@ public class StoryDetailActivity extends AppCompatActivity {
     }
 
     private void setFavorite() {
-        long created_at = convertTime();
+        long created_at = System.currentTimeMillis();
         if (isFavorite){
             favoritesDB.removeFavorite(id_favorite);
             isFavorite = false;
@@ -236,19 +231,6 @@ public class StoryDetailActivity extends AppCompatActivity {
             favoritesDB.addFavorite(comic_id, user_id, created_at);
             isFavorite = true;
         }
-    }
-
-    // Lấy thời gian hiện tại trên thiết bị di động
-    private long convertTime() {
-        long time = 0;
-        String dateTime = android.text.format.DateFormat.format("yyyy-MM-dd HH:mm:ss", new java.util.Date()).toString();
-        // chuyển từ string sang long
-        if (!TextUtils.isEmpty(dateTime)) {
-            time = Long.parseLong(dateTime.replace("-", "")
-                    .replace(" ", "")
-                    .replace(":", ""));
-        }
-        return time;
     }
 
     private void setExpanded() {
@@ -289,15 +271,5 @@ public class StoryDetailActivity extends AppCompatActivity {
             chapters.addAll(getChapter);
             chapterAdapter.notifyDataSetChanged();
         });
-    }
-
-    private void onChapterClick(String pdfUrl) {
-        Toast.makeText(this, "Đang đọc..." + pdfUrl, Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, ReadPageActivity.class);
-        intent.putExtra("pdf_url", pdfUrl);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("chapters", (ArrayList<Chapter>) chapters);
-        intent.putExtras(bundle);
-        startActivity(intent);
     }
 }

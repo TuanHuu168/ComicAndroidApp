@@ -40,6 +40,7 @@ public class PersonalActivity extends AppCompatActivity {
     private UsersDB usersDB;
     private String user_id;
     private User currentUser;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,9 +130,10 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         // nhận dữ liệu
-        usersDB = new UsersDB();
-        user_id = "admin001";
+        sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        user_id = sharedPreferences.getString("id", "");
 
+        usersDB = new UsersDB();
     }
 
     @Override
@@ -156,6 +158,14 @@ public class PersonalActivity extends AppCompatActivity {
         else
             iv_avatar.setImageResource(R.drawable.avatar);
     }
+    private void setLogout() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     private void setDialogLogout() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -166,9 +176,7 @@ public class PersonalActivity extends AppCompatActivity {
             dialog.dismiss();
         });
         builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-            finish();
+            setLogout();
         });
         AlertDialog dialog = builder.create();
         dialog.show();

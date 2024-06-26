@@ -19,7 +19,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/btnBack"
@@ -41,22 +42,39 @@
                 android:textSize="22dp"
                 android:textStyle="bold"
                 android:layout_marginRight="40dp"/>
+
+            <TextView
+                android:id="@+id/tvPageNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="N/N"
+                android:gravity="center"
+                android:paddingRight="8dp"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                />
         </LinearLayout>
     </RelativeLayout>
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpChapter"
-        android:layout_width="0dp"
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topNav"
-        app:layout_constraintVertical_bias="0.0" />
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topNav"
+        />
 
     <LinearLayout
         android:id="@+id/bottomNav"

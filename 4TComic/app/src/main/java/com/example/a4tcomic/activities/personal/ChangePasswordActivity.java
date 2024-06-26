@@ -1,5 +1,6 @@
 package com.example.a4tcomic.activities.personal;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -61,6 +62,11 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
 
     private void saveChange() {
         curUser.setPassword(et_new_password.getText().toString());
+
+        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("password", curUser.getPassword());
+
         UsersDB usersDB = new UsersDB();
         usersDB.updateUser(curUser, curUser.getAvatar_url(), () -> {
             Toast.makeText(ChangePasswordActivity.this, "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
