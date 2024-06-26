@@ -1,4 +1,5 @@
 package com.example.a4tcomic.activities.personal;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -68,6 +69,7 @@ public class UploadComicActivity extends AppCompatActivity {
     ComicsDB comicsDB;
     String authorId = "";
     boolean[] isChecked = {false};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +93,7 @@ public class UploadComicActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBack);
         btnUpload = findViewById(R.id.btnUpload);
 
-        btnBack.setOnClickListener(v -> { finish(); });
+        btnBack.setOnClickListener(v -> finish());
         comicsDB = new ComicsDB();
         genresDB = new GenresDB();
         authorsDB = new AuthorsDB();
@@ -268,7 +270,7 @@ public class UploadComicActivity extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-
+                                    Toast.makeText(UploadComicActivity.this, getString(R.string.avatar_upload_fail), Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
@@ -277,7 +279,7 @@ public class UploadComicActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-
+                    Toast.makeText(UploadComicActivity.this, getString(R.string.cover_image_upload_fail), Toast.LENGTH_SHORT).show();
                 }
             });
         } else {
@@ -285,11 +287,11 @@ public class UploadComicActivity extends AppCompatActivity {
         }
     }
 
-    private void saveComicToFirebase(String comicName, String coverUrl, String avatarUrl, String authorId, String summary) {
+    private void saveComicToFirebase(String comicName, String avatarUrl, String coverUrl, String authorId, String summary) {
         SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
         String userId = sharedPreferences.getString("id", "");
 
-        Comic comic = new Comic("", comicName, coverUrl, avatarUrl, authorId, summary, userId, System.currentTimeMillis());
+        Comic comic = new Comic("", comicName, avatarUrl, coverUrl, authorId, summary, userId, System.currentTimeMillis());
         comicsDB.addComic(comic);
         genresDB.getAllGenres(new GenresDB.GenreCallback() {
             @Override

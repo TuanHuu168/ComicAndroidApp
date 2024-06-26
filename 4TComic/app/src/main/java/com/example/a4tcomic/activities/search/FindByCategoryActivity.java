@@ -69,13 +69,14 @@ public class FindByCategoryActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         } else {
-                            Toast.makeText(FindByCategoryActivity.this, "Không tìm thấy thể loại", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FindByCategoryActivity.this, R.string.toast_genre_not_found, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             } else {
-                Toast.makeText(FindByCategoryActivity.this, "Vui lòng nhập tên thể loại", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FindByCategoryActivity.this, R.string.toast_please_enter_genre, Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

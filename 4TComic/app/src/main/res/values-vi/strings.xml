@@ -62,6 +62,17 @@
     <string name="new_password_title">Mật khẩu mới</string>
     <string name="confirm_new_password_title">Xác nhận mật khẩu mới</string>
 
+    <string name="password_changed">Đổi mật khẩu thành công</string>
+    <string name="current_password_required">Mật khẩu hiện tại là bắt buộc</string>
+    <string name="new_password_required">Mật khẩu mới là bắt buộc</string>
+    <string name="confirm_password_required">Xác nhận mật khẩu mới là bắt buộc</string>
+    <string name="incorrect_current_password">Mật khẩu hiện tại không đúng</string>
+
+    <string name="name_empty">Tên không được để trống</string>
+    <string name="update_success">Cập nhật thành công</string>
+
+    <string name="avatar_upload_fail">Không thể tải lên ảnh đại diện. Vui lòng thử lại.</string>
+
     <string name="register_text">&#160;Đăng Ký&#160;</string>
     <string name="user_name_text">Tên đăng nhập</string>
     <string name="email_text">Email</string>
@@ -127,6 +138,32 @@
     <string name="find_genre">Tìm kiếm theo thể loại</string>
     <string name="find_author">Tìm kiếm theo tác giả</string>
 
+    <string name="toast_enter_username">Vui lòng nhập tên người dịch</string>
+    <string name="toast_user_not_found">Không tìm thấy người dịch</string>
+
+    <string name="toast_genre_not_found">Không tìm thấy thể loại</string>
+    <string name="toast_please_enter_genre">Vui lòng nhập tên thể loại</string>
+
+    <string name="toast_author_not_found">Không tìm thấy tác giả</string>
+    <string name="toast_please_enter_author">Vui lòng nhập tên tác giả</string>
+
+    <string name="toast_comic_author_not_found">Không tìm thấy truyện của tác giả</string>
+    <string name="toast_comic_translator_not_found">Không tìm thấy truyện của người dịch</string>
+    <string name="toast_comic_genre_not_found">Không tìm thấy truyện của thể loại</string>
+    <string name="toast_comic_not_found">Không tìm thấy truyện</string>
+    <string name="title_not_found">Không tìm thấy truyện</string>
+    <string name="toast_missing_search_text">Vui lòng nhập văn bản tìm kiếm</string>
+
+    <string name="confirm_delete_history">Bạn có chắc chắn muốn xóa lịch sử truyện này không?</string>
+    <string name="confirm_delete_history_message">Nhấn Yes sẽ xóa vĩnh viễn lịch sử truyện này.</string>
+    <string name="confirm_delete_follow">Bạn có chắc chắn muốn xóa truyện theo dõi này không?</string>
+    <string name="confirm_delete_follow_message">Nhấn Yes sẽ xóa vĩnh viễn truyện này khỏi danh sách theo dõi của bạn.</string>
+
+    <string name="select_all">Chọn tất cả</string>
+    <string name="deselect_all">Bỏ chọn tất cả</string>
+
+    <string name="access_denied">Bạn không có quyền truy cập.</string>
+
     <string name="title_author_1">Tác phẩm nổi bật</string>
     <string name="title_author_2">Tác phẩm mới</string>
 
@@ -142,6 +179,5 @@
     <string name="chapterr">Chương</string>
 
     <string name="noti_update_chapter">Đã cập nhật chương mới: </string>
-
 
 </resources>

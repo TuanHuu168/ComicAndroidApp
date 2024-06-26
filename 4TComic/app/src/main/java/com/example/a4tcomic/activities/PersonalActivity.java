@@ -108,7 +108,7 @@ public class PersonalActivity extends AppCompatActivity {
 
         btn_admin.setOnClickListener(v -> {
             if (currentUser.getRole() != 1) {
-                Toast.makeText(this, "Bạn không có quyền truy cập", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.access_denied, Toast.LENGTH_SHORT).show();
                 return;
             }
             Intent intent = new Intent(this, AdminActivity.class);

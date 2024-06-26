@@ -51,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
     boolean[] isChecked = {false};
     Uri imgUri;
     UsersDB usersDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -157,18 +158,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-//    private long convertTime() {
-//        long time = 0;
-//        String dateTime = android.text.format.DateFormat.format("yyyy-MM-dd HH:mm:ss", new java.util.Date()).toString();
-//        // chuyển từ string sang long
-//        if (!TextUtils.isEmpty(dateTime)) {
-//            time = Long.parseLong(dateTime.replace("-", "")
-//                    .replace(" ", "")
-//                    .replace(":", ""));
-//        }
-//        return time;
-//    }
-
     private boolean isValidEmail(String email) {
         String emailPattern = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
         return email.matches(emailPattern);
@@ -213,7 +202,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void uploadImageToFirebase(User user) {
         StorageReference storageRef = FirebaseStorage.getInstance().getReference("comic_db/avatar_users/" + UUID.randomUUID().toString());

@@ -116,8 +116,8 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
 
         btnDelete.setOnClickListener(v -> {
             new AlertDialog.Builder(BookcaseActivity.this)
-                    .setTitle("Xác nhận xóa")
-                    .setMessage("Bạn có chắc chắn muốn xóa lịch sử truyện này không?")
+                    .setTitle(R.string.confirm_delete_history)
+                    .setMessage(R.string.confirm_delete_history_message)
                     .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                         // Xóa đơn vị khỏi SQLite
                     })
@@ -128,8 +128,8 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
 
         btnDeleteFollow.setOnClickListener(v -> {
             new AlertDialog.Builder(BookcaseActivity.this)
-                    .setTitle("Xác nhận xóa")
-                    .setMessage("Bạn có chắc chắn muốn xóa truyện theo dõi này không?")
+                    .setTitle(R.string.confirm_delete_follow)
+                    .setMessage(R.string.confirm_delete_follow_message)
                     .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                         // Xóa đơn vị khỏi SQLite
                     })
@@ -164,24 +164,25 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
         btnChooseAll.setOnClickListener(v -> {
             if (isAllSelected) {
                 historyAdapter.deselectAll();
-                btnChooseAll.setText("Chọn tất cả");
+                btnChooseAll.setText(R.string.select_all);
             } else {
-                btnChooseAll.setText("Bỏ chọn tất cả");
+                btnChooseAll.setText(R.string.deselect_all);
                 historyAdapter.selectAll();
             }
-            isAllSelected = !isAllSelected; // đổi trạng thái
+            isAllSelected = !isAllSelected; // Toggle state
         });
 
         btnChooseAllFollow.setOnClickListener(v -> {
             if (isAllSelected) {
                 followAdapter.deselectAll();
-                btnChooseAllFollow.setText("Chọn tất cả");
+                btnChooseAllFollow.setText(R.string.select_all);
             } else {
-                btnChooseAllFollow.setText("Bỏ chọn tất cả");
+                btnChooseAllFollow.setText(R.string.deselect_all);
                 followAdapter.selectAll();
             }
-            isAllSelected = !isAllSelected; // đổi trạng thái
+            isAllSelected = !isAllSelected; // Toggle state
         });
+
 
         rcvHistory = findViewById(R.id.rcvHistory);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);

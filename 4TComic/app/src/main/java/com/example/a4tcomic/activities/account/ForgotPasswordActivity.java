@@ -23,11 +23,12 @@ import java.util.Random;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    //Khai báo
+    // Khai báo
     EditText edtUserName, edtEmail;
     TextView lblLogin;
     Button btnForgot;
     UsersDB usersDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +74,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                             for (User user : users) {
                                 if (user.getUsername().equals(username) && user.getEmail().equals(email)) {
                                     userFound = true;
-                                    String newPassword = "12345";
+                                    String newPassword = "12345"; // Bạn có thể sử dụng Random để tạo mật khẩu ngẫu nhiên
                                     user.setPassword(newPassword);
                                     usersDB.updateUser(user, user.getAvatar_url(), () -> {
                                         Toast.makeText(ForgotPasswordActivity.this, getString(R.string.random_password_created), Toast.LENGTH_LONG).show();
@@ -90,5 +91,4 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             }
         });
     }
-
 }
