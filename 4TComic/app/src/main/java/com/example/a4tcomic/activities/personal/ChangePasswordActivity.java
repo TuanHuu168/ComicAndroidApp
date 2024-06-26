@@ -69,7 +69,7 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
 
         UsersDB usersDB = new UsersDB();
         usersDB.updateUser(curUser, curUser.getAvatar_url(), () -> {
-            Toast.makeText(ChangePasswordActivity.this, "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChangePasswordActivity.this, getString(R.string.password_changed), Toast.LENGTH_SHORT).show();
             finish();
         });
     }
@@ -80,31 +80,31 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
         String confirmPass = et_confirm_new_password.getText().toString().trim();
 
         if (curPass.isEmpty()) {
-            et_current_password.setError("Mật khẩu hiện tại là bắt buộc");
+            et_current_password.setError(getString(R.string.current_password_required));
             et_current_password.requestFocus();
             return false;
         }
 
         if (newPass.isEmpty()) {
-            et_new_password.setError("Mật khẩu mới là bắt buộc");
+            et_new_password.setError(getString(R.string.new_password_required));
             et_new_password.requestFocus();
             return false;
         }
 
         if (confirmPass.isEmpty()) {
-            et_confirm_new_password.setError("Xác nhận mật khẩu mới là bắt buộc");
+            et_confirm_new_password.setError(getString(R.string.confirm_password_required));
             et_confirm_new_password.requestFocus();
             return false;
         }
 
         if (!curPass.equals(curUser.getPassword())) {
-            et_current_password.setError("Mật khẩu hiện tại không đúng");
+            et_current_password.setError(getString(R.string.incorrect_current_password));
             et_current_password.requestFocus();
             return false;
         }
 
         if (!newPass.equals(confirmPass)) {
-            et_confirm_new_password.setError("Xác nhận mật khẩu mới không đúng");
+            et_confirm_new_password.setError(getString(R.string.password_mismatch));
             et_confirm_new_password.requestFocus();
             return false;
         }
@@ -121,5 +121,4 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
         et_confirm_new_password.clearFocus();
         return false;
     }
-
 }

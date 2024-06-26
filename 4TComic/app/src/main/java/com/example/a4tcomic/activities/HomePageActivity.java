@@ -23,6 +23,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.activities.search.FindByWriterActivity;
+import com.example.a4tcomic.activities.search.ListComicActivity;
 import com.example.a4tcomic.adapters.ContentAdapter;
 import com.example.a4tcomic.db.ComicsDB;
 import com.example.a4tcomic.db.FavoritesDB;
@@ -46,7 +47,7 @@ public class HomePageActivity extends AppCompatActivity{
 
     // Các biến khác
     EditText et_search;
-    ImageButton btnAdvancedSearch, btnHomePage, btnArchive, btnNotification, btnSetting;
+    ImageButton btnAdvancedSearch, btnHomePage, btnArchive, btnNotification, btnSetting, btnSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +61,11 @@ public class HomePageActivity extends AppCompatActivity{
         });
 
         // Ánh xạ
-        et_search = findViewById(R.id.et_search);
         trendingRecyclerView = findViewById(R.id.recyclerViewTrending);
         historyRecyclerView = findViewById(R.id.recyclerViewHistory);
         recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);
         btnAdvancedSearch = findViewById(R.id.btnAdvancedSearch);
+        btnSearch = findViewById(R.id.btnSearch);
 
         btnHomePage = findViewById(R.id.btnHomePage);
         btnArchive = findViewById(R.id.btnArchive);
@@ -92,6 +93,11 @@ public class HomePageActivity extends AppCompatActivity{
         btnAdvancedSearch.setOnClickListener(v -> {
             Intent advancedSearchIntent = new Intent(this, FindByWriterActivity.class);
             startActivity(advancedSearchIntent);
+        });
+
+        btnSearch.setOnClickListener(v -> {
+            Intent searchIntent = new Intent(this, ListComicActivity.class);
+            startActivity(searchIntent);
         });
 
         // Tạo slider vào thêm ảnh vào slider

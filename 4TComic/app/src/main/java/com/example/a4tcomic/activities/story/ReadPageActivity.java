@@ -1,6 +1,7 @@
 package com.example.a4tcomic.activities.story;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -62,13 +63,21 @@ public class ReadPageActivity extends AppCompatActivity {
         tvPage = findViewById(R.id.tvPageNumber);
         tvNameChapter = findViewById(R.id.tv_name_chapter);
         pdfView = findViewById(R.id.pdfView);
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
+
+        btnMusic = findViewById(R.id.btnMusic);
+        btnMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleMusic();
+            }
+        });
+
         btnSelectChapter = findViewById(R.id.btnChooseChapters);
         btnPrevious = findViewById(R.id.btnLeftArrow);
         btnNext = findViewById(R.id.btnRightArrow);
-        btnBack = findViewById(R.id.btnBack);
         progressBar = findViewById(R.id.progressBar);
-
-        btnBack.setOnClickListener(v -> finish());
 
         // nhận dữ liệu
         sortedListNew = (List<Chapter>) getIntent().getSerializableExtra("chapterList");
@@ -174,6 +183,18 @@ public class ReadPageActivity extends AppCompatActivity {
             Log.e(TAG, "loadPDF: ", e);
             progressBar.setVisibility(View.GONE);
         });
+    }
+    
+    private void toggleMusic() {
+        Intent intent = new Intent(ReadPageActivity.this, Music.class);
+        if (isMusicPlaying) {
+            stopService(intent);
+            btnMusic.setImageResource(R.drawable.ic_adjust); // Cập nhật icon cho nút
+        } else {
+            startService(intent);
+            btnMusic.setImageResource(R.drawable.ic_adjust); // Cập nhật icon cho nút
+        }
+        isMusicPlaying = !isMusicPlaying;
     }
 
     private void showDialog() {

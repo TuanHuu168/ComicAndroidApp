@@ -42,20 +42,19 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
-    implementation ("androidx.recyclerview:recyclerview:1.3.2")
-    implementation ("androidx.cardview:cardview:1.0.0")
+    implementation("com.google.firebase:firebase-firestore:24.0.0")
     implementation ("com.google.firebase:firebase-storage")
     implementation (platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation ("com.google.firebase:firebase-database:20.2.1")
     implementation ("com.google.firebase:firebase-auth:22.0.0")
+
     implementation ("com.github.bumptech.glide:glide:4.12.0")
-
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
-    implementation ("com.squareup.picasso:picasso:2.71828")
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
-//    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
     implementation ("com.github.barteksc:android-pdf-viewer:3.2.0-beta.1")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("androidx.cardview:cardview:1.0.0")
 }

@@ -23,6 +23,7 @@ import com.example.a4tcomic.activities.account.LoginActivity;
 import com.example.a4tcomic.activities.admin.AdminActivity;
 import com.example.a4tcomic.activities.personal.AccountActivity;
 import com.example.a4tcomic.activities.personal.GraphicSettingActivity;
+import com.example.a4tcomic.activities.personal.HomeUploadActivity;
 import com.example.a4tcomic.activities.personal.ProfileActivity;
 import com.example.a4tcomic.activities.personal.UploadComicActivity;
 import com.example.a4tcomic.db.UsersDB;
@@ -104,11 +105,12 @@ public class PersonalActivity extends AppCompatActivity {
         btn_setting.setOnClickListener(v -> {
             Intent intent = new Intent(this, GraphicSettingActivity.class);
             startActivity(intent);
+            finish();
         });
 
         btn_admin.setOnClickListener(v -> {
             if (currentUser.getRole() != 1) {
-                Toast.makeText(this, "Bạn không có quyền truy cập", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.access_denied, Toast.LENGTH_SHORT).show();
                 return;
             }
             Intent intent = new Intent(this, AdminActivity.class);
@@ -117,8 +119,8 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         btn_upload_story.setOnClickListener(v -> {
-            Intent intent = new Intent(this, UploadComicActivity.class);
-            intent.putExtra("user_id", user_id);
+            Intent intent = new Intent(this, HomeUploadActivity.class);
+            intent.putExtra("userId", user_id);
             startActivity(intent);
         });
 
@@ -150,10 +152,15 @@ public class PersonalActivity extends AppCompatActivity {
             return;
         }
         tv_name.setText(currentUser.getUsername());
-        if (!currentUser.getAvatar_url().equals(""))
-            Picasso.get().load(currentUser.getAvatar_url()).into(iv_avatar);
-        else
+        try{
+            if (!currentUser.getAvatar_url().equals(""))
+                Picasso.get().load(currentUser.getAvatar_url()).into(iv_avatar);
+            else
+                iv_avatar.setImageResource(R.drawable.avatar);
+        }catch (Exception e){
             iv_avatar.setImageResource(R.drawable.avatar);
+        }
+
     }
     private void setLogout() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -173,7 +180,16 @@ public class PersonalActivity extends AppCompatActivity {
             dialog.dismiss();
         });
         builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
-            setLogout();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
+            finish();
         });
         AlertDialog dialog = builder.create();
         dialog.show();

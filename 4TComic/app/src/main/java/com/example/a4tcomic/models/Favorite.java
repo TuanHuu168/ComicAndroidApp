@@ -4,9 +4,9 @@ public class Favorite {
     private String id;
     private String comic_id;
     private String user_id;
-    private int created_at;
+    private long created_at;
 
-    public Favorite(String id, String comic_id, String user_id, int created_at) {
+    public Favorite(String id, String comic_id, String user_id, long created_at) {
         this.id = id;
         this.comic_id = comic_id;
         this.user_id = user_id;
@@ -41,11 +41,11 @@ public class Favorite {
         this.user_id = user_id;
     }
 
-    public int getCreated_at() {
+    public long getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(int created_at) {
+    public void setCreated_at(long created_at) {
         this.created_at = created_at;
     }
 }

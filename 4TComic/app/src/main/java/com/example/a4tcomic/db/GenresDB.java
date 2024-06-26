@@ -1,7 +1,10 @@
 package com.example.a4tcomic.db;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
+import com.example.a4tcomic.models.Comic;
 import com.example.a4tcomic.models.Genre;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -60,20 +63,20 @@ public class GenresDB {
                             if (genre_id != null)
 
                                 mGenresRef.child(genre_id).addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                String genre_name;
-                                                if (snapshot.exists()) {
-                                                    genre_name = snapshot.child("title")
-                                                            .getValue(String.class);
-                                                } else genre_name = "Unknown";
-                                                Genre new_genre = new Genre(genre_id, genre_name);
-                                                genreList.add(new_genre);
-                                                callback.onGenres(genreList);
-                                            }
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError error) {}
-                                        });
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        String genre_name;
+                                        if (snapshot.exists()) {
+                                            genre_name = snapshot.child("title")
+                                                    .getValue(String.class);
+                                        } else genre_name = "Unknown";
+                                        Genre new_genre = new Genre(genre_id, genre_name);
+                                        genreList.add(new_genre);
+                                        callback.onGenres(genreList);
+                                    }
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {}
+                                });
                         }
                     }
                     @Override
@@ -97,11 +100,70 @@ public class GenresDB {
         mComicGenreRef.child(key).child("comic_id").setValue(comicId);
     }
 
+    // lấy id thể loại bằng tên thể loại
+    public void getGenreIdByName(final String genreName, final GenreIdCallback callback) {
+        mGenresRef.orderByChild("title").equalTo(genreName).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot genreSnapshot : snapshot.getChildren()) {
+                        String genreId = genreSnapshot.getKey();
+                        callback.onGenreIdLoaded(genreId);
+                        return;
+                    }
+                }
+                callback.onGenreIdLoaded(null);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                callback.onGenreIdLoaded(null);
+            }
+        });
+    }
+
+    public void getComicsByGenreId(String genreId, final ComicsDB.AllComicsCallback callback) {
+        mComicGenreRef.orderByChild("genre_id")
+                .equalTo(genreId)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            List<Comic> comics = new ArrayList<>();
+                            ComicsDB comicsDB = new ComicsDB();
+                            for (DataSnapshot comicSnapshot : snapshot.getChildren()) {
+                                String comicId = comicSnapshot.child("comic_id").getValue(String.class);
+                                comicsDB.getComicById(comicId, comic -> {
+                                    if (comic != null) {
+                                        comics.add(comic);
+                                        comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                                        callback.onAllComicsLoaded(comics);
+                                    } else {
+                                        Log.e("GenresDB", "Comic object is null for comicId: " + comicId);
+                                    }
+                                });
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+    }
+
+
     public DatabaseReference getGenresRef() {
         return mGenresRef;
     }
 
     public DatabaseReference getComicGenreRef() {
         return mComicGenreRef;
+    }
+
+    public interface GenreIdCallback {
+        void onGenreIdLoaded(String genreId);
     }
 }

@@ -12,20 +12,34 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.models.Chapter;
+import com.example.a4tcomic.models.Comic;
+import com.example.a4tcomic.models.History;
 import com.example.a4tcomic.models.ListBookCase;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
     private List<ListBookCase> list;
+    private List<History> listHistory;
+    private List<Chapter> listChapter;
+    private List<Comic> listComic;
     private boolean isEditMode = false;
 
-    public HistoryAdapter(List<ListBookCase> list) {
-        this.list = list;
+    public HistoryAdapter() {
+    }
+
+    public void setData(List<History> listHistory, List<Comic> listComic , List<Chapter> listChapter) {
+        this.listHistory = listHistory;
+        this.listChapter = listChapter;
+        this.listComic = listComic;
+        this.list = new ArrayList<>();
     }
 
     public void setEditMode(boolean isEditMode) {
-         this.isEditMode = isEditMode;
+        this.isEditMode = isEditMode;
         notifyDataSetChanged();
     }
 
@@ -53,13 +67,22 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     @Override
     public void onBindViewHolder(@NonNull HistoryViewHolder holder, int position) {
-        ListBookCase listBookCase = list.get(position);
-        holder.bind(listBookCase);
+        if (position < listHistory.size() && position < listComic.size() && position < listChapter.size()) {
+            Chapter chapter = listChapter.get(position);
+            Comic comic = listComic.get(position);
+            History history = listHistory.get(position); // lấy id History
+
+            ListBookCase listBookCase = new ListBookCase(comic.getImg_url(), comic.getTitle(), chapter.getOrder());
+            this.list.add(listBookCase);
+
+            holder.onBindView(history, comic, chapter, listBookCase);
+        }
     }
+
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return listHistory.size();
     }
 
     public class HistoryViewHolder extends RecyclerView.ViewHolder {
@@ -67,6 +90,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         TextView tvNameHistory;
         RadioButton radioButtonHistory;
         LinearLayout lyReadingChapter;
+        TextView valueChapterHistory;
 
         public HistoryViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -74,12 +98,16 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
             tvNameHistory = itemView.findViewById(R.id.titleItemHistory);
             radioButtonHistory = itemView.findViewById(R.id.radio_button_book_History);
             lyReadingChapter = itemView.findViewById(R.id.lyReadingChapter);
+            valueChapterHistory = itemView.findViewById(R.id.valueChapterHistory);
         }
 
-        public void bind(ListBookCase listBookCase) {
-//            Log.d("Adapter", "isEditMode: " + isEditMode);
-            imgBtnItemHistory.setImageResource(listBookCase.getImageBook());
-            tvNameHistory.setText(listBookCase.getNameBook());
+        public void onBindView(History history, Comic comic, Chapter chapter, ListBookCase listBookCase) {
+            if (!comic.getImg_url().isEmpty()) {
+                Picasso.get().load(comic.getImg_url()).into(imgBtnItemHistory);
+            }
+            tvNameHistory.setText(comic.getTitle());
+            valueChapterHistory.setText(chapter.getOrder()+"");
+
             radioButtonHistory.setChecked(listBookCase.isChecked());
             radioButtonHistory.setVisibility(isEditMode ? View.VISIBLE : View.INVISIBLE);
             radioButtonHistory.setOnClickListener(v -> {
@@ -88,5 +116,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
             });
             lyReadingChapter.setVisibility(View.VISIBLE);
         }
+
     }
 }

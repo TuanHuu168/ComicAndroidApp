@@ -23,11 +23,12 @@ import java.util.Random;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    //Khai báo
+    // Khai báo
     EditText edtUserName, edtEmail;
     TextView lblLogin;
     Button btnForgot;
     UsersDB usersDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,5 +91,4 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             }
         });
     }
-
 }

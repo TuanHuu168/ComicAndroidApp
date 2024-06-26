@@ -139,7 +139,7 @@ public class StoryDetailActivity extends AppCompatActivity {
 
         btn_cmt.setOnClickListener(v -> {
             Intent intent = new Intent(this, CommentActivity.class);
-            intent.putExtra("comic_id", comic_id);
+            intent.putExtra("comicId", comic_id);
             startActivity(intent);
         });
 

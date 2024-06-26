@@ -64,7 +64,8 @@
                     android:id="@android:id/tabs"
                     android:layout_width="match_parent"
                     android:tabStripEnabled="false"
-                    android:layout_height="50dp" />
+                    android:layout_height="50dp"
+                    />
             </androidx.cardview.widget.CardView>
 
             <FrameLayout

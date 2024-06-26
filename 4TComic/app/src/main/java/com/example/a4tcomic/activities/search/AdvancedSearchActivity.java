@@ -2,8 +2,10 @@ package com.example.a4tcomic.activities.search;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +14,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.db.UsersDB;
 
 public class AdvancedSearchActivity extends AppCompatActivity {
 
     private TextView tv_writer, tv_category, tv_advanced;
+    private EditText editSearch;
     private ImageButton btnSearch;
+    private UsersDB usersDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,8 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         tv_category = findViewById(R.id.tv_category);
         tv_advanced = findViewById(R.id.tv_advanced);
         btnSearch = findViewById(R.id.btnSearch);
+        editSearch = findViewById(R.id.edtSearch);
+        usersDB = new UsersDB();
 
         tv_writer.setOnClickListener(v -> {
             Intent intent = new Intent(this, FindByWriterActivity.class);
@@ -50,9 +57,25 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         btn_back.setOnClickListener(v -> finish());
 
         btnSearch.setOnClickListener(v -> {
-            Intent intent = new Intent(this, ListComicActivity.class);
-            startActivity(intent);
-            finish();
+            String userName = editSearch.getText().toString().trim();
+
+            if (!userName.isEmpty()) {
+                usersDB.getUserIdByName(userName, new UsersDB.UserIdCallback() {
+                    @Override
+                    public void onUserIdLoaded(String userId) {
+                        if (userId != null) {
+                            Intent intent = new Intent(AdvancedSearchActivity.this, ListComicActivity.class);
+                            intent.putExtra("userId", userId);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(AdvancedSearchActivity.this, R.string.toast_user_not_found, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            } else {
+                Toast.makeText(AdvancedSearchActivity.this, R.string.toast_enter_username, Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }

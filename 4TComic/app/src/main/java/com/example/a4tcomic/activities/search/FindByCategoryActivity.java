@@ -2,8 +2,10 @@ package com.example.a4tcomic.activities.search;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +14,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.db.GenresDB;
 
 public class FindByCategoryActivity extends AppCompatActivity {
 
     private TextView tv_writer, tv_category, tv_advanced;
+    private EditText editSearch;
     private ImageButton btnSearch;
+    private GenresDB genresDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,8 @@ public class FindByCategoryActivity extends AppCompatActivity {
         tv_category = findViewById(R.id.tv_category);
         tv_advanced = findViewById(R.id.tv_advanced);
         btnSearch = findViewById(R.id.btnSearch);
+        editSearch = findViewById(R.id.editSearch);
+        genresDB = new GenresDB();
 
         tv_writer.setOnClickListener(v -> {
             Intent intent = new Intent(this, FindByWriterActivity.class);
@@ -50,9 +57,26 @@ public class FindByCategoryActivity extends AppCompatActivity {
         btn_back.setOnClickListener(v -> finish());
 
         btnSearch.setOnClickListener(v -> {
-            Intent intent = new Intent(this, ListComicActivity.class);
-            startActivity(intent);
-            finish();
+            String genreName = editSearch.getText().toString().trim();
+
+            if (!genreName.isEmpty()) {
+                genresDB.getGenreIdByName(genreName, new GenresDB.GenreIdCallback() {
+                    @Override
+                    public void onGenreIdLoaded(String genreId) {
+                        if (genreId != null) {
+                            Intent intent = new Intent(FindByCategoryActivity.this, ListComicActivity.class);
+                            intent.putExtra("genreId", genreId);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(FindByCategoryActivity.this, R.string.toast_genre_not_found, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            } else {
+                Toast.makeText(FindByCategoryActivity.this, R.string.toast_please_enter_genre, Toast.LENGTH_SHORT).show();
+            }
         });
+
     }
 }

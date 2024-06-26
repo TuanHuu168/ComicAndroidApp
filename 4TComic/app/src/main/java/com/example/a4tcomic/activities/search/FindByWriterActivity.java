@@ -7,36 +7,29 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.db.AuthorsDB;
 
 public class FindByWriterActivity extends AppCompatActivity {
 
     private TextView tv_writer, tv_category, tv_advanced;
     private EditText editSearch;
     private ImageButton btnSearch;
+    private AuthorsDB authorsDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_find_by_writer);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         tv_writer = findViewById(R.id.tv_writer);
         tv_category = findViewById(R.id.tv_category);
         tv_advanced = findViewById(R.id.tv_advanced);
         btnSearch = findViewById(R.id.btnSearch);
-        editSearch = findViewById(R.id.edtSearch); // Corrected to editSearch based on your XML
+        editSearch = findViewById(R.id.edtSearch);
+        authorsDB = new AuthorsDB();
 
         tv_category.setOnClickListener(v -> {
             Intent intent = new Intent(this, FindByCategoryActivity.class);
@@ -55,14 +48,25 @@ public class FindByWriterActivity extends AppCompatActivity {
 
         btnSearch.setOnClickListener(v -> {
             String writerName = editSearch.getText().toString().trim();
+
             if (!writerName.isEmpty()) {
-                Intent intent = new Intent(this, ListComicActivity.class);
-                intent.putExtra("writerName", writerName);
-                startActivity(intent);
-                finish();
+                authorsDB.getAuthorIdByName(writerName, new AuthorsDB.AuthorIdCallback() {
+                    @Override
+                    public void onAuthorIdLoaded(String authorId) {
+                        if (authorId != null) {
+                            Intent intent = new Intent(FindByWriterActivity.this, ListComicActivity.class);
+                            intent.putExtra("authorId", authorId);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(FindByWriterActivity.this, R.string.toast_author_not_found, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             } else {
-                Toast.makeText(FindByWriterActivity.this, "Không tìm thấy tác giả", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FindByWriterActivity.this, R.string.toast_please_enter_author, Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

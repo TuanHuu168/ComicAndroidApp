@@ -127,7 +127,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnTouchLi
 
         // lưu thay đổi user
         btn_save.setOnClickListener(v -> {
-           saveUser();
+            saveUser();
         });
 
         // hide keyboard
@@ -135,16 +135,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnTouchLi
     }
 
     private void saveUser() {
-        if (et_name.getText().toString().equals("")){
-            Toast.makeText(this, "Tên không được để trống", Toast.LENGTH_SHORT).show();
+        if (et_name.getText().toString().isEmpty()){
+            Toast.makeText(this, getString(R.string.name_empty), Toast.LENGTH_SHORT).show();
             return;
         }
         currentUser.setUsername(et_name.getText().toString());
 
-        if (!odlAvatarUrl.equals("") && isDeleteAvatar)
+        if (!odlAvatarUrl.isEmpty() && isDeleteAvatar)
             currentUser.setAvatar_url("");
         usersDB.updateUser(currentUser, odlAvatarUrl, () -> {
-            Toast.makeText(ProfileActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ProfileActivity.this, getString(R.string.update_success), Toast.LENGTH_SHORT).show();
             finish();
         });
     }

@@ -63,8 +63,54 @@ public class ChaptersDB {
         });
     }
 
+    // Lấy chapter mới nhất theo id
+    public void getLastestChapter(String comic_id, final ChapterCallback callback) {
+        mChaptersRef.orderByChild("comic_id")
+                .equalTo(comic_id)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Chapter latestChapter = null;
+                        for (DataSnapshot chapterSnapshot : snapshot.getChildren()) {
+                            Chapter chapter = chapterSnapshot.getValue(Chapter.class);
+                            if (latestChapter == null || chapter.getCreated_at() > latestChapter.getCreated_at()) {
+                                latestChapter = chapter;
+                            }
+                        }
+                        callback.onChapterLoaded(latestChapter);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        // Handle possible errors.
+                    }
+                });
+    }
+
+    // Lấy tất cả các chapters từ tất cả các truyện
+    public void getAllChapters(ChaptersCallback callback) {
+        mChaptersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Chapter> allChapters = new ArrayList<>();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Chapter chapter = dataSnapshot.getValue(Chapter.class);
+                    allChapters.add(chapter);
+                }
+                callback.onChaptersLoaded(allChapters);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle possible errors.
+            }
+        });
+    }
+
+
     public void addChapter(Chapter chapter) {
         String key = mChaptersRef.push().getKey();
+        chapter.setId(key);
         mChaptersRef.child(key).setValue(chapter);
     }
 

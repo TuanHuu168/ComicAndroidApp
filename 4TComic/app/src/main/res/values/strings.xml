@@ -25,9 +25,9 @@
     <string name="btn_favorite">Favorite</string>
     <string name="btn_favorited">Favorited</string>
 
-    <string name="btn_new">Read Latest</string>
+    <string name="btn_new">Last chapter</string>
     <string name="btn_cmt">Comment</string>
-    <string name="btn_first_chapter">Read from the Beginning</string>
+    <string name="btn_first_chapter">Chapter 1</string>
 
     <string name="personal_title">Personal</string>
     <string name="edit_profile_title">Edit Profile</string>
@@ -61,6 +61,43 @@
     <string name="current_password_title">Current Password</string>
     <string name="new_password_title">New Password</string>
     <string name="confirm_new_password_title">Confirm New Password</string>
+
+    <string name="password_changed">Password changed successfully</string>
+    <string name="current_password_required">Current password is required</string>
+    <string name="new_password_required">New password is required</string>
+    <string name="confirm_password_required">Confirm new password is required</string>
+    <string name="incorrect_current_password">Current password is incorrect</string>
+
+    <string name="name_empty">Name cannot be empty</string>
+    <string name="update_success">Update successful</string>
+
+    <string name="avatar_upload_fail">Failed to upload avatar image. Please try again.</string>
+
+    <string name="toast_enter_username">Translator not found</string>
+    <string name="toast_user_not_found">Please enter translator name</string>
+
+    <string name="toast_genre_not_found">Genre not found</string>
+    <string name="toast_please_enter_genre">Please enter genre name</string>
+
+    <string name="toast_author_not_found">Author not found</string>
+    <string name="toast_please_enter_author">Please enter author name</string>
+
+    <string name="toast_comic_author_not_found">No comics found for author</string>
+    <string name="toast_comic_translator_not_found">No comics found for translator</string>
+    <string name="toast_comic_genre_not_found">No comics found for genre</string>
+    <string name="toast_comic_not_found">Comic not found</string>
+    <string name="title_not_found">No comics found</string>
+    <string name="toast_missing_search_text">Please enter search text</string>
+
+    <string name="confirm_delete_history">Are you sure you want to delete this comic history?</string>
+    <string name="confirm_delete_history_message">Clicking Yes will permanently delete this comic history.</string>
+    <string name="confirm_delete_follow">Are you sure you want to delete this followed comic?</string>
+    <string name="confirm_delete_follow_message">Clicking Yes will permanently remove this comic from your followed list.</string>
+
+    <string name="select_all">Select All</string>
+    <string name="deselect_all">Deselect All</string>
+
+    <string name="access_denied">You do not have access rights.</string>
 
     <string name="register_text">&#160;Register&#160;</string>
     <string name="user_name_text">Username</string>
@@ -106,5 +143,52 @@
     <string name="titleChapter">Chapter</string>
     <string name="ChooseChapters">Choose chapter</string>
     <string name="chapter">Chapter</string>
+    <string name="chapter_upload_success">Chapter uploaded successfully!</string>
+    <string name="pdf_upload_fail">Failed to upload PDF.</string>
+    <string name="cover_image_upload_fail">Failed to upload cover image.</string>
+    <string name="comic_upload_success">Comic uploaded successfully!</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+
+    <string name="title_advance_search">Advanced Search</string>
+    <string name="author">Author</string>
+    <string name="genre">Genre</string>
+    <string name="translator">Translator</string>
+    <string name="find_translator">Find by translator</string>
+
+    <string name="title_comment">Comment</string>
+    <string name="hint_comment">Coment here ...</string>
+    <string name="post_comment">Post</string>
+    <string name="new_comment">New</string>
+
+    <string name="find_genre">Find by genre</string>
+    <string name="find_author">Find by author</string>
+
+    <string name="title_author_1">Masterpiece</string>
+    <string name="title_author_2">New composition</string>
+
+    <string name="title_genre_1">Emotional</string>
+
+    <string name="title_setting">Setting</string>
+    <string name="dark_mode">Dark interface mode</string>
+    <string name="language">Interface language</string>
+
+    <string name="title_list_comic">List comic</string>
+
+    <string name="title_noti">Notification</string>
+    <string name="chapterr">Chapter</string>
+
+    <string name="noti_update_chapter">Updated new chapter: </string>
+    
+    <string name="on_text">On</string>
+    <string name="off_text">Off</string>
+
+    <string-array name="language_options">
+        <item>en</item>
+        <item>vi</item>
+    </string-array>
+    <string name="nightmode">Night mode</string>
+    <string name="lang_text">Language</string>
+    <string name="graphic_setting">Graphic setting</string>
 
 </resources>
