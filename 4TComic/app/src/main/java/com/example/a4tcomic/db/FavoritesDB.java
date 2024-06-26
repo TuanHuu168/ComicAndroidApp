@@ -67,7 +67,7 @@ public class FavoritesDB {
                             Favorite favorite = favorSnapshot.getValue(Favorite.class);
                             favoritesUserList.add(favorite);
                         }
-                        favoritesUserList.sort((o1, o2) -> Integer.compare(o2.getCreated_at(), o1.getCreated_at()));
+                        favoritesUserList.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
 
                         ComicsDB comicsDB = new ComicsDB();
                         List<Comic> comics = new ArrayList<>();

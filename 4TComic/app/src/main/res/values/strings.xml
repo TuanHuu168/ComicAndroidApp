@@ -110,5 +110,7 @@
     <string name="pdf_upload_fail">Failed to upload PDF.</string>
     <string name="cover_image_upload_fail">Failed to upload cover image.</string>
     <string name="comic_upload_success">Comic uploaded successfully!</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
 
 </resources>

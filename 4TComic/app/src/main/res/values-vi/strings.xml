@@ -110,4 +110,6 @@
     <string name="pdf_upload_fail">Tải lên PDF thất bại.</string>
     <string name="cover_image_upload_fail">Tải lên ảnh bìa thất bại.</string>
     <string name="comic_upload_success">Tải lên truyện thành công!</string>
+    <string name="off">Tắt</string>
+    <string name="on">Bật</string>
 </resources>
