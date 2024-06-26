@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -26,6 +28,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.adapters.FollowAdapter;
 import com.example.a4tcomic.adapters.HistoryAdapter;
+import com.example.a4tcomic.db.ChaptersDB;
+import com.example.a4tcomic.db.ComicsDB;
+import com.example.a4tcomic.db.HistoryDB;
+import com.example.a4tcomic.models.Chapter;
+import com.example.a4tcomic.models.Comic;
+import com.example.a4tcomic.models.History;
 import com.example.a4tcomic.models.ListBookCase;
 
 import java.util.ArrayList;
@@ -41,6 +49,9 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
     LinearLayout llayout, llayoutFollow;
     boolean isEditButtonColored = false; // Trạng thái ban đầu của nút
     boolean isAllSelected = false; // Trạng thái ban đầu của nút
+
+    private HistoryDB historyDB;
+    private String user_id;
 
     // Thiết lập tabLayout
     TabHost mytab;
@@ -63,9 +74,9 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
         spec1.setIndicator("Lịch sử");
         mytab.addTab(spec1);
         // theo dõi
-        spec2 = mytab.newTabSpec("theodoi");   // tạo mới tab
+        spec2 = mytab.newTabSpec("yeuthich");   // tạo mới tab
         spec2.setContent(R.id.tabFollow); // tham chiếu id tab con
-        spec2.setIndicator("Theo dõi");
+        spec2.setIndicator("Yêu thích");
         mytab.addTab(spec2);
 
         // setup edit text search
@@ -183,18 +194,23 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
             isAllSelected = !isAllSelected; // Toggle state
         });
 
+        historyDB = new HistoryDB();
+        user_id = "admin001";
 
         rcvHistory = findViewById(R.id.rcvHistory);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rcvHistory.setLayoutManager(linearLayoutManager);
-        historyAdapter = new HistoryAdapter(getList()); // sử dụng adapter cho lịch sử
+        historyAdapter = new HistoryAdapter(); // sử dụng adapter cho lịch sử
+        historyAdapter.setData(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
         rcvHistory.setAdapter(historyAdapter);
+        getHistory();
 
         rcvFollow = findViewById(R.id.rcvFollow);
         LinearLayoutManager linearLayoutManagerFollow = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rcvFollow.setLayoutManager(linearLayoutManagerFollow);
-        followAdapter = new FollowAdapter(getList()); // sử dụng adapter cho theo dõi
-        rcvFollow.setAdapter(followAdapter);
+
+//        followAdapter = new FollowAdapter(getList()); // sử dụng adapter cho theo dõi
+//        rcvFollow.setAdapter(followAdapter);
 
         mytab.setOnTabChangedListener(tabId -> {
             // Reset edit mode khi chuyển tab
@@ -207,15 +223,22 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
         });
     }
 
-    private List<ListBookCase> getList() {
-        List<ListBookCase> list = new ArrayList<>();
-        list.add(new ListBookCase(R.drawable.tinhtukiemsi, "Tinh tú kiếm sĩ"));
-        list.add(new ListBookCase(R.drawable.ic_oce_piece, "ONE PIECE"));
-        list.add(new ListBookCase(R.drawable.tinhtukiemsi, "Tinh tú kiếm sĩ 2"));
-        list.add(new ListBookCase(R.drawable.ic_khong_chi_bat_nat, "Không chỉ là bắt nạt"));
-        list.add(new ListBookCase(R.drawable.ic_khong_chi_bat_nat, "Không chỉ là bắt nạt"));
-        list.add(new ListBookCase(R.drawable.ic_khong_chi_bat_nat, "Không chỉ là bắt nạt"));
-        return list;
+//    private List<ListBookCase> getList() {
+//        List<ListBookCase> list = new ArrayList<>();
+//        list.add(new ListBookCase(R.drawable.tinhtukiemsi, "Tinh tú kiếm sĩ"));
+//        list.add(new ListBookCase(R.drawable.ic_oce_piece, "ONE PIECE"));
+//        list.add(new ListBookCase(R.drawable.tinhtukiemsi, "Tinh tú kiếm sĩ 2"));
+//        return list;
+//    }
+
+    private void getHistory() {
+        historyDB.getComicsReadByUser(user_id, (history, comic, chapter) -> {
+            if (history != null && comic != null && chapter != null) {
+                Log.d("TAG", "getComic: " + comic.get(0).getTitle());
+                historyAdapter.setData(history, comic, chapter);
+                historyAdapter.notifyDataSetChanged();
+            }
+        });
     }
 
     @SuppressLint("ClickableViewAccessibility")

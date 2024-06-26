@@ -1,5 +1,7 @@
 package com.example.a4tcomic.db;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.a4tcomic.models.Chapter;
@@ -65,65 +67,10 @@ public class HistoryDB {
     }
 
     // thêm truyện vào danh sách đọc của user
-    public void addComicReadByUser(String comic_id, Chapter curChapter, String user_id) {
-        getComicsReadByUser(user_id, (history, comic, chapter) -> {
-            boolean isComicExist = false;
-            boolean isChapterExist = false;
-            int pos = -1;
-
-            // kiểm tra chương / truyện đã tồn tại hay chưa
-            // nếu có thì set True và lấy vị trí đó
-            for (int i = 0; i < chapter.size(); i++) {
-                Chapter ch = chapter.get(i);
-                if (ch.getId().equals(curChapter.getId())) {
-                    isChapterExist = true;
-                    pos = i;
-                    break;
-                }
-                else if (ch.getComic_id().equals(comic_id)) {
-                    isComicExist = true;
-                    break;
-                }
-            }
-
-            // nếu chưa tồn tại thì thêm vào danh sách
-            if (pos == -1) {
-                String id_h = mHistoryRef.push().getKey();
-                History h = new History();
-                h.setId(id_h);
-                h.setUser_id(user_id);
-                h.setChapter_id(curChapter.getId());
-                h.setLast_date(System.currentTimeMillis());
-                mHistoryRef.child(id_h).setValue(h);
-                return;
-            }
-
-            Chapter ch = chapter.get(pos);
-            Long curTime = System.currentTimeMillis();
-            String id_h = history.get(pos).getId();
-
-            // nếu chương có trong lịch sử và thời gian đọc gần hơn 5 phút
-            // cập nhật thời gian đọc
-            if (isChapterExist &&
-                    (curTime - history.get(pos).getLast_date()) > 300000 )
-            {
-                mHistoryRef.child(id_h)
-                        .child("last_date")
-                        .setValue(System.currentTimeMillis());
-                return;
-            }
-
-            // nếu truyện có trong lịch sử
-            // cập nhật chương đọc gần nhất và thời gian đọc
-            if (isComicExist) {
-                mHistoryRef.child(id_h)
-                        .child("last_date")
-                        .setValue(curTime);
-                mHistoryRef.child(id_h)
-                        .child("chapter_id")
-                        .setValue(curChapter.getId());
-            }
-        });
+    public void addComicReadByUser(History history) {
+        String key = mHistoryRef.push().getKey();
+        history.setId(key);
+        mHistoryRef.child(key).setValue(history);
     }
 
     // xóa truyện khỏi danh sách đọc của user

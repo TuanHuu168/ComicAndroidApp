@@ -77,7 +77,7 @@ public class FollowAdapter extends RecyclerView.Adapter<FollowAdapter.FollowView
 
         public void bind(ListBookCase listBookCase) {
             Log.d("Adapter", "isEditMode: " + isEditMode);
-            imgBtnItemFollow.setImageResource(listBookCase.getImageBook());
+//            imgBtnItemFollow.setImageResource(listBookCase.getImageBook());
             tvNameFollow.setText(listBookCase.getNameBook());
             radioButtonFollow.setChecked(listBookCase.isChecked());
             radioButtonFollow.setVisibility(isEditMode ? View.VISIBLE : View.INVISIBLE);

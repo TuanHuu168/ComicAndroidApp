@@ -1,7 +1,6 @@
 package com.example.a4tcomic.activities.story;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -112,12 +111,8 @@ public class StoryDetailActivity extends AppCompatActivity {
         genresDB = new GenresDB();
         chaptersDB = new ChaptersDB();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
-        user_id = sharedPreferences.getString("id", "");
-        Comic comic = (Comic) getIntent().getSerializableExtra("comic");
-        comic_id = comic.getId();
-//        user_id = "admin001";
-//        comic_id = "comic001";
+        user_id = "admin001";
+        comic_id = "comic001";
         getComic();
 
         // Yêu thích
@@ -149,7 +144,7 @@ public class StoryDetailActivity extends AppCompatActivity {
         btn_first_chapter.setOnClickListener(v -> {
             Chapter firstChapter = chapters.isEmpty() ? null : chapters.get(chapters.size() - 1);
 //            if (firstChapter == null) {
-                Toast.makeText(this, "Truyện không có chương nào" + firstChapter.getPdf_url(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Truyện không có chương nào" + firstChapter.getPdf_url(), Toast.LENGTH_SHORT).show();
 //                return;
 //            }
 //            Intent intent = new Intent(this, ReadPageActivity.class);
@@ -162,7 +157,7 @@ public class StoryDetailActivity extends AppCompatActivity {
 
         btn_cmt.setOnClickListener(v -> {
             Intent intent = new Intent(this, CommentActivity.class);
-            intent.putExtra("comicId", comic_id);
+            intent.putExtra("comic_id", comic_id);
             startActivity(intent);
         });
 
@@ -232,7 +227,7 @@ public class StoryDetailActivity extends AppCompatActivity {
     }
 
     private void setFavorite() {
-        long created_at = System.currentTimeMillis();
+        long created_at = convertTime();
         if (isFavorite){
             favoritesDB.removeFavorite(id_favorite);
             isFavorite = false;
@@ -241,6 +236,19 @@ public class StoryDetailActivity extends AppCompatActivity {
             favoritesDB.addFavorite(comic_id, user_id, created_at);
             isFavorite = true;
         }
+    }
+
+    // Lấy thời gian hiện tại trên thiết bị di động
+    private long convertTime() {
+        long time = 0;
+        String dateTime = android.text.format.DateFormat.format("yyyy-MM-dd HH:mm:ss", new java.util.Date()).toString();
+        // chuyển từ string sang long
+        if (!TextUtils.isEmpty(dateTime)) {
+            time = Long.parseLong(dateTime.replace("-", "")
+                    .replace(" ", "")
+                    .replace(":", ""));
+        }
+        return time;
     }
 
     private void setExpanded() {
