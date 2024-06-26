@@ -44,13 +44,35 @@ public class ComicsDB {
                     Comic comic = comicSnapshot.getValue(Comic.class);
                     comics.add(comic);
                 }
-//                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
-//                callback.onAllComicsLoaded(comics);
+                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                callback.onAllComicsLoaded(comics);
                 fetchLatestChaptersAndSort(comics, callback);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) { }
+        });
+    }
+
+    // Tìm truyện theo tên
+    public void getComicsByTitle(String title, final AllComicsCallback callback) {
+        mComicsRef.orderByChild("title").equalTo(title).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Comic> comics = new ArrayList<>();
+                for (DataSnapshot comicSnapshot : snapshot.getChildren()) {
+                    Comic comic = comicSnapshot.getValue(Comic.class);
+                    if (comic != null) {
+                        comics.add(comic);
+                    }
+                }
+                comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                callback.onAllComicsLoaded(comics);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
         });
     }
 
@@ -75,8 +97,6 @@ public class ComicsDB {
             });
         }
     }
-
-
 
     // tìm truyện theo id
     public void getComicById(String comic_id, final ComicCallback callback) {
