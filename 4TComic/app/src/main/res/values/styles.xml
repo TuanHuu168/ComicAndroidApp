@@ -1,0 +1,24 @@
+<resources>
+    <!-- Định nghĩa RoundLog -->
+    <style name="RoundLog">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <!-- Định nghĩa RoundComic -->
+    <style name="RoundComic">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <!-- Đổi màu tab được chọn -->
+    <style name="tabColor">
+        <item name="android:textColorPrimary">@color/blue_main</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+</resources>

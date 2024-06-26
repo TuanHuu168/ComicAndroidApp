@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "232097632933",
+    "firebase_url": "https://comic4t-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "comic4t",
+    "storage_bucket": "comic4t.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232097632933:android:c0e63e276d450d8cf7334c",
+        "android_client_info": {
+          "package_name": "com.example.a4tcomic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC61PJ8yM_hH4r5sAbqFkEMtiB_OK94y6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

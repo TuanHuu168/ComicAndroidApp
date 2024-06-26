@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">4T Comic</string>
+
+    <string name="account_locked">Tài khoản đã bị khóa</string>
+    <string name="fill_all_fields">Vui lòng nhập đầy đủ thông tin</string>
+    <string name="incorrect_credentials">Tài khoản hoặc mật khẩu không đúng</string>
+
+    <string name="invalid_email">Email không hợp lệ</string>
+    <string name="password_mismatch">Mật khẩu không khớp</string>
+    <string name="agree_terms">Vui lòng đồng ý với điều khoản</string>
+    <string name="account_exists">Tài khoản đã tồn tại</string>
+    <string name="account_not_exists">Tài khoản không tồn tại</string>
+    <string name="random_password_created">Mật khẩu đã được tạo là 12345. Vui lòng vào cài đặt để đổi lại mật khẩu</string>
+    <string name="registration_failed">Đăng ký thất bại. Vui lòng thử lại</string>
+    <string name="registration_success">Đăng ký thành công</string>
+
+    <string name="name_story">ONE PIECE</string>
+    <string name="author_story">sáng tác bởi</string>
+    <string name="genre_title">Thể loại</string>
+    <string name="des_title">Nội dung</string>
+    <string name="chapter_title">Chương</string>
+    <string name="update_time_title">Cập nhật lúc:</string>
+
+    <string name="btn_favorite">Yêu thích</string>
+    <string name="btn_favorited">Đã thích</string>
+
+    <string name="btn_new">Đọc mới nhất</string>
+    <string name="btn_cmt">Bình luận</string>
+    <string name="btn_first_chapter">Đọc từ đầu</string>
+
+    <string name="personal_title">Cá nhân</string>
+    <string name="edit_profile_title">Chỉnh sửa hồ sơ</string>
+    <string name="account_title">Tài khoản</string>
+    <string name="setting_title">Cài đặt giao diện</string>
+    <string name="admin_title">Quản trị viên</string>
+
+    <string name="logout_title">Đăng xuất</string>
+    <string name="string_yes">Đăng xuất</string>
+    <string name="string_no">Hủy</string>
+    <string name="title_dialog_logout">Đăng xuất</string>
+    <string name="message_logout">Bạn sẽ trở về màn hình đăng nhập!</string>
+
+    <string name="select_img_title">Thay đổi ảnh đại diện</string>
+    <string name="btn_change_avatar">Thay đổi ảnh</string>
+    <string name="btn_delete_avatar">Xóa ảnh</string>
+    <string name="save_btn_title">Lưu</string>
+    <string name="edit_name_title">Đặt tên hiển thị</string>
+    <string name="num_character">0 / 50</string>
+    <string name="nva_name">Nguyễn Văn A</string>
+    <string name="name_user">Không xác định</string>
+
+    <string name="change_pass_personal">Đổi mật khẩu</string>
+    <string name="email_title">Liên kết email:</string>
+    <string name="delete_account">Xóa tài khoản</string>
+    <string name="change_pass">Thay đối mật khẩu</string>
+    <string name="title_dialog_warning">Cảnh báo</string>
+    <string name="mes_delete_account">Bạn có muốn xóa tài khoản này?</string>
+    <string name="upload_story_title">Đăng truyện</string>
+
+    <string name="current_password_title">Mật khẩu hiện tại</string>
+    <string name="new_password_title">Mật khẩu mới</string>
+    <string name="confirm_new_password_title">Xác nhận mật khẩu mới</string>
+
+    <string name="register_text">&#160;Đăng Ký&#160;</string>
+    <string name="user_name_text">Tên đăng nhập</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Mật khẩu</string>
+    <string name="confirm_password_text">Xác nhận mật khẩu</string>
+    <string name="login_text">&#160;Đăng Nhập&#160;</string>
+    <string name="terms_text">Tôi đồng ý với các điều khoản &amp; dịch vụ</string>
+    <string name="terms_text_underline">điều khoản &amp; dịch vụ</string>
+    <string name="forgot_text">&#160;Quên Mật Khẩu&#160;</string>
+    <string name="search_text">Tìm kiếm truyện…</string>
+    <string name="trending_text">Xu hướng</string>
+    <string name="history_text">Lịch sử</string>
+    <string name="recently_updated">Mới cập nhật</string>
+    <string name="admin_text">Trang quản trị</string>
+    <string name="account_list_text">Tài khoản mới tạo</string>
+    <string name="recently_comment">Bình luận gần đây</string>
+    <string name="upload_text">Tải lên truyện</string>
+    <string name="comic_name_text">Tên truyện</string>
+    <string name="original_comic_name_text">Tên gốc</string>
+    <string name="author_text">Tác giả</string>
+    <string name="category_text">Thể loại</string>
+    <string name="summary_text">Tóm tắt</string>
+    <string name="edt_summary_text">Tóm tắt nội dung truyện</string>
+    <string name="cover_image_text">Ảnh bìa</string>
+    <string name="content_image">Ảnh đại diện</string>
+    <string name="upload_terms_text">Tôi đồng ý với các điều khoản &amp; dịch vụ khi đăng truyện</string>
+    <string name="select_category">Chọn thể loại</string>
+    <string name="select_img">Vui lòng chọn đầy đủ ảnh của truyện.</string>
+    <string name="upload_chapter">Thêm chương mới</string>
+    <string name="pdf_selector">Chọn file PDF</string>
+
+    <string name="titleBookcase">Tủ sách</string>
+    <string name="History">Lịch sử</string>
+    <string name="Follow">Theo dõi</string>
+    <string name="hintSearch">Tìm kiếm</string>
+    <string name="title">Tiêu đề</string>
+    <string name="reading">"Chương đang đọc: "</string>
+    <string name="all">Chọn tất cả</string>
+    <string name="remove">Xoá</string>
+    <string name="filterOldest">Cũ nhất</string>
+    <string name="filterNewest">Mới nhất</string>
+    <string name="titleChapter">Chương</string>
+    <string name="ChooseChapters">Chọn chương</string>
+    <string name="chapter">Chương</string>
+</resources>

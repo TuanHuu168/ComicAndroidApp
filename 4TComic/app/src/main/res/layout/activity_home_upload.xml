@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.personal.UploadComicActivity">
+    <!-- topNav -->
+    <LinearLayout
+        android:id="@+id/topNav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/top_navigation_bar"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/pink"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/faustina_bold"
+            android:gravity="center"
+            android:text="@string/upload_text"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnAddComic"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/pink"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_add"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/ic_bg_menu"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_while_search"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp">
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:background="#FFFFFF"
+                app:srcCompat="@drawable/ic_search_img" />
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/faustina"
+                android:hint="@string/hintSearch"
+                android:paddingStart="20dp"
+                android:paddingEnd="16dp"
+                android:textColor="#808080"
+                android:textSize="19dp" />
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                >
+                <ImageButton
+                    android:id="@+id/btnSearchClear"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="16dp"
+                    android:background="#FFFFFF"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_close" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/uploaded_comics_by_user"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>
