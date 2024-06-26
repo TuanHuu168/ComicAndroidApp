@@ -1,6 +1,7 @@
 package com.example.a4tcomic.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
@@ -14,15 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.adapters.NotificationAdapter;
-import com.example.a4tcomic.db.ChaptersDB;
 
 public class NotificationActivity extends AppCompatActivity {
 
     private ImageButton btnHomePage, btnArchive, btnNotification, btnSetting;
     private RecyclerView recyclerNotification;
     private NotificationAdapter notificationAdapter;
-    private ChaptersDB chaptersDB;
-    private String userId; 
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +40,12 @@ public class NotificationActivity extends AppCompatActivity {
         btnSetting = findViewById(R.id.btnSetting);
         recyclerNotification = findViewById(R.id.recyclerNotification);
 
-        // Giả định rằng userId được truyền vào từ Intent hoặc được lấy từ SharedPreferences
-        userId = getIntent().getStringExtra("userId");
+        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        userId = sharedPreferences.getString("id", "");
 
         notificationAdapter = new NotificationAdapter(this, userId);
         recyclerNotification.setLayoutManager(new LinearLayoutManager(this));
         recyclerNotification.setAdapter(notificationAdapter);
-        chaptersDB = new ChaptersDB();
 
         btnHomePage.setOnClickListener(v -> {
             Intent settingIntent = new Intent(this, HomePageActivity.class);
