@@ -232,7 +232,7 @@ public class StoryDetailActivity extends AppCompatActivity {
     }
 
     private void setFavorite() {
-        long created_at = convertTime();
+        long created_at = System.currentTimeMillis();
         if (isFavorite){
             favoritesDB.removeFavorite(id_favorite);
             isFavorite = false;
@@ -241,19 +241,6 @@ public class StoryDetailActivity extends AppCompatActivity {
             favoritesDB.addFavorite(comic_id, user_id, created_at);
             isFavorite = true;
         }
-    }
-
-    // Lấy thời gian hiện tại trên thiết bị di động
-    private long convertTime() {
-        long time = 0;
-        String dateTime = android.text.format.DateFormat.format("yyyy-MM-dd HH:mm:ss", new java.util.Date()).toString();
-        // chuyển từ string sang long
-        if (!TextUtils.isEmpty(dateTime)) {
-            time = Long.parseLong(dateTime.replace("-", "")
-                    .replace(" ", "")
-                    .replace(":", ""));
-        }
-        return time;
     }
 
     private void setExpanded() {

@@ -87,6 +87,26 @@ public class ChaptersDB {
                 });
     }
 
+    // Lấy tất cả các chapters từ tất cả các truyện
+    public void getAllChapters(ChaptersCallback callback) {
+        mChaptersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Chapter> allChapters = new ArrayList<>();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Chapter chapter = dataSnapshot.getValue(Chapter.class);
+                    allChapters.add(chapter);
+                }
+                callback.onChaptersLoaded(allChapters);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle possible errors.
+            }
+        });
+    }
+
 
     public void addChapter(Chapter chapter) {
         String key = mChaptersRef.push().getKey();
