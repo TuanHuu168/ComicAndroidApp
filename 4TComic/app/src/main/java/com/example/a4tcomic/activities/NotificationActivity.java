@@ -22,7 +22,7 @@ public class NotificationActivity extends AppCompatActivity {
     private RecyclerView recyclerNotification;
     private NotificationAdapter notificationAdapter;
     private ChaptersDB chaptersDB;
-    private String userId; // Thêm userId của người dùng hiện tại
+    private String userId; 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
