@@ -2,6 +2,7 @@ package com.example.a4tcomic.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -71,12 +72,12 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
         // lịch sử
         spec1 = mytab.newTabSpec("lichsu");   // tạo mới tab
         spec1.setContent(R.id.tabHistory); // tham chiếu id tab con
-        spec1.setIndicator("Lịch sử");
+        spec1.setIndicator(getString(R.string.history_text));
         mytab.addTab(spec1);
         // theo dõi
         spec2 = mytab.newTabSpec("yeuthich");   // tạo mới tab
         spec2.setContent(R.id.tabFollow); // tham chiếu id tab con
-        spec2.setIndicator("Yêu thích");
+        spec2.setIndicator(getString(R.string.btn_favorite));
         mytab.addTab(spec2);
 
         // setup edit text search
@@ -89,7 +90,6 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
         });
 
         editSearch = findViewById(R.id.editSearch);
-        editSearchFollow = findViewById(R.id.editSearchFollow);
         btnEdit = findViewById(R.id.btnEdit);
         llayout = findViewById(R.id.llayout);
         llayout.setVisibility(View.GONE);
@@ -195,7 +195,9 @@ public class BookcaseActivity extends AppCompatActivity implements View.OnTouchL
         });
 
         historyDB = new HistoryDB();
-        user_id = "admin001";
+        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        user_id = sharedPreferences.getString("id", "");
+        //user_id = getSharedPreferences("Login");
 
         rcvHistory = findViewById(R.id.rcvHistory);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
