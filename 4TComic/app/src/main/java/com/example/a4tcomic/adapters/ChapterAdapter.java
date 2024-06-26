@@ -52,10 +52,13 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         holder.tv_name_chapter.setText(chapter.getOrder() + ": " + chapter.getTitle());
 
         if (chapter.getCreated_at() > 0)
-            holder.chapterTimeUpdate.setText(" " + convertTime(chapter.getCreated_at()) );
+            holder.chapterTimeUpdate.setText(" " +
+                    new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+                            .format(new java.util.Date(chapter.getCreated_at()))
+            );
 
         holder.cardView.setOnClickListener(v -> {
-            iClickChapter.onClickChapter(chapter.getPdf_url()+"");
+            iClickChapter.onClickChapter(chapter);
         });
     }
 

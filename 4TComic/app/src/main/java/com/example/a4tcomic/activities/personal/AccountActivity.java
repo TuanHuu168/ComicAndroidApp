@@ -3,6 +3,7 @@ package com.example.a4tcomic.activities.personal;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
@@ -74,6 +75,12 @@ public class AccountActivity extends AppCompatActivity {
     private void delAcc() {
         UsersDB usersDB = new UsersDB();
         usersDB.deleteUserByUser(curUser.getId());
+
+        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();

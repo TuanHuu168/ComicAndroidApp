@@ -1,5 +1,7 @@
 package com.example.a4tcomic.app_interface;
 
+import com.example.a4tcomic.models.Chapter;
+
 public interface IClickChapter {
-    void onClickChapter(String pdfUrl);
+    void onClickChapter(Chapter chapter);
 }

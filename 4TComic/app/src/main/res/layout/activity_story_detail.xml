@@ -266,8 +266,9 @@
             android:text="@string/btn_cmt"
             android:textColor="@color/pink_main"
             android:textStyle="bold"
-            app:cornerRadius="20dp"
-            app:iconPadding="0dp" />
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cornerRadius="20dp" />
 
         <Button
             android:id="@+id/btn_first_chapter"
