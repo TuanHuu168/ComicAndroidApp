@@ -67,14 +67,16 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     @Override
     public void onBindViewHolder(@NonNull HistoryViewHolder holder, int position) {
-        Chapter chapter = listChapter.get(position);
-        Comic comic = listComic.get(position);
-        History history = listHistory.get(position); // lấy id History
+        if (position < listHistory.size() && position < listComic.size() && position < listChapter.size()) {
+            Chapter chapter = listChapter.get(position);
+            Comic comic = listComic.get(position);
+            History history = listHistory.get(position); // lấy id History
 
-        ListBookCase listBookCase = new ListBookCase(comic.getImg_url(), comic.getTitle(), chapter.getOrder());
-        this.list.add(listBookCase);
+            ListBookCase listBookCase = new ListBookCase(comic.getImg_url(), comic.getTitle(), chapter.getOrder());
+            this.list.add(listBookCase);
 
-        holder.onBindView(history, comic, chapter, listBookCase);
+            holder.onBindView(history, comic, chapter, listBookCase);
+        }
     }
 
 

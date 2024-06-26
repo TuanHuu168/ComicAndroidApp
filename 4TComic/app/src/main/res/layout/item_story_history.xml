@@ -20,12 +20,12 @@
             <ImageButton
                 android:id="@+id/imgBtnItemHistory"
                 android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:layout_marginLeft="10dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/tinhtukiemsi"
                 android:background="@drawable/border_image"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tinhtukiemsi"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <LinearLayout
