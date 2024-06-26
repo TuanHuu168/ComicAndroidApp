@@ -4,66 +4,85 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.a4tcomic.R;
+import com.example.a4tcomic.db.CommentsDB;
+import com.example.a4tcomic.db.UsersDB;
 import com.example.a4tcomic.models.Comment;
-import com.example.a4tcomic.utilities.UserUtil;
+import com.example.a4tcomic.models.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CommentAdapter extends ArrayAdapter<Comment> {
+public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentViewHolder> {
 
-    private Context mContext;
-    private int mResource;
+    private final Context mContext;
+    private final List<Comment> commentList;
+    private final CommentsDB commentsDB;
+    private final UsersDB usersDB;
 
-    public CommentAdapter(@NonNull Context context, int resource, @NonNull List<Comment> objects) {
-        super(context, resource, objects);
-        mContext = context;
-        mResource = resource;
+    public CommentAdapter(Context mContext) {
+        this.mContext = mContext;
+        this.commentList = new ArrayList<>();
+        this.commentsDB = new CommentsDB();
+        this.usersDB = new UsersDB();
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItem = convertView;
-        if (listItem == null) {
-            listItem = LayoutInflater.from(mContext).inflate(mResource, parent, false);
-        }
+    public CommentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_comment_2, parent, false);
+        return new CommentViewHolder(view);
+    }
 
-        Comment comment = getItem(position);
+    @Override
+    public void onBindViewHolder(@NonNull CommentViewHolder holder, int position) {
+        Comment comment = commentList.get(position);
+        holder.tvContentComment.setText(comment.getBody());
 
-        TextView textViewContent = listItem.findViewById(R.id.tvContentComment);
-        textViewContent.setText(comment.getBody());
-
-        TextView tvNameUser = listItem.findViewById(R.id.tvNameUser);
-        tvNameUser.setTag(comment.getUser_id()); // Assuming user_id is a String
-
-        // Initially set a placeholder text
-        tvNameUser.setText("Loading...");
-
-        // Fetch username asynchronously
-        UserUtil.fetchUsername(comment.getUser_id(), new UserUtil.OnUserFetchListener() {
+        usersDB.getUserById(comment.getUser_id(), new UsersDB.UserCallback() {
             @Override
-            public void onUserFetched(String username) {
-                // Check if the listItem is still associated with the correct user_id
-                Object tag = tvNameUser.getTag();
-                if (tag instanceof String && tag.equals(comment.getUser_id())) {
-                    tvNameUser.setText(username);
-                }
-            }
-
-            @Override
-            public void onUserFetchFailed(String errorMessage) {
-                // Handle fetch failure
-                tvNameUser.setText("Unknown User");
+            public void onUserLoaded(User user) {
+                holder.tvNameUser.setText(user.getUsername());
+                Glide.with(mContext)
+                        .load(user.getAvatar_url())
+                        .placeholder(R.drawable.truyen1)
+                        .into(holder.imgUser);
             }
         });
+    }
 
-        return listItem;
+    @Override
+    public int getItemCount() {
+        return commentList.size();
+    }
+
+    public void loadComments(String comicId) {
+        commentsDB.getComments(comicId, new CommentsDB.CommentsCallback() {
+            @Override
+            public void onCommentsLoaded(List<Comment> comments) {
+                commentList.clear();
+                commentList.addAll(comments);
+                notifyDataSetChanged();
+            }
+        });
+    }
+
+    public static class CommentViewHolder extends RecyclerView.ViewHolder {
+        TextView tvContentComment, tvNameUser;
+        ImageView imgUser;
+
+        public CommentViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tvContentComment = itemView.findViewById(R.id.tvContentComment);
+            tvNameUser = itemView.findViewById(R.id.tvNameUser);
+            imgUser = itemView.findViewById(R.id.imgUser);
+        }
     }
 }

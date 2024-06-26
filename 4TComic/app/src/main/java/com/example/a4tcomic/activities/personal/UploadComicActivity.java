@@ -1,5 +1,4 @@
 package com.example.a4tcomic.activities.personal;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;

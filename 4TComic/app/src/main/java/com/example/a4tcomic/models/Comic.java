@@ -1,7 +1,5 @@
 package com.example.a4tcomic.models;
 
-//import com.google.type.DateTime;
-
 import java.io.Serializable;
 
 public class Comic implements Serializable {

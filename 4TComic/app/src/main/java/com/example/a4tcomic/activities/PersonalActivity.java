@@ -8,7 +8,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,15 +23,25 @@ import com.example.a4tcomic.activities.account.LoginActivity;
 import com.example.a4tcomic.activities.admin.AdminActivity;
 import com.example.a4tcomic.activities.personal.AccountActivity;
 import com.example.a4tcomic.activities.personal.GraphicSettingActivity;
-import com.example.a4tcomic.activities.personal.HomeUploadActivity;
 import com.example.a4tcomic.activities.personal.ProfileActivity;
 import com.example.a4tcomic.activities.personal.UploadComicActivity;
+import com.example.a4tcomic.db.UsersDB;
+import com.example.a4tcomic.models.User;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PersonalActivity extends AppCompatActivity {
 
-    private TextView tv_edit_profile;
+    private TextView tv_name, tv_edit_profile;
     private Button btn_account, btn_setting, btn_admin, btn_logout, btn_upload_story;
-    private ImageButton btnHomePage, btnArchive, btnNotification, btnSetting;
+    private ImageButton btnHomePage, btnArchive, btnNotification;
+    private CircleImageView iv_avatar;
+
+    private UsersDB usersDB;
+    private String user_id;
+    private User currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +54,10 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         // Tham chiếu đến Views
+        tv_name = findViewById(R.id.tv_name);
+        iv_avatar = findViewById(R.id.iv_avatar);
         tv_edit_profile = findViewById(R.id.tv_edit_profile);
+
         btn_account = findViewById(R.id.btn_account);
         btn_setting = findViewById(R.id.btn_setting);
         btn_admin = findViewById(R.id.btn_admin);
@@ -52,7 +67,6 @@ public class PersonalActivity extends AppCompatActivity {
         btnHomePage = findViewById(R.id.btnHomePage);
         btnArchive = findViewById(R.id.btnArchive);
         btnNotification = findViewById(R.id.btnNotification);
-        btnSetting = findViewById(R.id.btnSetting);
 
         // Chuyển trang bottom
         btnHomePage.setOnClickListener(v -> {
@@ -76,11 +90,13 @@ public class PersonalActivity extends AppCompatActivity {
         // Sự kiện
         tv_edit_profile.setOnClickListener(v -> {
             Intent intent = new Intent(this, ProfileActivity.class);
+            intent.putExtra("currentUser", currentUser);
             startActivity(intent);
         });
 
         btn_account.setOnClickListener(v -> {
             Intent intent = new Intent(this, AccountActivity.class);
+            intent.putExtra("currentUser", currentUser);
             startActivity(intent);
         });
 
@@ -90,49 +106,80 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         btn_admin.setOnClickListener(v -> {
+            if (currentUser.getRole() != 1) {
+                Toast.makeText(this, "Bạn không có quyền truy cập", Toast.LENGTH_SHORT).show();
+                return;
+            }
             Intent intent = new Intent(this, AdminActivity.class);
+            intent.putExtra("currentUser", currentUser);
             startActivity(intent);
         });
 
         btn_upload_story.setOnClickListener(v -> {
-            Intent intent = new Intent(this, HomeUploadActivity.class);
+            Intent intent = new Intent(this, UploadComicActivity.class);
+            intent.putExtra("user_id", user_id);
             startActivity(intent);
         });
 
         btn_logout.setOnClickListener(v -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.title_dialog_logout);
-            builder.setMessage(R.string.message_logout);
-
-            builder.setPositiveButton(R.string.string_no, (dialog, which) -> {
-                dialog.dismiss();
-            });
-            builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
-                SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.clear();
-                editor.apply();
-
-                Intent loginIntent = new Intent(this, LoginActivity.class);
-                startActivity(loginIntent);
-                finish();
-            });
-            AlertDialog dialog = builder.create();
-            dialog.show();
-
-            Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
-            Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
-
-            // Dat mau chu va do bong cho cac nut
-            positiveButton.setTextColor(Color.parseColor("#50CAFF"));
-            positiveButton.setTextSize(16.0f);
-            positiveButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
-
-            neutralButton.setTextColor(Color.parseColor("#FFA5BB"));
-            neutralButton.setTextSize(16.0f);
-            neutralButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
+            setDialogLogout();
         });
+
+        // nhận dữ liệu
+        usersDB = new UsersDB();
+        user_id = "admin001";
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        usersDB.getUserById(user_id, new UsersDB.UserCallback() {
+            @Override
+            public void onUserLoaded(User user) {
+                currentUser = user;
+                setupUI();
+            }
+        });
+    }
+
+    private void setupUI() {
+        if (currentUser == null) {
+            return;
+        }
+        tv_name.setText(currentUser.getUsername());
+        if (!currentUser.getAvatar_url().equals(""))
+            Picasso.get().load(currentUser.getAvatar_url()).into(iv_avatar);
+        else
+            iv_avatar.setImageResource(R.drawable.avatar);
+    }
+
+    private void setDialogLogout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.title_dialog_logout);
+        builder.setMessage(R.string.message_logout);
+
+        builder.setPositiveButton(R.string.string_no, (dialog, which) -> {
+            dialog.dismiss();
+        });
+        builder.setNeutralButton(R.string.string_yes, (dialog, which) -> {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
+
+        // Dat mau chu va do bong cho cac nut
+        positiveButton.setTextColor(Color.parseColor("#50CAFF"));
+        positiveButton.setTextSize(16.0f);
+        positiveButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
+
+        neutralButton.setTextColor(Color.parseColor("#FFA5BB"));
+        neutralButton.setTextSize(16.0f);
+        neutralButton.setShadowLayer(7.0f, 0.0f, 8.0f, Color.parseColor("#80808080"));
+    }
 }

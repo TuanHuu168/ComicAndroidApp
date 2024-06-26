@@ -72,10 +72,11 @@ public class FavoritesDB {
                         ComicsDB comicsDB = new ComicsDB();
                         List<Comic> comics = new ArrayList<>();
                         for (Favorite favorite : favoritesUserList) {
-                            comicsDB.getComicById(favorite.getComic_id(), comic ->
-                                    comics.add(comic));
+                            comicsDB.getComicById(favorite.getComic_id(), comic -> {
+                                comics.add(comic);
+                                callback.onFavoriteComicsLoaded(favoritesUserList, comics);
+                            });
                         }
-                        callback.onFavoriteComicsLoaded(favoritesUserList, comics);
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) { }
@@ -94,7 +95,6 @@ public class FavoritesDB {
                     if (comic_id != null) {
                         comicCounts.put(comic_id, comicCounts.getOrDefault(comic_id, 0) + 1);
                     }
-
                 }
 
                 List<Map.Entry<String, Integer>> sortedComics = new ArrayList<>(comicCounts.entrySet());

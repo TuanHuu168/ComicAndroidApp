@@ -34,11 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_avatar"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:scaleType="centerCrop"
                 android:src="@drawable/avatar" />
 
             <TextView
@@ -47,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_toEndOf="@id/iv_avatar"
-                android:text="Nguyễn Văn A"
+                android:text="@string/name_user"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

@@ -16,11 +16,11 @@
     <string name="registration_success">Đăng ký thành công</string>
 
     <string name="name_story">ONE PIECE</string>
-    <string name="author_story">sáng tác bởi Oda Eiichiro</string>
+    <string name="author_story">sáng tác bởi</string>
     <string name="genre_title">Thể loại</string>
     <string name="des_title">Nội dung</string>
     <string name="chapter_title">Chương</string>
-    <string name="update_time_title">Cập nhật lúc</string>
+    <string name="update_time_title">Cập nhật lúc:</string>
 
     <string name="btn_favorite">Yêu thích</string>
     <string name="btn_favorited">Đã thích</string>
@@ -41,18 +41,26 @@
     <string name="title_dialog_logout">Đăng xuất</string>
     <string name="message_logout">Bạn sẽ trở về màn hình đăng nhập!</string>
 
-    <string name="select_img_title">Chọn hình ảnh đại diện</string>
+    <string name="select_img_title">Thay đổi ảnh đại diện</string>
+    <string name="btn_change_avatar">Thay đổi ảnh</string>
+    <string name="btn_delete_avatar">Xóa ảnh</string>
     <string name="save_btn_title">Lưu</string>
     <string name="edit_name_title">Đặt tên hiển thị</string>
-    <string name="num_character">18 / 50</string>
+    <string name="num_character">0 / 50</string>
     <string name="nva_name">Nguyễn Văn A</string>
+    <string name="name_user">Không xác định</string>
 
+    <string name="change_pass_personal">Đổi mật khẩu</string>
     <string name="email_title">Liên kết email:</string>
     <string name="delete_account">Xóa tài khoản</string>
     <string name="change_pass">Thay đối mật khẩu</string>
     <string name="title_dialog_warning">Cảnh báo</string>
     <string name="mes_delete_account">Bạn có muốn xóa tài khoản này?</string>
     <string name="upload_story_title">Đăng truyện</string>
+
+    <string name="current_password_title">Mật khẩu hiện tại</string>
+    <string name="new_password_title">Mật khẩu mới</string>
+    <string name="confirm_new_password_title">Xác nhận mật khẩu mới</string>
 
     <string name="register_text">&#160;Đăng Ký&#160;</string>
     <string name="user_name_text">Tên đăng nhập</string>

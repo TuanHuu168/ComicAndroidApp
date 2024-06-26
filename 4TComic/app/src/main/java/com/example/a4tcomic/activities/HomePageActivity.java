@@ -60,7 +60,6 @@ public class HomePageActivity extends AppCompatActivity{
         });
 
         // Ánh xạ
-        et_search = findViewById(R.id.et_search);
         trendingRecyclerView = findViewById(R.id.recyclerViewTrending);
         historyRecyclerView = findViewById(R.id.recyclerViewHistory);
         recentlyUpdatedRecyclerView = findViewById(R.id.recyclerViewRecentlyUpdated);
@@ -93,7 +92,6 @@ public class HomePageActivity extends AppCompatActivity{
             Intent advancedSearchIntent = new Intent(this, FindByWriterActivity.class);
             startActivity(advancedSearchIntent);
         });
-
 
         // Tạo slider vào thêm ảnh vào slider
         ImageSlider imageSlider = findViewById(R.id.imageSlider);
