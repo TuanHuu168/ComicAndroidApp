@@ -1,0 +1,786 @@
+[
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_while_search.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_while_search.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_bg_item.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_bg_item.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_three_dot.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\three_dot.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_adjust.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_adjust.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_read_page.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_read_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_selected_notification.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_selected_notification.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_user_image_1.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\user_image_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_btn_return_white.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\btn_return_white.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_background_btn_favorite.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\background_btn_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_page1.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_page1.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_slider_2.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\slider_2.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_setting.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_setting.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_logout.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_logout.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_white_box.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\white_box.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_up.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\up.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_favorite_white.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\favorite_white.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_avatar.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\avatar.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_background_rounded_bottom.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\background_rounded_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\anim_slide_in_bottom.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\anim\\slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_image4.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\image4.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_khong_chi_bat_nat.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_khong_chi_bat_nat.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_comment.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_comment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\font_inter_medium.ttf.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\font\\inter_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_slider_1.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\slider_1.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_three_dot_3x.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\three_dot_3x.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_username.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_username.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_right_pink.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_right_pink.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_khong_chi_la_bat_nat.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\khong_chi_la_bat_nat.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\font_fira_code.ttf.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\font\\fira_code.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_notification.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_slider_4.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\slider_4.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_truyen4.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\truyen4.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_like.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\like.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_upload_chapter.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_upload_chapter.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_dialog_bg.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\dialog_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_bookcase_page.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_bookcase_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_tieu_thu_be_bong.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\tieu_thu_be_bong.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_pdf.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_pdf.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_advanced_search.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_advanced_search.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_archive_selected.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_archive_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_button_language.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\button_language.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_white_edt_background.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\white_edt_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_upload.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_upload.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_app.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_app.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_home_page.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_home_page.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_tinhtukiemsi.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\tinhtukiemsi.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_genre.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_genre.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_btn_delete_comic.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\btn_delete_comic.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_selected_personal.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_selected_personal.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_comic.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_comic.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_story_history.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_story_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_topnav.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\topnav.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_archive.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_archive.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_right.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_right.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_edit_blue.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_edit_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_tinh_tu_kiem_si_3x.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\tinh_tu_kiem_si_3x.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_left_arrow.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_left_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_chapter.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_chapter.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_border_image.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\border_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_comic_holder.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\comic_holder.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_down.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\down.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_button_normal.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\button_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_notification.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_notification.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_close.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_close.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_history.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_chapters.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_chapters.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_account.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_upload_comic.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_upload_comic.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_box_button.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\box_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_eye.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_eye.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_search_img.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_search_img.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_white_b_box_items.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\white_b_box_items.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_top_navigation_bar.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\top_navigation_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_btn_return_black.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\btn_return_black.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_choose_chapters.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_choose_chapters.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_edit_pink.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_edit_pink.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_personal.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_personal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_slider_3.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\slider_3.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_back.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_back.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_bottomnavbar.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\bottomnavbar.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_advanced_search.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_advanced_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_tinh_tu_kiem_si.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\tinh_tu_kiem_si.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_oldest.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_oldest.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_bg_item_white.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_bg_item_white.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_forgot_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_home_page.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_home_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_box_group_tran.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\box_group_tran.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_circle_shape.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\circle_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_translation_group.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_translation_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_chapter_btn.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_chapter_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_title_holder.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\title_holder.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_blue_box.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\blue_box.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\anim_slide_out_bottom.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\anim\\slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_spinner_background.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_spinner_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_upload_comic.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_upload_comic.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_box_coment.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\box_coment.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_b_box_items.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\b_box_items.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\font_faustina_bold.ttf.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\font\\faustina_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_account.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_cover.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\cover.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_truyen1.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\truyen1.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_comment_2.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_comment_2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_radius_menu_chapter.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\radius_menu_chapter.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_chevron.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\chevron.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_sword_star.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\sword_star.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_category.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_banner.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\banner.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\font_faustina_medium.ttf.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\font\\faustina_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_box_vertical.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\box_vertical.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_menu.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_menu.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_img_title.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\img_title.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_oce_piece.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_oce_piece.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_comment_chapter.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_comment_chapter.png"
+    },
+    {
+        "merged": "com.example.a4tcomic.app-debug-45:/layout_activity_read_page.xml.flat",
+        "source": "com.example.a4tcomic.app-main-47:/layout/activity_read_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_notification.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_background_rounded_top.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\background_rounded_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_bg_white.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_bg_white.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_page_item.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\page_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_home_upload.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_home_upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\color_radio_color.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\color\\radio_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_box_find.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\box_find.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_btn_edit_user.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\btn_edit_user.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_dot.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\dot.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_story_follow.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_story_follow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_find_by_category.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_find_by_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_story_detail.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_story_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_setting_display.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_setting_display.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_bg_search.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\bg_search.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_logo_user.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\logo_user.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_btn_delete_user.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\btn_delete_user.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_recently_updated.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_recently_updated.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_selected_setting.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_selected_setting.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_bottom_nav_bar_up.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\bottom_nav_bar_up.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_truyen2.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\truyen2.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_blue_dot.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\blue_dot.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_heart.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_heart.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_arrow.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_comment.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_comment.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_favorited.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\favorited.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_account.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_account.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_item_holder.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\item_holder.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_admin.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\font_faustina.ttf.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\font\\faustina.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_lock.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_lock.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_sword_star_ver.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\sword_star_ver.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_bg_pink.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_bg_pink.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_edt_multi_line_background.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_edt_multi_line_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_bottom_navigation_bar.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\bottom_navigation_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_graphic_setting.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_graphic_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_item_list_comic.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\item_list_comic.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_upload_story.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_upload_story.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_user_password.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_user_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_box_comment_no_shadown.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\box_comment_no_shadown.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_selected_home_page.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_selected_home_page.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_arrow.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_bg_menu.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_bg_menu.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_right_arrow.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_right_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_white_bg_search.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\white_bg_search.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_pink_dot.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\pink_dot.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_background_pressed.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\background_pressed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_change_password.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_change_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_selected_archive.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_selected_archive.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_list_comic.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_list_comic.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_truyen3.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\truyen3.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_follow.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_follow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\layout_activity_find_by_writer.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\layout\\activity_find_by_writer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_edit_white.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_edit_white.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_newest.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_newest.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-debug-45:\\drawable_ic_bg_blue.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.6\\com.example.a4tcomic.app-main-47:\\drawable\\ic_bg_blue.png"
+    }
+]

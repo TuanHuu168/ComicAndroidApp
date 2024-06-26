@@ -138,33 +138,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void clearLoginState() {
-        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
-    }
-
-    private void applySettings() {
-        SharedPreferences sharedPreferences = getSharedPreferences("SettingsPrefs", MODE_PRIVATE);
-        boolean isDarkModeEnabled = sharedPreferences.getBoolean("DarkMode", false);
-        String language = sharedPreferences.getString("Language", "en");
-
-        setDarkMode(isDarkModeEnabled);
-        setLocale(language);
-    }
-
-    private void setDarkMode(boolean isEnabled) {
-        int nightMode = isEnabled ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO;
-        AppCompatDelegate.setDefaultNightMode(nightMode);
-    }
-
-    private void setLocale(String lang) {
-        Locale locale = new Locale(lang);
-        Locale.setDefault(locale);
-        Configuration config = getBaseContext().getResources().getConfiguration();
-        config.setLocale(locale);
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-    }
 }

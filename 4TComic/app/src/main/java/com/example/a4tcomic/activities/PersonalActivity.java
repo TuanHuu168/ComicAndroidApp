@@ -42,6 +42,7 @@ public class PersonalActivity extends AppCompatActivity {
     private UsersDB usersDB;
     private String user_id;
     private User currentUser;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,11 +129,10 @@ public class PersonalActivity extends AppCompatActivity {
         });
 
         // nhận dữ liệu
-        usersDB = new UsersDB();
-        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
         user_id = sharedPreferences.getString("id", "");
-        //user_id = "admin001";
 
+        usersDB = new UsersDB();
     }
 
     @Override
@@ -161,6 +161,14 @@ public class PersonalActivity extends AppCompatActivity {
             iv_avatar.setImageResource(R.drawable.avatar);
         }
 
+    }
+    private void setLogout() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void setDialogLogout() {

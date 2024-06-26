@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firebase_database_url" translatable="false">https://comic4t-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+    <string name="gcm_defaultSenderId" translatable="false">232097632933</string>
+    <string name="google_api_key" translatable="false">AIzaSyC61PJ8yM_hH4r5sAbqFkEMtiB_OK94y6g</string>
+    <string name="google_app_id" translatable="false">1:232097632933:android:c0e63e276d450d8cf7334c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC61PJ8yM_hH4r5sAbqFkEMtiB_OK94y6g</string>
+    <string name="google_storage_bucket" translatable="false">comic4t.appspot.com</string>
+    <string name="project_id" translatable="false">comic4t</string>
+</resources>

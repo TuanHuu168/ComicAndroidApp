@@ -1,7 +1,5 @@
 package com.example.a4tcomic.adapters;
 
-import android.content.Context;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,20 +50,14 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         holder.tv_name_chapter.setText(chapter.getOrder() + ": " + chapter.getTitle());
 
         if (chapter.getCreated_at() > 0)
-            holder.chapterTimeUpdate.setText(" " + convertTime(chapter.getCreated_at()) );
+            holder.chapterTimeUpdate.setText(" " +
+                    new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+                            .format(new java.util.Date(chapter.getCreated_at()))
+            );
 
         holder.cardView.setOnClickListener(v -> {
-            iClickChapter.onClickChapter(chapter.getPdf_url()+"");
+            iClickChapter.onClickChapter(chapter);
         });
-    }
-
-    public String convertTime(Long time) {
-        String date = "";
-        String year = String.valueOf(time).substring(0, 4);
-        String month = String.valueOf(time).substring(4, 6);
-        String day = String.valueOf(time).substring(6, 8);
-        date = day + "/" + month + "/" + year;
-        return date;
     }
 
     @Override

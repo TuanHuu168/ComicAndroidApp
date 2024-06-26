@@ -25,8 +25,9 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.Chapte
         this.listener = listener;
     }
 
-    public ChaptersAdapter(List<String> chapters) {
+    public ChaptersAdapter(List<String> chapters, OnItemClickListener listener) {
         this.chapters = chapters;
+        this.listener = listener;
     }
 
     @NonNull
@@ -40,6 +41,11 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.Chapte
     public void onBindViewHolder(@NonNull ChapterViewHolder holder, int position) {
         String chapter = chapters.get(position);
         holder.tvChapter.setText(chapter);
+        holder.tvChapter.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(position);
+            }
+        });
     }
 
     @Override
@@ -58,17 +64,6 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.Chapte
         public ChapterViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
             tvChapter = itemView.findViewById(R.id.tv_chapter);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null) {
-                        int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION) {
-                            listener.onItemClick(position);
-                        }
-                    }
-                }
-            });
         }
     }
 }

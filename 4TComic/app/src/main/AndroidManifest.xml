@@ -28,6 +28,18 @@
             android:name=".activities.personal.HomeUploadActivity"
             android:exported="false" />
         <activity
+<<<<<<< Updated upstream
+=======
+            android:name=".activities.search.ListComicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.personal.UploadChapterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.personal.HomeUploadActivity"
+            android:exported="false" />
+        <activity
+>>>>>>> Stashed changes
             android:name=".activities.personal.ChangePasswordActivity"
             android:exported="false" />
         <activity
