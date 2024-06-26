@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.models.Comic;
 
@@ -40,8 +42,11 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Comic currentComic = mList.get(position);
-
         holder.nameTextView.setText(currentComic.getTitle());
+        Glide.with(mContext)
+                .load(currentComic.getImg_url())
+                .placeholder(R.drawable.truyen1)
+                .into(holder.imgComic);
     }
 
     @Override
@@ -51,10 +56,12 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ViewHolder> 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView;
+        ImageView imgComic;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.tvNameComic);
+            imgComic = itemView.findViewById(R.id.imgComic);
         }
     }
 }

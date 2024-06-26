@@ -1,5 +1,7 @@
 package com.example.a4tcomic.db;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.a4tcomic.models.Comic;
@@ -132,9 +134,13 @@ public class GenresDB {
                             for (DataSnapshot comicSnapshot : snapshot.getChildren()) {
                                 String comicId = comicSnapshot.child("comic_id").getValue(String.class);
                                 comicsDB.getComicById(comicId, comic -> {
-                                    comics.add(comic);
-                                    comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
-                                    callback.onAllComicsLoaded(comics);
+                                    if (comic != null) {
+                                        comics.add(comic);
+                                        comics.sort((o1, o2) -> Long.compare(o2.getCreated_at(), o1.getCreated_at()));
+                                        callback.onAllComicsLoaded(comics);
+                                    } else {
+                                        Log.e("GenresDB", "Comic object is null for comicId: " + comicId);
+                                    }
                                 });
                             }
                         }
