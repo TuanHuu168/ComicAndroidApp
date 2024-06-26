@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_bg_item">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="118dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/ic_bg_item_white">
+
+            <ImageButton
+                android:id="@+id/imgBtnItemHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/tinhtukiemsi"
+                android:background="@drawable/border_image"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/titleItemHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/faustina"
+                    android:text="@string/title"
+                    android:textColor="#FF6C91"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/lyReadingChapter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp">
+                        <TextView
+                            android:id="@+id/readChapter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reading"
+                            android:textSize="15dp"
+                            tools:ignore="TextSizeCheck" />
+                        <TextView
+                            android:id="@+id/valueChapter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2"
+                            android:textColor="#FF0000"
+                            android:textSize="15dp"
+                            tools:ignore="TextSizeCheck" />
+                        <TextView
+                            android:id="@+id/maxChapter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/7"
+                            android:textSize="15dp"
+                            tools:ignore="TextSizeCheck" />
+                    </LinearLayout>
+                    <RadioButton
+                        android:id="@+id/radio_button_book_History"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="45dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp">
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:background="@null"
+                            android:src="@drawable/ic_heart"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp">
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:background="@null"
+                            android:src="@drawable/ic_eye"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:background="@null"
+                            android:src="@drawable/ic_comment"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
