@@ -110,6 +110,7 @@ public class ChaptersDB {
 
     public void addChapter(Chapter chapter) {
         String key = mChaptersRef.push().getKey();
+        chapter.setId(key);
         mChaptersRef.child(key).setValue(chapter);
     }
 

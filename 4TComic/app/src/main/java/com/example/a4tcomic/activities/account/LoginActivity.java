@@ -1,9 +1,11 @@
 package com.example.a4tcomic.activities.account;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,15 +13,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.example.a4tcomic.R;
 import com.example.a4tcomic.activities.HomePageActivity;
+import com.example.a4tcomic.activities.personal.GraphicSettingActivity;
 import com.example.a4tcomic.db.UsersDB;
 import com.example.a4tcomic.models.User;
 
 import java.util.List;
+import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -31,6 +36,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Áp dụng cài đặt dark mode và ngôn ngữ
+        applySettings();
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
@@ -63,55 +71,43 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // Chuyển trang quên mật khẩu và đăng ký
-        lblForgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent forgotIntent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-                startActivity(forgotIntent);
-            }
+        lblForgot.setOnClickListener(v -> {
+            Intent forgotIntent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+            startActivity(forgotIntent);
         });
 
-        lblRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(registerIntent);
-            }
+        lblRegister.setOnClickListener(v -> {
+            Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(registerIntent);
         });
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = edtEmail.getText().toString().trim();
-                String password = edtPassword.getText().toString().trim();
+        btnLogin.setOnClickListener(v -> {
+            String emailInput = edtEmail.getText().toString().trim();
+            String passwordInput = edtPassword.getText().toString().trim();
 
-                if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
-                } else {
-                    usersDB.getAllUsers(new UsersDB.AllUsersCallback() {
-                        @Override
-                        public void onAllUsersLoaded(List<User> users) {
-                            boolean userFound = false;
-                            for (User user : users) {
-                                if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
-                                    if (user.getStatus() == 1) {
-                                        Toast.makeText(LoginActivity.this, getString(R.string.account_locked), Toast.LENGTH_SHORT).show();
-                                        return;
-                                    }
-                                    userFound = true;
-                                    saveLoginState(user.getId(), user.getEmail(), password, user.getStatus());
-                                    Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
-                                    startActivity(homePageIntent);
-                                    finish();
-                                    break;
-                                }
+            if (emailInput.isEmpty() || passwordInput.isEmpty()) {
+                Toast.makeText(LoginActivity.this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
+            } else {
+                usersDB.getAllUsers(users -> {
+                    boolean userFound = false;
+                    for (User user : users) {
+                        if (user.getEmail().equals(emailInput) && user.getPassword().equals(passwordInput)) {
+                            if (user.getStatus() == 1) {
+                                Toast.makeText(LoginActivity.this, getString(R.string.account_locked), Toast.LENGTH_SHORT).show();
+                                return;
                             }
-                            if (!userFound) {
-                                Toast.makeText(LoginActivity.this, getString(R.string.incorrect_credentials), Toast.LENGTH_SHORT).show();
-                            }
+                            userFound = true;
+                            saveLoginState(user.getId(), user.getEmail(), passwordInput, user.getStatus());
+                            Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
+                            startActivity(homePageIntent);
+                            finish();
+                            break;
                         }
-                    });
-                }
+                    }
+                    if (!userFound) {
+                        Toast.makeText(LoginActivity.this, getString(R.string.incorrect_credentials), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }
@@ -128,28 +124,47 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void autoLogin(String userId, String email, String password, int status) {
-        boolean check = false;
-        usersDB.getUserById(userId, new UsersDB.UserCallback() {
-            @Override
-            public void onUserLoaded(User user) {
-                boolean check = false;
-                if (user != null && user.getEmail().equals(email) && user.getPassword().equals(password)) {
-                    if (status == 0) {
-                        check = true;
-                    }
-                }
-                if (check) {
+        usersDB.getUserById(userId, user -> {
+            if (user != null && user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                if (status == 0) {
                     Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
                     startActivity(homePageIntent);
                     finish();
                 } else {
-                    // Nếu tài khoản không hợp lệ, xóa trạng thái đăng nhập
-                    SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.clear();
-                    editor.apply();
+                    clearLoginState();
                 }
+            } else {
+                clearLoginState();
             }
         });
+    }
+
+    private void clearLoginState() {
+        SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
+
+    private void applySettings() {
+        SharedPreferences sharedPreferences = getSharedPreferences("SettingsPrefs", MODE_PRIVATE);
+        boolean isDarkModeEnabled = sharedPreferences.getBoolean("DarkMode", false);
+        String language = sharedPreferences.getString("Language", "en");
+
+        setDarkMode(isDarkModeEnabled);
+        setLocale(language);
+    }
+
+    private void setDarkMode(boolean isEnabled) {
+        int nightMode = isEnabled ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO;
+        AppCompatDelegate.setDefaultNightMode(nightMode);
+    }
+
+    private void setLocale(String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = getBaseContext().getResources().getConfiguration();
+        config.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
 }

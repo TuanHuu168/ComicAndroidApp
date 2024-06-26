@@ -127,7 +127,7 @@
                 android:paddingEnd="16dp"
                 android:paddingBottom="10dp"
                 android:text="@string/find_translator"
-                android:textColor="#808080"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck" />
 

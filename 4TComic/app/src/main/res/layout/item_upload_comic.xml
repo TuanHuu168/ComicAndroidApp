@@ -57,11 +57,13 @@
             android:layout_marginTop="4dp"
             android:fontFamily="@font/faustina_medium"
             android:text="Lại thể loại truyện hack"
+            android:textColor="@color/black"
             android:textSize="14sp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
+
         <TextView
             android:id="@+id/lblCommentTime"
             android:layout_width="wrap_content"
@@ -71,6 +73,7 @@
             android:fontFamily="@font/faustina"
             android:gravity="bottom"
             android:text="12p"
+            android:textColor="@color/black"
             android:textSize="12sp" />
 
     </LinearLayout>
