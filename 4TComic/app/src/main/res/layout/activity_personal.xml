@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="@drawable/background_rounded_top"
+        android:fontFamily="@font/faustina_bold"
         android:gravity="center"
         android:text="@string/personal_title"
         android:textColor="@color/white"
@@ -46,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_toEndOf="@id/iv_avatar"
+                android:fontFamily="@font/faustina"
                 android:text="@string/name_user"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -69,6 +71,7 @@
                     android:id="@+id/tv_edit_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/faustina"
                     android:text="@string/edit_profile_title"
                     android:textColor="@color/pink_main"
                     android:textSize="18sp" />
@@ -84,6 +87,7 @@
             android:backgroundTint="@color/pink_main"
             android:drawableLeft="@drawable/ic_account"
             android:drawableRight="@drawable/ic_right"
+            android:fontFamily="@font/faustina"
             android:gravity="center_vertical"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
@@ -99,6 +103,7 @@
             android:backgroundTint="@color/pink_main"
             android:drawableLeft="@drawable/ic_setting_display"
             android:drawableRight="@drawable/ic_right"
+            android:fontFamily="@font/faustina"
             android:gravity="center_vertical"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
@@ -114,6 +119,7 @@
             android:backgroundTint="@color/pink_main"
             android:drawableLeft="@drawable/ic_lock"
             android:drawableRight="@drawable/ic_right"
+            android:fontFamily="@font/faustina"
             android:gravity="center_vertical"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
@@ -129,6 +135,7 @@
             android:backgroundTint="@color/pink_main"
             android:drawableLeft="@drawable/ic_upload_story"
             android:drawableRight="@drawable/ic_right"
+            android:fontFamily="@font/faustina"
             android:gravity="center_vertical"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
@@ -149,7 +156,8 @@
             android:paddingBottom="16dp"
             android:text="@string/logout_title"
             android:textSize="18sp"
-            app:cornerRadius="20dp" />
+            app:cornerRadius="20dp"
+            android:fontFamily="@font/faustina" />
 
     </LinearLayout>
 

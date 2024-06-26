@@ -95,6 +95,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentTop="true"
+                                android:fontFamily="@font/faustina_bold"
                                 android:text="@string/app_name"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
@@ -111,9 +112,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/tv_name_story"
                                     android:layout_alignStart="@+id/tv_name_story"
+                                    android:fontFamily="@font/faustina"
                                     android:text="@string/author_story"
                                     android:textColor="@color/white"
-                                    android:textSize="18sp"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -123,9 +125,10 @@
                                     android:layout_below="@+id/tv_name_story"
                                     android:layout_marginStart="4dp"
                                     android:layout_toRightOf="@id/title_author"
+                                    android:fontFamily="@font/faustina"
                                     android:text="@string/app_name"
                                     android:textColor="@color/white"
-                                    android:textSize="18sp"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
@@ -146,6 +149,7 @@
                             android:layout_height="40dp"
                             android:background="@drawable/background_btn_favorite"
                             android:drawableLeft="@drawable/favorite_white"
+                            android:fontFamily="@font/faustina"
                             android:gravity="center"
                             android:padding="10dp"
                             android:text="@string/btn_favorite"

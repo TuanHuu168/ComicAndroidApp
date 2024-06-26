@@ -34,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:fontFamily="@font/faustina_bold"
             android:paddingEnd="30dp"
             android:text="@string/title_advance_search"
             android:textAlignment="center"
@@ -62,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:fontFamily="@font/faustina"
             android:text="@string/author"
             android:textAlignment="center"
             android:textColor="#49C8FF"
@@ -74,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:fontFamily="@font/faustina"
             android:text="@string/genre"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -86,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:fontFamily="@font/faustina"
             android:text="@string/translator"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -121,12 +125,12 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:backgroundTint="@android:color/transparent"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/faustina"
                 android:hint="@string/find_author"
                 android:paddingStart="20dp"
                 android:paddingEnd="16dp"
                 android:paddingBottom="10dp"
-                android:textColor="#808080"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -169,10 +173,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="Jeong Gyeong Yun"
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/btWriter1"
@@ -182,10 +187,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="Chu-Gong"
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/btWriter2"
@@ -195,10 +201,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="Son Jeho"
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
         </LinearLayout>
 
@@ -217,10 +224,11 @@
                 android:layout_marginBottom="0dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="Park Tae-joon"
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/btWriter4"
@@ -230,10 +238,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="Yaongyi"
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/btWriter5"
@@ -243,10 +252,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="SIU"
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -263,10 +273,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="Yongje Park"
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/btWriter7"
@@ -276,10 +287,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="Yun Hyunseok "
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/btWriter8"
@@ -289,10 +301,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
                 android:padding="0dp"
                 android:text="Quimchee"
                 android:textSize="10sp"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -335,6 +348,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/faustina"
                         android:text="@string/title_author_1"
                         android:textColor="#FFB3C6"
                         android:textSize="18sp" />
@@ -405,6 +419,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/faustina"
                         android:text="@string/title_author_2"
                         android:textColor="#FFB3C6"
                         android:textSize="18sp" />
