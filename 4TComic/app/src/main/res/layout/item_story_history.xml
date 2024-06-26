@@ -58,6 +58,7 @@
                             android:id="@+id/readChapter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/faustina"
                             android:text="@string/reading"
                             android:textColor="@color/black"
                             android:textSize="15dp"
