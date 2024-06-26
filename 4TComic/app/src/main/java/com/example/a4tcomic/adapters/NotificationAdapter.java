@@ -1,6 +1,7 @@
 package com.example.a4tcomic.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.NotificationViewHolder> {
 
@@ -63,6 +65,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     @Override
     public void onBindViewHolder(@NonNull NotificationViewHolder holder, int position) {
         if (chapters == null || chapters.isEmpty()) {
+            Log.d("NotificationAdapter", "Chapters list is empty or null");
             return;
         }
 
@@ -91,6 +94,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         }
 
         holder.tvNameChapter.setText(chapter.getTitle());
+        holder.tvTime.setText(getTimeElapsed(chapter.getCreated_at()));
     }
 
     @Override
@@ -104,21 +108,42 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         notifyDataSetChanged();
     }
 
+    private String getTimeElapsed(long createdAt) {
+        long currentTime = System.currentTimeMillis();
+        long elapsedTime = currentTime - createdAt;
+
+        long days = TimeUnit.MILLISECONDS.toDays(elapsedTime);
+        long hours = TimeUnit.MILLISECONDS.toHours(elapsedTime) % 24;
+        long minutes = TimeUnit.MILLISECONDS.toMinutes(elapsedTime) % 60;
+        long seconds = TimeUnit.MILLISECONDS.toSeconds(elapsedTime) % 60;
+
+        if (days > 0) {
+            return days + " days ago";
+        } else if (hours > 0) {
+            return hours + " hours ago";
+        } else if (minutes > 0) {
+            return minutes + " minutes ago";
+        } else {
+            return seconds + " seconds ago";
+        }
+    }
+
     private void loadFavoriteComics() {
         favoritesDB.getComicsFavorByUser(userId, new FavoritesDB.FavoriteComicsCallback() {
             @Override
             public void onFavoriteComicsLoaded(List<Favorite> favorites, List<Comic> comics) {
                 setComics(comics);
+                List<Chapter> newChapters = new ArrayList<>();
                 for (Favorite favorite : favorites) {
                     chaptersDB.getChapters(favorite.getComic_id(), new ChaptersDB.ChaptersCallback() {
                         @Override
                         public void onChaptersLoaded(List<Chapter> chapterList) {
                             for (Chapter chapter : chapterList) {
                                 if (chapter.getCreated_at() > favorite.getCreated_at()) {
-                                    chapters.add(chapter);
+                                    newChapters.add(chapter);
                                 }
                             }
-                            setNotifications(chapters);
+                            setNotifications(newChapters);
                         }
                     });
                 }
@@ -129,13 +154,14 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     public static class NotificationViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imvComic;
-        TextView tvNameComic, tvNameChapter;
+        TextView tvNameComic, tvNameChapter, tvTime;
 
         public NotificationViewHolder(@NonNull View itemView) {
             super(itemView);
             imvComic = itemView.findViewById(R.id.imvComic);
             tvNameComic = itemView.findViewById(R.id.tvNameComic);
             tvNameChapter = itemView.findViewById(R.id.tvNameChapter);
+            tvTime = itemView.findViewById(R.id.tvTime);
         }
     }
 }
