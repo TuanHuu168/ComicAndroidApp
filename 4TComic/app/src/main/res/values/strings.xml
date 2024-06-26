@@ -113,4 +113,34 @@
     <string name="off">Off</string>
     <string name="on">On</string>
 
+    <string name="title_advance_search">Advanced Search</string>
+    <string name="author">Author</string>
+    <string name="genre">Genre</string>
+    <string name="translator">Translator</string>
+    <string name="find_translator">Find by translator</string>
+
+    <string name="title_comment">Comment</string>
+    <string name="hint_comment">Coment here ...</string>
+    <string name="post_comment">Post</string>
+    <string name="new_comment">New</string>
+
+    <string name="find_genre">Find by genre</string>
+    <string name="find_author">Find by author</string>
+
+    <string name="title_author_1">Masterpiece</string>
+    <string name="title_author_2">New composition</string>
+
+    <string name="title_genre_1">Emotional</string>
+
+    <string name="title_setting">Setting</string>
+    <string name="dark_mode">Dark interface mode</string>
+    <string name="language">Interface language</string>
+
+    <string name="title_list_comic">List comic</string>
+
+    <string name="title_noti">Notification</string>
+    <string name="chapterr">Chapter</string>
+
+    <string name="noti_update_chapter">Updated new chapter: </string>
+
 </resources>

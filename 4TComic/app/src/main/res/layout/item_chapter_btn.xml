@@ -9,7 +9,7 @@
     android:backgroundTint="#3CBEF5"
     android:fontFamily="@font/faustina"
     android:padding="4dp"
-    android:text="Chương"
+    android:text="@string/chapterr"
     android:textAllCaps="false"
     android:textColor="#FFFFFF"
     android:textSize="12dp"

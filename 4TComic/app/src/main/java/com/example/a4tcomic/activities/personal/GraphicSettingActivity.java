@@ -29,7 +29,5 @@ public class GraphicSettingActivity extends AppCompatActivity {
 
         ImageButton btn_back = findViewById(R.id.btn_back);
         btn_back.setOnClickListener(v -> finish());
-
-        switchDarkMode.
     }
 }

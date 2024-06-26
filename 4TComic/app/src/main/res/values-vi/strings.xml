@@ -112,4 +112,36 @@
     <string name="comic_upload_success">Tải lên truyện thành công!</string>
     <string name="off">Tắt</string>
     <string name="on">Bật</string>
+
+    <string name="title_advance_search">Tìm kiếm nâng cao</string>
+    <string name="author">Tác giả</string>
+    <string name="genre">Thể loại</string>
+    <string name="translator">Người dịch</string>
+    <string name="find_translator">Tìm kiếm theo người dịch</string>
+
+    <string name="title_comment">Bình luận</string>
+    <string name="hint_comment">Bình luận ...</string>
+    <string name="post_comment">Đăng</string>
+    <string name="new_comment">Mới nhất</string>
+
+    <string name="find_genre">Tìm kiếm theo thể loại</string>
+    <string name="find_author">Tìm kiếm theo tác giả</string>
+
+    <string name="title_author_1">Tác phẩm nổi bật</string>
+    <string name="title_author_2">Tác phẩm mới</string>
+
+    <string name="title_genre_1">Tình cảm</string>
+
+    <string name="title_setting">Cài đặt</string>
+    <string name="dark_mode">Chế độ giao diện tối</string>
+    <string name="language">Ngôn ngữ giao diện</string>
+
+    <string name="title_list_comic">Danh sách truyện</string>
+
+    <string name="title_noti">Thông báo</string>
+    <string name="chapterr">Chương</string>
+
+    <string name="noti_update_chapter">Đã cập nhật chương mới: </string>
+
+
 </resources>
