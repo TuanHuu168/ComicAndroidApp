@@ -22,9 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/faustina"
         android:gravity="center"
-        android:textColor="#000"
         android:text="manga name"
+        android:textColor="#000"
         android:textSize="14sp" />
 
 </LinearLayout>

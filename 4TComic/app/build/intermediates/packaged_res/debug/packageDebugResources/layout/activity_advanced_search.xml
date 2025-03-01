@@ -6,7 +6,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    tools:context=".activities.search.AdvancedSearchActivity">
+    android:backgroundTint="#FFB3C6">
 
     <LinearLayout
         android:id="@+id/linear_header"
@@ -34,8 +34,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:fontFamily="@font/faustina_bold"
             android:paddingEnd="30dp"
-            android:text="Tìm kiếm nâng cao"
+            android:text="@string/title_advance_search"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="22sp"
@@ -47,8 +48,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linear_header"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="0dp"
@@ -62,7 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Tác giả"
+            android:fontFamily="@font/faustina"
+            android:text="@string/author"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
@@ -74,7 +76,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Thể loại"
+            android:fontFamily="@font/faustina"
+            android:text="@string/genre"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -86,7 +89,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Người dịch"
+            android:fontFamily="@font/faustina"
+            android:text="@string/translator"
             android:textAlignment="center"
             android:textColor="#49C8FF"
             android:textSize="16sp"
@@ -94,15 +98,12 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="false"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="0dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/bg_search"
         android:orientation="horizontal">
 
@@ -118,18 +119,18 @@
             android:paddingBottom="10dp">
 
             <EditText
-                android:id="@+id/editSearch"
+                android:id="@+id/edtSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:backgroundTint="@android:color/transparent"
-                android:fontFamily="sans-serif"
-                android:hint="Tìm kiếm theo nhóm dịch ..."
+                android:fontFamily="@font/faustina"
+                android:hint="@string/find_translator"
                 android:paddingStart="20dp"
                 android:paddingEnd="16dp"
                 android:paddingBottom="10dp"
-                android:textColor="#808080"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -147,20 +148,325 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ListView
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="0dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btWriter0"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="Jeong Gyeong Yun"
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/btWriter1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="Chu-Gong"
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/btWriter2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="Son Jeho"
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btWriter3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="Park Tae-joon"
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/btWriter4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="Yaongyi"
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/btWriter5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="SIU"
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#FFB3C6"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btWriter6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="Yongje Park"
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/btWriter7"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="Yun Hyunseok "
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/btWriter8"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFB3C6"
+                android:fontFamily="@font/faustina"
+                android:padding="0dp"
+                android:text="Quimchee"
+                android:textSize="10sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/linearLayout4"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentEnd="false"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/box_group_tran"
-        android:dividerHeight="0dp"
-        android:divider="@android:color/transparent"
-        android:scrollbars="none"
-        tools:listitem="@layout/item_translation_group" />
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/b_box_items"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingTop="6dp"
+                android:paddingRight="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/white_box"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/faustina"
+                        android:text="Cổ team"
+                        android:textColor="#FFB3C6"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/imbtComic1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            app:srcCompat="@drawable/tinh_tu_kiem_si" />
+
+                        <ImageButton
+                            android:id="@+id/imbtComic2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            app:srcCompat="@drawable/tieu_thu_be_bong" />
+
+                        <ImageButton
+                            android:id="@+id/imbtComic3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            app:srcCompat="@drawable/khong_chi_la_bat_nat" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/b_box_items"
+                android:orientation="vertical"
+                android:paddingTop="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/white_box"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/faustina"
+                        android:text="DouTee"
+                        android:textColor="#FFB3C6"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/imbtComic4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            app:srcCompat="@drawable/tinh_tu_kiem_si" />
+
+                        <ImageButton
+                            android:id="@+id/imbtComic5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            app:srcCompat="@drawable/tieu_thu_be_bong" />
+
+                        <ImageButton
+                            android:id="@+id/imbtComic6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            app:srcCompat="@drawable/khong_chi_la_bat_nat" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

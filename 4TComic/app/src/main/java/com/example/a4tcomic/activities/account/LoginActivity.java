@@ -36,8 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Áp dụng cài đặt dark mode và ngôn ngữ
-        applySettings();
+        // Áp dụng cài đặt dark mode và ngôn ng
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -66,48 +65,61 @@ public class LoginActivity extends AppCompatActivity {
         String email = sharedPreferences.getString("email", "");
         String password = sharedPreferences.getString("password", "");
         int status = sharedPreferences.getInt("status", 0);
+        Toast.makeText(this, userId, Toast.LENGTH_LONG).show();
         if (!userId.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
             autoLogin(userId, email, password, status);
         }
 
         // Chuyển trang quên mật khẩu và đăng ký
-        lblForgot.setOnClickListener(v -> {
-            Intent forgotIntent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-            startActivity(forgotIntent);
+        lblForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent forgotIntent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+                startActivity(forgotIntent);
+            }
         });
 
-        lblRegister.setOnClickListener(v -> {
-            Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-            startActivity(registerIntent);
+        lblRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(registerIntent);
+            }
         });
 
-        btnLogin.setOnClickListener(v -> {
-            String emailInput = edtEmail.getText().toString().trim();
-            String passwordInput = edtPassword.getText().toString().trim();
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = edtEmail.getText().toString().trim();
+                String password = edtPassword.getText().toString().trim();
 
-            if (emailInput.isEmpty() || passwordInput.isEmpty()) {
-                Toast.makeText(LoginActivity.this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
-            } else {
-                usersDB.getAllUsers(users -> {
-                    boolean userFound = false;
-                    for (User user : users) {
-                        if (user.getEmail().equals(emailInput) && user.getPassword().equals(passwordInput)) {
-                            if (user.getStatus() == 1) {
-                                Toast.makeText(LoginActivity.this, getString(R.string.account_locked), Toast.LENGTH_SHORT).show();
-                                return;
+                if (email.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(LoginActivity.this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
+                } else {
+                    usersDB.getAllUsers(new UsersDB.AllUsersCallback() {
+                        @Override
+                        public void onAllUsersLoaded(List<User> users) {
+                            boolean userFound = false;
+                            for (User user : users) {
+                                if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                                    if (user.getStatus() == 1) {
+                                        Toast.makeText(LoginActivity.this, getString(R.string.account_locked), Toast.LENGTH_SHORT).show();
+                                        return;
+                                    }
+                                    userFound = true;
+                                    saveLoginState(user.getId(), user.getEmail(), password, user.getStatus());
+                                    Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
+                                    startActivity(homePageIntent);
+                                    finish();
+                                    break;
+                                }
                             }
-                            userFound = true;
-                            saveLoginState(user.getId(), user.getEmail(), passwordInput, user.getStatus());
-                            Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
-                            startActivity(homePageIntent);
-                            finish();
-                            break;
+                            if (!userFound) {
+                                Toast.makeText(LoginActivity.this, getString(R.string.incorrect_credentials), Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                    if (!userFound) {
-                        Toast.makeText(LoginActivity.this, getString(R.string.incorrect_credentials), Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    });
+                }
             }
         });
     }
@@ -124,17 +136,27 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void autoLogin(String userId, String email, String password, int status) {
-        usersDB.getUserById(userId, user -> {
-            if (user != null && user.getEmail().equals(email) && user.getPassword().equals(password)) {
-                if (status == 0) {
+        boolean check = false;
+        usersDB.getUserById(userId, new UsersDB.UserCallback() {
+            @Override
+            public void onUserLoaded(User user) {
+                boolean check = false;
+                if (user != null && user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                    if (status == 0) {
+                        check = true;
+                    }
+                }
+                if (check) {
                     Intent homePageIntent = new Intent(LoginActivity.this, HomePageActivity.class);
                     startActivity(homePageIntent);
                     finish();
                 } else {
-                    clearLoginState();
+                    // Nếu tài khoản không hợp lệ, xóa trạng thái đăng nhập
+                    SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.clear();
+                    editor.apply();
                 }
-            } else {
-                clearLoginState();
             }
         });
     }

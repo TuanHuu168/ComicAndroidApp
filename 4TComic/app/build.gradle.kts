@@ -54,6 +54,6 @@ dependencies {
     implementation ("com.squareup.picasso:picasso:2.71828")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
-    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
+    implementation ("com.github.mhiew:android-pdf-viewer:3.2.0-beta.3")
+    implementation ("androidx.annotation:annotation:1.1.0")
 }
-

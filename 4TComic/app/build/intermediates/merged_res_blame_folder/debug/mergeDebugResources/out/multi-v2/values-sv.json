@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.a4tcomic.app-mergeDebugResources-43:/values-sv/values-sv.xml",
+            "outputFile": "com.example.a4tcomic.app-mergeDebugResources-42:/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-4\\68e38edb8ef70470b2724895b4d0e8ab\\transformed\\browser-1.4.0\\res\\values-sv\\values-sv.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.a4tcomic.app-mergeDebugResources-43:/values-iw/values-iw.xml",
+            "outputFile": "com.example.a4tcomic.app-mergeDebugResources-42:/values-iw/values-iw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-4\\dcd0a36a31ea758e2d1547b227944ed4\\transformed\\jetified-play-services-base-18.1.0\\res\\values-iw\\values.xml",

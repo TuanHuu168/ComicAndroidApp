@@ -1,3 +1,0 @@
-com.example.a4tcomic.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

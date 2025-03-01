@@ -1,15 +1,15 @@
-#Thu Jun 27 04:22:05 ICT 2024
-base.0=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.10=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
-base.2=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.3=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.4=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.5=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
-base.6=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
-base.7=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.8=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
-base.9=C\:\\Users\\Admin\\Documents\\GitHub\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Sat Mar 01 14:56:00 ICT 2025
+base.0=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.10=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+base.2=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.3=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.4=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
+base.5=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.6=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+base.7=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.8=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.9=C\:\\Users\\Admin\\Documents\\GitHub\\ComicAndroidApp\\4TComic\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.10=classes3.dex

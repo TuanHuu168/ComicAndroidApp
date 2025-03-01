@@ -32,6 +32,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme._4TComic" >
+        <service
+            android:name="com.example.a4tcomic.activities.story.Music"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name="com.example.a4tcomic.activities.search.ListComicActivity"
             android:exported="false" />

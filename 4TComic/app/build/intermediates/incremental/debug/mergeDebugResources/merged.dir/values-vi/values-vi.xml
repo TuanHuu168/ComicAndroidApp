@@ -34,6 +34,7 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Chia sẻ với"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Chia sẻ với <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Thu gọn"</string>
+    <string name="access_denied">Bạn không có quyền truy cập.</string>
     <string name="account_exists">Tài khoản đã tồn tại</string>
     <string name="account_list_text">Tài khoản mới tạo</string>
     <string name="account_locked">Tài khoản đã bị khóa</string>
@@ -46,8 +47,10 @@
     <string msgid="8397015543330865059" name="android.credentials.TYPE_PASSWORD_CREDENTIAL">"Mật khẩu"</string>
     <string msgid="3929015085059320822" name="androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL">"Khoá truy cập"</string>
     <string name="app_name">4T Comic</string>
+    <string name="author">Tác giả</string>
     <string name="author_story">sáng tác bởi</string>
     <string name="author_text">Tác giả</string>
+    <string name="avatar_upload_fail">Không thể tải lên ảnh đại diện. Vui lòng thử lại.</string>
     <string name="bottomsheet_action_collapse">Thu gọn bảng dưới cùng</string>
     <string name="bottomsheet_action_expand">Mở rộng bảng dưới cùng</string>
     <string name="bottomsheet_action_expand_halfway">Mở rộng một nửa</string>
@@ -58,8 +61,8 @@
     <string name="btn_delete_avatar">Xóa ảnh</string>
     <string name="btn_favorite">Yêu thích</string>
     <string name="btn_favorited">Đã thích</string>
-    <string name="btn_first_chapter">Đọc từ đầu</string>
-    <string name="btn_new">Đọc mới nhất</string>
+    <string name="btn_first_chapter">Chương 1</string>
+    <string name="btn_new">Chương cuối</string>
     <string msgid="881409763997275156" name="call_notification_answer_action">"Trả lời"</string>
     <string msgid="8793775615905189152" name="call_notification_answer_video_action">"Video"</string>
     <string msgid="3229508546291798546" name="call_notification_decline_action">"Từ chối"</string>
@@ -72,10 +75,13 @@
     <string name="change_pass_personal">Đổi mật khẩu</string>
     <string name="chapter">Chương</string>
     <string name="chapter_title">Chương</string>
+    <string name="chapter_upload_success">Tải lên chương truyện thành công!</string>
+    <string name="chapterr">Chương</string>
     <string name="character_counter_content_description">Đã nhập %1$d trong số %2$d ký tự</string>
     <string name="character_counter_overflowed_content_description">Đã vượt quá giới hạn ký tự %1$d/%2$d</string>
     <string name="clear_text_end_icon_content_description">Xóa văn bản</string>
     <string name="comic_name_text">Tên truyện</string>
+    <string name="comic_upload_success">Tải lên truyện thành công!</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Bật</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s sẽ không hoạt động nếu bạn không bật dịch vụ của Google Play.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Bật dịch vụ của Google Play</string>
@@ -94,14 +100,23 @@
     <string name="common_open_on_phone">Mở trên điện thoại</string>
     <string name="common_signin_button_text">Đăng nhập</string>
     <string name="common_signin_button_text_long">Đăng nhập bằng Google</string>
+    <string name="confirm_delete_follow">Bạn có chắc chắn muốn xóa truyện theo dõi này không?</string>
+    <string name="confirm_delete_follow_message">Nhấn Yes sẽ xóa vĩnh viễn truyện này khỏi danh sách theo dõi của bạn.</string>
+    <string name="confirm_delete_history">Bạn có chắc chắn muốn xóa lịch sử truyện này không?</string>
+    <string name="confirm_delete_history_message">Nhấn Yes sẽ xóa vĩnh viễn lịch sử truyện này.</string>
     <string name="confirm_new_password_title">Xác nhận mật khẩu mới</string>
+    <string name="confirm_password_required">Xác nhận mật khẩu mới là bắt buộc</string>
     <string name="confirm_password_text">Xác nhận mật khẩu</string>
     <string name="content_image">Ảnh đại diện</string>
     <string msgid="3260749812566568062" name="copy_toast_msg">"Đã sao chép đường liên kết vào bảng nhớ tạm"</string>
     <string name="cover_image_text">Ảnh bìa</string>
+    <string name="cover_image_upload_fail">Tải lên ảnh bìa thất bại.</string>
+    <string name="current_password_required">Mật khẩu hiện tại là bắt buộc</string>
     <string name="current_password_title">Mật khẩu hiện tại</string>
+    <string name="dark_mode">Chế độ giao diện tối</string>
     <string name="delete_account">Xóa tài khoản</string>
     <string name="des_title">Nội dung</string>
+    <string name="deselect_all">Bỏ chọn tất cả</string>
     <string name="edit_name_title">Đặt tên hiển thị</string>
     <string name="edit_profile_title">Chỉnh sửa hồ sơ</string>
     <string name="edt_summary_text">Tóm tắt nội dung truyện</string>
@@ -116,14 +131,23 @@
     <string name="fill_all_fields">Vui lòng nhập đầy đủ thông tin</string>
     <string name="filterNewest">Mới nhất</string>
     <string name="filterOldest">Cũ nhất</string>
+    <string name="find_author">Tìm kiếm theo tác giả</string>
+    <string name="find_genre">Tìm kiếm theo thể loại</string>
+    <string name="find_translator">Tìm kiếm theo người dịch</string>
     <string name="forgot_text"> Quên Mật Khẩu </string>
+    <string name="genre">Thể loại</string>
     <string name="genre_title">Thể loại</string>
+    <string name="graphic_setting">Cài đặt giao diện</string>
     <string name="hintSearch">Tìm kiếm</string>
+    <string name="hint_comment">Bình luận ...</string>
     <string name="history_text">Lịch sử</string>
     <string name="icon_content_description">Biểu tượng hộp thoại</string>
     <string name="incorrect_credentials">Tài khoản hoặc mật khẩu không đúng</string>
+    <string name="incorrect_current_password">Mật khẩu hiện tại không đúng</string>
     <string name="invalid_email">Email không hợp lệ</string>
     <string name="item_view_role_description">Thẻ</string>
+    <string name="lang_text">Ngôn ngữ</string>
+    <string name="language">Ngôn ngữ giao diện</string>
     <string name="login_text"> Đăng Nhập </string>
     <string name="logout_title">Đăng xuất</string>
     <string name="material_clock_toggle_content_description">Chọn SA hoặc CH</string>
@@ -186,17 +210,29 @@
     <string name="mtrl_picker_toggle_to_year_selection">Nhấn để chuyển sang chế độ xem theo năm</string>
     <string name="mtrl_timepicker_cancel">Huỷ</string>
     <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="name_empty">Tên không được để trống</string>
     <string name="name_story">ONE PIECE</string>
     <string name="name_user">Không xác định</string>
+    <string name="new_comment">Mới nhất</string>
+    <string name="new_password_required">Mật khẩu mới là bắt buộc</string>
     <string name="new_password_title">Mật khẩu mới</string>
+    <string name="nightmode">Chế độ giao diện tối</string>
+    <string name="noti_update_chapter">Đã cập nhật chương mới: </string>
     <string name="num_character">0 / 50</string>
     <string name="nva_name">Nguyễn Văn A</string>
+    <string name="off">Tắt</string>
+    <string name="off_text">Tắt</string>
+    <string name="on">Bật</string>
+    <string name="on_text">Bật</string>
     <string name="original_comic_name_text">Tên gốc</string>
+    <string name="password_changed">Đổi mật khẩu thành công</string>
     <string name="password_mismatch">Mật khẩu không khớp</string>
     <string name="password_text">Mật khẩu</string>
     <string name="password_toggle_content_description">Hiện mật khẩu</string>
     <string name="pdf_selector">Chọn file PDF</string>
+    <string name="pdf_upload_fail">Tải lên PDF thất bại.</string>
     <string name="personal_title">Cá nhân</string>
+    <string name="post_comment">Đăng</string>
     <string name="random_password_created">Mật khẩu đã được tạo là 12345. Vui lòng vào cài đặt để đổi lại mật khẩu</string>
     <string name="reading">"Chương đang đọc: "</string>
     <string name="recently_comment">Bình luận gần đây</string>
@@ -210,6 +246,7 @@
     <string name="search_text">Tìm kiếm truyện…</string>
     <string name="searchview_clear_text_content_description">Xoá văn bản</string>
     <string name="searchview_navigation_content_description">Quay lại</string>
+    <string name="select_all">Chọn tất cả</string>
     <string name="select_category">Chọn thể loại</string>
     <string name="select_img">Vui lòng chọn đầy đủ ảnh của truyện.</string>
     <string name="select_img_title">Thay đổi ảnh đại diện</string>
@@ -223,10 +260,32 @@
     <string name="terms_text_underline">điều khoản &amp; dịch vụ</string>
     <string name="title">Tiêu đề</string>
     <string name="titleBookcase">Tủ sách</string>
-    <string name="titleChapter">Chương</string>
+    <string name="titleChapter">Chương 1</string>
+    <string name="title_advance_search">Tìm kiếm nâng cao</string>
+    <string name="title_author_1">Tác phẩm nổi bật</string>
+    <string name="title_author_2">Tác phẩm mới</string>
+    <string name="title_comment">Bình luận</string>
     <string name="title_dialog_logout">Đăng xuất</string>
     <string name="title_dialog_warning">Cảnh báo</string>
+    <string name="title_genre_1">Tình cảm</string>
+    <string name="title_list_comic">Danh sách truyện</string>
+    <string name="title_not_found">Không tìm thấy truyện</string>
+    <string name="title_noti">Thông báo</string>
+    <string name="title_setting">Cài đặt</string>
+    <string name="toast_author_not_found">Không tìm thấy tác giả</string>
+    <string name="toast_comic_author_not_found">Không tìm thấy truyện của tác giả</string>
+    <string name="toast_comic_genre_not_found">Không tìm thấy truyện của thể loại</string>
+    <string name="toast_comic_not_found">Không tìm thấy truyện</string>
+    <string name="toast_comic_translator_not_found">Không tìm thấy truyện của người dịch</string>
+    <string name="toast_enter_username">Vui lòng nhập tên người dịch</string>
+    <string name="toast_genre_not_found">Không tìm thấy thể loại</string>
+    <string name="toast_missing_search_text">Vui lòng nhập văn bản tìm kiếm</string>
+    <string name="toast_please_enter_author">Vui lòng nhập tên tác giả</string>
+    <string name="toast_please_enter_genre">Vui lòng nhập tên thể loại</string>
+    <string name="toast_user_not_found">Không tìm thấy người dịch</string>
+    <string name="translator">Người dịch</string>
     <string name="trending_text">Xu hướng</string>
+    <string name="update_success">Cập nhật thành công</string>
     <string name="update_time_title">Cập nhật lúc:</string>
     <string name="upload_chapter">Thêm chương mới</string>
     <string name="upload_story_title">Đăng truyện</string>

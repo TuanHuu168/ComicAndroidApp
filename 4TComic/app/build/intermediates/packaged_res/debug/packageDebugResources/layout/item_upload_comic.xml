@@ -57,6 +57,7 @@
             android:layout_marginTop="4dp"
             android:fontFamily="@font/faustina_medium"
             android:text="Lại thể loại truyện hack"
+            android:textColor="@color/black"
             android:textSize="14sp" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,6 +72,7 @@
             android:fontFamily="@font/faustina"
             android:gravity="bottom"
             android:text="12p"
+            android:textColor="@color/black"
             android:textSize="12sp" />
 
     </LinearLayout>

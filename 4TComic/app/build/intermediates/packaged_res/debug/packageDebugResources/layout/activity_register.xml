@@ -88,6 +88,7 @@
                     android:drawableRight="@drawable/ic_username"
                     android:fontFamily="@font/faustina"
                     android:hint="@string/user_name_text"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <!-- Email -->
@@ -100,6 +101,7 @@
                     android:fontFamily="@font/faustina"
                     android:hint="@string/email_text"
                     android:inputType="text|textEmailAddress"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <!-- Mật khẩu -->
@@ -112,6 +114,7 @@
                     android:fontFamily="@font/faustina"
                     android:hint="@string/password_text"
                     android:inputType="textPassword"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <!-- Nhập lại mật khẩu -->
@@ -124,6 +127,7 @@
                     android:fontFamily="@font/faustina"
                     android:hint="@string/confirm_password_text"
                     android:inputType="textPassword"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <!-- Quên mật khẩu và Đăng ký -->

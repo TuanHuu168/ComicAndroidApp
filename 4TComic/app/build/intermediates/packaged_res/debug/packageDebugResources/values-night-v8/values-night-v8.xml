@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background_color">#121212</color>
     <style name="Base.Theme._4TComic" parent="Theme.Material3.DayNight.NoActionBar">
         
         
+        <item name="android:colorBackground">#2C3E50</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColorHint">#696969</item>
     </style>
 </resources>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.a4tcomic.app-mergeDebugResources-43:/values-ne/values-ne.xml",
+            "outputFile": "com.example.a4tcomic.app-mergeDebugResources-42:/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-4\\819fe6c3eed301cf0f74235099b06bde\\transformed\\core-1.13.0\\res\\values-ne\\values-ne.xml",
